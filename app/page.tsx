@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 const navItems = ["About", "Approach", "Services", "Team", "Careers", "FAQ"];
 const services = [
@@ -32,6 +32,24 @@ const heroTrustItems = [
   ["Structured Approach", "Proses yang tersusun untuk setiap keputusan kewangan anda."],
   ["Client-Focused Guidance", "Keperluan anda menjadi asas kepada setiap cadangan kami."],
   ["Long-Term Support", "Kami bersama anda untuk setiap langkah sepanjang perjalanan."],
+];
+
+const journeySteps = [
+  ["01", "Semak Keperluan", "Kongsikan kedudukan semasa supaya kami boleh memahami keutamaan anda."],
+  ["02", "Sesi Konsultasi", "Wakil kami memberi penerangan jelas tentang pilihan yang sesuai."],
+  ["03", "Rancang Strategi", "Langkah seterusnya disusun secara teratur mengikut keadaan anda."],
+  ["04", "Tindakan Susulan", "Kami membantu memastikan proses berjalan lancar sehingga selesai."],
+];
+const stats = [
+  ["10", "Tahun Pengalaman"],
+  ["80", "Wakil Penasihat Kewangan"],
+  ["16,000", "Pelanggan Berpuas Hati"],
+  ["RM450 Juta", "Aset Di Bawah Nasihat"],
+];
+const henryBenefits = [
+  ["Kenal Pasti Peluang Aset", "Kami bantu pelanggan mengenal pasti pilihan aset yang berpotensi dan sesuai dengan keadaan semasa."],
+  ["Rancang Dengan Strategi", "Setiap langkah dirancang secara tersusun supaya keputusan dibuat dengan lebih yakin."],
+  ["Bina Masa Depan Yang Lebih Stabil", "Dengan aset yang tepat, pelanggan boleh merancang masa depan dengan lebih baik."],
 ];
 const whatWeDo = [
   ["01", "Penyatuan Komitmen Kewangan", "Menyusun semula komitmen sedia ada supaya aliran kewangan lebih teratur dan mudah diuruskan."],
@@ -75,7 +93,7 @@ function Header() {
   );
 }
 
-function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
+function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: ReactNode; text: string }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">{eyebrow}</p>
@@ -129,6 +147,92 @@ function HeroSlider() {
   );
 }
 
+function JourneySection() {
+  return (
+    <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionTitle eyebrow="Customer Journey" title={<>Berurusan Dengan Papaipay Dalam<br />4 Langkah Mudah</>} text="Proses ringkas yang membantu pelanggan bergerak dengan lebih yakin daripada semakan awal hingga tindakan susulan." />
+        <div className="relative mx-auto mt-16 grid max-w-6xl gap-5 md:grid-cols-4">
+          <div className="absolute left-[12%] right-[12%] top-16 hidden h-px bg-gradient-to-r from-transparent via-brand-700/25 to-transparent md:block" />
+          {journeySteps.map(([number, title, text]) => (
+            <div key={title} className="relative rounded-[2rem] border border-emerald-100 bg-white p-6 text-center shadow-xl shadow-emerald-950/5">
+              <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 text-xl font-black text-white shadow-lg shadow-emerald-900/20 md:h-[4.25rem] md:w-[4.25rem]">
+                {number}
+              </div>
+              <h3 className="mt-6 text-lg font-extrabold leading-tight text-slate-950">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatsSection() {
+  return (
+    <section className="bg-white px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionTitle eyebrow="Statistics" title={<>Pendekatan Profesional<br />Hasil Yang Terbukti</>} text="Kami membantu pelanggan melihat pilihan kewangan dan aset melalui pendekatan yang diperakui dan dipercayai." />
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {stats.map(([value, label]) => (
+            <div key={label} className="rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] p-7 text-center shadow-xl shadow-emerald-950/5">
+              <div className={`font-extrabold leading-none tracking-[-0.075em] text-brand-800 ${value === "RM450 Juta" ? "text-[2.65rem] md:text-[2.85rem]" : "text-5xl md:text-6xl"}`}>{value}</div>
+              <p className="mx-auto mt-4 max-w-[13rem] text-sm font-extrabold uppercase leading-6 tracking-[0.08em] text-slate-600">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HenryAssetSection() {
+  return (
+    <section id="henry" className="bg-[#071d12] px-5 py-24 text-white lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-emerald-300">Henry's Asset Approach</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Pendekatan Aset Yang Lebih Tersusun</h2>
+            <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">Kami membantu pelanggan memahami pilihan aset melalui penerangan yang jelas, strategi yang teratur dan bimbingan yang berfokus kepada masa depan.</p>
+            <div className="mt-8 hidden grid-cols-1 gap-4 md:grid lg:grid-cols-3">
+              {henryBenefits.map(([title, text]) => (
+                <div key={title} className="rounded-[1.6rem] border border-white/10 bg-white/8 p-5 backdrop-blur">
+                  <div className="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-emerald-300/15 text-emerald-200">◆</div>
+                  <h3 className="text-base font-extrabold leading-tight">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/65">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-[2.4rem] shadow-2xl shadow-black/30">
+            <picture>
+              <source media="(max-width: 767px)" srcSet="/henrys-asset-mobile.png" />
+              <img src="/henrys-asset.png" alt="Henry Asset Approach" className="h-[640px] w-full object-cover md:h-[620px]" />
+            </picture>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/10 to-transparent md:from-black/20" />
+            <div className="absolute inset-x-5 bottom-5 rounded-[1.8rem] border border-white/15 bg-slate-950/58 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl md:hidden">
+              {henryBenefits.map(([title, text], index) => (
+                <div key={title} className="py-4 first:pt-1 last:pb-1">
+                  <div className="flex gap-4">
+                    <div className="mt-1 grid h-10 w-10 flex-none place-items-center rounded-xl bg-emerald-300/18 text-sm text-emerald-100 ring-1 ring-white/10">◆</div>
+                    <div>
+                      <h3 className="text-[15px] font-extrabold leading-tight text-white">{title}</h3>
+                      <p className="mt-2 text-[13px] leading-6 text-white/76">{text}</p>
+                    </div>
+                  </div>
+                  {index < henryBenefits.length - 1 && <div className="ml-14 mt-4 h-px w-24 bg-emerald-200/35" />}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function WhatWeDoSection() {
   return (
     <section id="services" className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
@@ -171,18 +275,9 @@ export default function Home() {
       </section>
 
       <WhatWeDoSection />
-
-      <section id="henry" className="bg-white px-5 py-24 lg:px-8">
-        <SectionTitle eyebrow="Approach" title="A Clearer Way To Plan" text="Henry Asset Approach diposisikan sebagai pendekatan perundingan yang menekankan kefahaman, semakan dan bimbingan sebelum sesuatu keputusan dibuat." />
-        <div className="mx-auto mt-14 grid max-w-6xl gap-4 md:grid-cols-5">
-          {["Understand", "Review", "Guide", "Plan", "Follow Up"].map((step, index) => (
-            <div key={step} className="rounded-[1.6rem] bg-slate-50 p-6 text-center transition hover:bg-brand-50">
-              <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-brand-700 font-black text-white">{index + 1}</div>
-              <p className="font-extrabold text-slate-800">{step}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <JourneySection />
+      <StatsSection />
+      <HenryAssetSection />
 
       <section className="px-5 py-24 lg:px-8">
         <SectionTitle eyebrow="Services" title="Advisory Support For Better Decisions" text="Peranan Papaipay adalah membantu pelanggan mendapatkan kefahaman dan bimbingan yang lebih tersusun sebelum meneruskan langkah seterusnya." />
