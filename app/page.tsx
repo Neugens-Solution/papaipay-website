@@ -119,10 +119,11 @@ function HeroSlider() {
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.96)_0%,rgba(3,26,14,0.82)_34%,rgba(3,26,14,0.34)_64%,rgba(3,26,14,0.04)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/70 via-transparent to-black/20" />
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-start px-5 pb-36 pt-32 md:items-center md:pb-28 md:pt-28 lg:px-8 lg:pb-36 lg:pt-32">
-        <div className="max-w-[700px]">
-          <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.26em] text-white/90 backdrop-blur">Plan Advisor • Pay Advisor</div>
-          <div className="relative min-h-[380px] md:min-h-[330px] lg:min-h-[340px]">
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-start px-5 pb-12 pt-28 md:items-center md:pb-28 md:pt-28 lg:px-8 lg:pb-36 lg:pt-32">
+        <div className="flex min-h-[calc(100vh-10rem)] max-w-[700px] flex-col md:block md:min-h-0">
+          <div>
+            <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.26em] text-white/90 backdrop-blur">Plan Advisor • Pay Advisor</div>
+          <div className="relative min-h-[310px] md:min-h-[330px] lg:min-h-[340px]">
             {heroSlides.map((slide, index) => (
               <div key={slide.title} className={`absolute inset-0 opacity-0 ${index === 0 ? "animate-[copyOne_18s_infinite]" : index === 1 ? "animate-[copyTwo_18s_infinite]" : "animate-[copyThree_18s_infinite]"}`}>
                 <h1 className="max-w-[680px] text-[31px] font-extrabold leading-[1.08] tracking-[-0.045em] md:text-[48px] lg:text-[56px] xl:text-[60px]">{slide.title}</h1>
@@ -130,12 +131,15 @@ function HeroSlider() {
               </div>
             ))}
           </div>
-          <div className="mt-8 flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
-            <a href="#mohon" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
-            <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
           </div>
-          <div className="mt-16 flex gap-3 md:mt-9">
-            {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
+          <div className="mt-auto pt-10 md:mt-0 md:pt-0">
+            <div className="flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
+              <a href="#mohon" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
+              <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
+            </div>
+            <div className="mt-12 flex gap-3 md:mt-9">
+              {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
+            </div>
           </div>
         </div>
       </div>
@@ -216,8 +220,8 @@ export default function Home() {
       <Header />
       <HeroSlider />
 
-      <section className="px-5 py-14 lg:hidden">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#06321c] px-6 py-7 text-white shadow-2xl shadow-emerald-950/20">
+      <section className="bg-[#06321c] px-5 pb-10 pt-8 text-white lg:hidden">
+        <div className="mx-auto max-w-7xl">
           {heroTrustItems.map(([title, text], index) => (
             <div key={title}>
               <div className="text-sm font-extrabold tracking-[-0.01em] text-white">{title}</div>
