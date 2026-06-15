@@ -101,9 +101,9 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white px-5 py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <div className="hidden min-h-[360px] overflow-hidden rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5 md:block">
-            <img src="/tentang-papaipay.png" alt="Tentang Papaipay" className="h-full min-h-[360px] w-full object-cover" />
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+          <div className="hidden min-h-[315px] overflow-hidden border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5 md:block">
+            <img src="/tentang-papaipay.png" alt="Tentang Papaipay" className="h-full min-h-[315px] w-full object-cover" />
           </div>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Tentang Papaipay</p>
