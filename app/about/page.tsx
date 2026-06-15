@@ -96,14 +96,14 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-16 lg:px-8">
-          <h1 className="text-4xl font-extrabold uppercase leading-[1.03] tracking-[-0.055em] md:text-5xl lg:text-[56px]">ABOUT US</h1>
+          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">About Us</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <div className="flex min-h-[280px] items-center justify-center rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] p-10 shadow-xl shadow-emerald-950/5">
-            <img src="/papaipay-logo.svg" alt="Papaipay" className="h-auto w-full max-w-[360px] object-contain" />
+          <div className="min-h-[360px] overflow-hidden rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5">
+            <img src="/tentang-papaipay.png" alt="Tentang Papaipay" className="h-full min-h-[360px] w-full object-cover" />
           </div>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Tentang Papaipay</p>
@@ -118,12 +118,12 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-[2rem] border border-emerald-100 bg-white p-8 text-center shadow-2xl shadow-emerald-950/5 md:p-12">
-          <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-50 text-brand-700 ring-1 ring-emerald-100">
-            <SmallIcon name="target" className="h-7 w-7" />
+        <div className="mx-auto max-w-5xl text-center">
+          <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white/80 text-brand-700 ring-1 ring-emerald-100 shadow-lg shadow-emerald-950/5">
+            <SmallIcon name="target" className="h-6 w-6 opacity-80" />
           </div>
-          <p className="mt-6 text-xs font-extrabold uppercase tracking-[0.3em] text-brand-700">Visi Kami</p>
-          <blockquote className="mx-auto mt-6 max-w-4xl text-xl font-extrabold leading-relaxed tracking-[-0.035em] text-slate-950 md:text-2xl md:leading-relaxed">“Untuk memperkasakan isi rumah dengan mengubah liabiliti kewangan kepada peluang melalui pengurusan aset strategik, memupuk kesihatan kewangan yang mampan dan kestabilan jangka panjang. Kami berhasrat untuk mengurangkan beban hutang dengan melengkapkan individu dengan alat, pengetahuan dan sumber untuk mengembangkan dan memanfaatkan aset yang membuka jalan kepada kebebasan kewangan dan kemakmuran generasi.”</blockquote>
+          <h2 className="mt-6 text-3xl font-extrabold uppercase leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">VISI KAMI</h2>
+          <blockquote className="mx-auto mt-7 max-w-4xl text-lg font-medium leading-8 tracking-[-0.02em] text-slate-700 md:text-xl md:leading-9">“Untuk memperkasakan isi rumah dengan mengubah liabiliti kewangan kepada peluang melalui pengurusan aset strategik, memupuk kesihatan kewangan yang mampan dan kestabilan jangka panjang. Kami berhasrat untuk mengurangkan beban hutang dengan melengkapkan individu dengan alat, pengetahuan dan sumber untuk mengembangkan dan memanfaatkan aset yang membuka jalan kepada kebebasan kewangan dan kemakmuran generasi.”</blockquote>
         </div>
       </section>
 
