@@ -91,18 +91,18 @@ export default function AboutPage() {
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
       <Header />
 
-      <section className="relative flex min-h-[360px] items-center justify-center overflow-hidden pt-20 text-center text-white md:min-h-[320px] md:pt-16">
+      <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-about-us.png')" }} />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
-        <div className="relative mx-auto w-full max-w-7xl px-5 py-16 lg:px-8">
+        <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
           <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">About Us</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <div className="min-h-[360px] overflow-hidden rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5">
+          <div className="hidden min-h-[360px] overflow-hidden rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5 md:block">
             <img src="/tentang-papaipay.png" alt="Tentang Papaipay" className="h-full min-h-[360px] w-full object-cover" />
           </div>
           <div>
