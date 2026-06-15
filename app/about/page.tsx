@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 const navItems = ["About", "Approach", "Services", "Team", "Careers", "FAQ"];
 const socials = ["Facebook", "Instagram", "LinkedIn"];
 const missionItems = [
-  ["Membimbing Dengan Jelas", "Membantu pelanggan memahami pilihan kewangan yang tersedia melalui penerangan yang mudah difahami dan tersusun."],
-  ["Fokus Kepada Pelanggan", "Setiap cadangan bermula dengan memahami keperluan, matlamat dan situasi sebenar pelanggan."],
-  ["Didorong Oleh Impak", "Membantu pelanggan membuat keputusan yang lebih baik demi kesejahteraan kewangan jangka panjang."],
+  ["target", "Bertindak untuk Perubahan", "Membantu keluarga mengurus aset dengan bijak, mengurangkan beban hutang, dan mencapai kebebasan kewangan menjadikan cabaran hari ini sebagai peluang untuk masa depan yang lebih baik."],
+  ["users", "Fokus kepada Pelanggan", "Membimbing setiap isi rumah dari hutang ke arah kestabilan dan kekayaan melalui strategi aset yang disesuaikan. Kami mendengar, mendidik, dan bertindak agar setiap keputusan kewangan membawa manfaat jangka panjang."],
+  ["spark", "Didorong oleh Impak", "Komited untuk memutuskan kitaran hutang dengan memanfaatkan kekuatan aset. Kami menyediakan ilmu, pembiayaan, dan strategi bagi membina masa depan kewangan yang kukuh dan mampan."],
 ];
 const coreValues = [
   ["Integriti", "Kami mengutamakan ketelusan dan kepercayaan dalam setiap urusan."],
   ["Profesionalisme", "Setiap nasihat dan panduan diberikan dengan penuh tanggungjawab dan etika."],
-  ["Fokus Pelanggan", "Keperluan pelanggan sentiasa menjadi keutamaan dalam setiap cadangan."],
-  ["Penambahbaikan Berterusan", "Kami sentiasa memperkukuh pengetahuan, kemahiran dan pendekatan bagi memberikan nilai yang lebih baik."],
+  ["Komitmen Jangka Panjang", "Kami fokus kepada hubungan yang berterusan dan kejayaan pelanggan dalam jangka panjang."],
+  ["Pembelajaran Berterusan", "Kami sentiasa menambah ilmu dan kemahiran untuk memberi nilai dan penyelesaian yang lebih baik."],
 ];
 
 function BrandLogo({ dark = false }: { dark?: boolean }) {
@@ -62,6 +62,17 @@ function SocialIcon({ name, className = "" }: { name: string; className?: string
   );
 }
 
+function SmallIcon({ name, className = "" }: { name: string; className?: string }) {
+  const common = { fill: "none", stroke: "currentColor", strokeLinecap: "round" as const, strokeLinejoin: "round" as const, strokeWidth: 1.8 };
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      {name === "target" && <><circle {...common} cx="12" cy="12" r="8" /><circle {...common} cx="12" cy="12" r="4" /><path {...common} d="M12 2v3M12 19v3M2 12h3M19 12h3" /></>}
+      {name === "users" && <><circle {...common} cx="9" cy="8" r="3" /><circle {...common} cx="17" cy="9" r="2.5" /><path {...common} d="M3.5 19a5.5 5.5 0 0 1 11 0" /><path {...common} d="M14 16.5a4.5 4.5 0 0 1 6.5 2.5" /></>}
+      {name === "spark" && <><path {...common} d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" /><path {...common} d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" /></>}
+    </svg>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-[#082314] px-5 py-14 text-white lg:px-8">
@@ -80,22 +91,22 @@ export default function AboutPage() {
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
       <Header />
 
-      <section className="relative flex min-h-[360px] items-center overflow-hidden pt-20 text-white md:min-h-[320px] md:pt-16">
+      <section className="relative flex min-h-[360px] items-center justify-center overflow-hidden pt-20 text-center text-white md:min-h-[320px] md:pt-16">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-about-us.png')" }} />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.95)_0%,rgba(3,26,14,0.78)_42%,rgba(3,26,14,0.32)_72%,rgba(3,26,14,0.08)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/80 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-16 lg:px-8">
-          <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-[#d6b95f]">ABOUT PAPAIPAY</p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.03] tracking-[-0.055em] md:text-5xl lg:text-[56px]">Membantu Pelanggan Membuat Keputusan Dengan Lebih Yakin</h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/78 md:text-lg">Kami percaya setiap keputusan kewangan yang baik bermula dengan kefahaman yang jelas, panduan yang betul dan perancangan yang tersusun.</p>
+          <h1 className="text-4xl font-extrabold uppercase leading-[1.03] tracking-[-0.055em] md:text-5xl lg:text-[56px]">ABOUT US</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div className="flex min-h-[280px] items-center justify-center rounded-[2rem] border border-emerald-100 bg-[#f7fbf8] p-10 shadow-xl shadow-emerald-950/5">
+            <img src="/papaipay-logo.svg" alt="Papaipay" className="h-auto w-full max-w-[360px] object-contain" />
+          </div>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Tentang Papaipay</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Rakan Perunding Yang Dipercayai Untuk Keputusan Kewangan Yang Lebih Baik</h2>
             <div className="mt-8 space-y-5 text-base leading-8 text-slate-600">
               <p>Dengan pengalaman melebihi 10 tahun dalam bidang perundingan kewangan serta rangkaian lebih 80 wakil penasihat kewangan, Papaipay telah membantu ribuan pelanggan memahami situasi kewangan mereka dan yang merancang langkah kewangan yang lebih sesuai dengan keperluan masing-masing.</p>
               <p>Kami percaya bahawa setiap situasi kewangan adalah berbeza. Atas sebab itu, pendekatan kami bermula dengan memahami keadaan pelanggan secara menyeluruh sebelum sebarang nasihat diberikan. Fokus kami bukan sekadar kepada penyelesaian jangka pendek, tetapi membantu pelanggan membuat keputusan yang lebih selamat, berbaloi dan lebih mampan untuk masa hadapan.</p>
@@ -103,35 +114,33 @@ export default function AboutPage() {
               <p>Hari ini, Papaipay terus berkembang dengan satu matlamat yang sama iaitu membantu lebih ramai individu dan keluarga membuat keputusan kewangan yang lebih baik dengan telus, profesional dan berorientasikan hasil.</p>
             </div>
           </div>
-          <div className="relative min-h-[460px] overflow-hidden rounded-[2rem] bg-[#06321c] shadow-2xl shadow-emerald-950/15">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-about-us.png')" }} />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#02140c]/88 via-[#06321c]/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-              <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">Professional Consultation</p>
-              <p className="mt-3 max-w-sm text-xl font-extrabold leading-tight tracking-[-0.04em]">Pendekatan profesional, telus dan berpusatkan pelanggan.</p>
-            </div>
-          </div>
         </div>
       </section>
 
       <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
-        <div className="mx-auto max-w-5xl text-center">
-          <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-brand-700">Visi Kami</p>
-          <h2 className="mt-6 text-3xl font-extrabold leading-[1.08] tracking-[-0.055em] text-slate-950 md:text-5xl lg:text-6xl">Memperkasakan isi rumah melalui pengurusan kewangan dan aset yang lebih strategik, mampan dan berorientasikan masa depan bagi membantu membina kestabilan kewangan jangka panjang.</h2>
+        <div className="mx-auto max-w-5xl rounded-[2rem] border border-emerald-100 bg-white p-8 text-center shadow-2xl shadow-emerald-950/5 md:p-12">
+          <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-50 text-brand-700 ring-1 ring-emerald-100">
+            <SmallIcon name="target" className="h-7 w-7" />
+          </div>
+          <p className="mt-6 text-xs font-extrabold uppercase tracking-[0.3em] text-brand-700">Visi Kami</p>
+          <blockquote className="mx-auto mt-6 max-w-4xl text-xl font-extrabold leading-relaxed tracking-[-0.035em] text-slate-950 md:text-2xl md:leading-relaxed">“Untuk memperkasakan isi rumah dengan mengubah liabiliti kewangan kepada peluang melalui pengurusan aset strategik, memupuk kesihatan kewangan yang mampan dan kestabilan jangka panjang. Kami berhasrat untuk mengurangkan beban hutang dengan melengkapkan individu dengan alat, pengetahuan dan sumber untuk mengembangkan dan memanfaatkan aset yang membuka jalan kepada kebebasan kewangan dan kemakmuran generasi.”</blockquote>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Misi Kami</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Komitmen Kami Dalam Setiap Sesi Konsultasi</h2>
+      <section className="relative overflow-hidden bg-[#02140c] px-5 py-24 text-white lg:px-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(31,143,77,0.36),transparent_34%),radial-gradient(circle_at_84%_24%,rgba(214,185,95,0.18),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.05)_0_1px,transparent_1px_24px)]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="text-center">
+            <p className="text-xs font-extrabold uppercase tracking-[0.32em] text-[#d6b95f]">MISI KAMI</p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {missionItems.map(([title, text]) => (
-              <div key={title} className="rounded-[1.75rem] border border-emerald-100 bg-[#f7fbf8] p-8 shadow-xl shadow-emerald-950/5">
-                <h3 className="text-2xl font-extrabold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
-                <p className="mt-5 text-sm leading-7 text-slate-600">{text}</p>
+            {missionItems.map(([icon, title, text]) => (
+              <div key={title} className="rounded-[1.75rem] border border-white/10 bg-white/10 p-8 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
+                <div className="mx-auto grid h-11 w-11 place-items-center rounded-full border border-[#d6b95f]/35 bg-white/10 text-[#d6b95f]">
+                  <SmallIcon name={icon} className="h-5 w-5" />
+                </div>
+                <h3 className="mt-6 text-2xl font-extrabold leading-tight tracking-[-0.04em] text-white">{title}</h3>
+                <p className="mt-5 text-sm leading-7 text-white/72">{text}</p>
               </div>
             ))}
           </div>
@@ -139,12 +148,13 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Nilai Teras</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Nilai Yang Membentuk Cara Kami Berkhidmat</h2>
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">PHILOSOPHY KAMI</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Nilai-Nilai Yang Membentuk Cara Kami Berkhidmat</h2>
+            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">Prinsip ini menjadi asas kepada cara Papaipay membina kepercayaan, memberi panduan dan menyokong pelanggan dalam membuat keputusan kewangan yang lebih baik.</p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2">
             {coreValues.map(([title, text]) => (
               <div key={title} className="rounded-[1.5rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5">
                 <div className="mb-7 h-1 w-12 rounded-full bg-[#d6b95f]" />
@@ -152,21 +162,6 @@ export default function AboutPage() {
                 <p className="mt-4 text-sm leading-7 text-slate-600">{text}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="relative overflow-hidden bg-[#02140c] px-5 py-24 text-white lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(31,143,77,0.32),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(214,185,95,0.18),transparent_28%)]" />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-start justify-between gap-10 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur md:p-12 lg:flex-row lg:items-center">
-          <div className="max-w-3xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Strategic Partnership</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Mari Membina Kerjasama Yang Bermakna</h2>
-            <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">Papaipay sentiasa terbuka untuk menjalin kerjasama strategik bersama organisasi, institusi, persatuan dan rakan industri yang berkongsi aspirasi untuk membantu lebih ramai masyarakat membuat keputusan kewangan yang lebih baik.</p>
-          </div>
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
-            <a href="#" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-xl shadow-black/10 transition hover:-translate-y-0.5">Hubungi Kami</a>
-            <a href="#" className="rounded-full border border-white/25 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:bg-white/10">Jalin Kerjasama</a>
           </div>
         </div>
       </section>
