@@ -9,7 +9,7 @@ const services = [
   ["Financial Education", "Penerangan mudah difahami supaya pelanggan lebih yakin membuat keputusan."],
   ["Client Support", "Sokongan susulan untuk memastikan setiap proses berjalan dengan lebih teratur."],
 ];
-const socials = ["Facebook", "Instagram", "TikTok"];
+const socials = [["Facebook", "facebook"], ["Instagram", "instagram"], ["TikTok", "tiktok"]];
 const heroSlides = [
   {
     image: "/hero-1a.png",
@@ -193,6 +193,17 @@ function LineIcon({ name, className = "" }: { name: string; className?: string }
   );
 }
 
+function SocialIcon({ name, className = "" }: { name: string; className?: string }) {
+  const common = { fill: "currentColor" };
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      {name === "facebook" && <path {...common} d="M14 8.5h2.3V5.1A12 12 0 0 0 13 5c-3.3 0-5 2-5 5.2v2.3H5v3.8h3V24h4v-7.7h3.4l.6-3.8h-4V10.6c0-1.1.3-2.1 2-2.1Z" />}
+      {name === "instagram" && <><path {...common} d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Z" /><path {...common} d="M12 7.4A4.6 4.6 0 1 1 12 16.6 4.6 4.6 0 0 1 12 7.4Zm0 2A2.6 2.6 0 1 0 12 14.6 2.6 2.6 0 0 0 12 9.4ZM17.2 6.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" /></>}
+      {name === "tiktok" && <path {...common} d="M16.4 3c.4 2.3 1.7 3.7 4 3.9v3.4a7.4 7.4 0 0 1-4-1.2v6.4c0 3.3-2.5 5.5-5.8 5.5-3 0-5.4-2.1-5.4-5.1 0-3.4 2.6-5.5 6.2-5.2v3.5c-1.7-.3-2.7.5-2.7 1.7 0 1.1.9 1.8 2 1.8 1.3 0 2.2-.8 2.2-2.5V3h3.5Z" />}
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
@@ -208,10 +219,10 @@ export default function Home() {
       <WhatWeDoSection />
 
       <section id="henry" className="relative min-h-[700px] overflow-hidden bg-[#052315] text-white lg:min-h-[760px]">
-        <div className="absolute inset-0">
-          <img src="/henrys-asset-mobile.png" alt="Henry's Asset Approach" className="h-full w-full object-cover md:hidden" />
-          <img src="/henrys-asset.png" alt="Henry's Asset Approach" className="hidden h-full w-full object-cover md:block" />
-        </div>
+        <picture className="absolute inset-0 block bg-[#052315]">
+          <source media="(max-width: 767px)" srcSet="/henrys-asset-mobile.png" />
+          <img src="/henrys-asset.png" alt="Henry's Asset Approach" className="h-full w-full object-cover object-center" />
+        </picture>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,17,10,0.98)_0%,rgba(3,35,20,0.88)_33%,rgba(3,35,20,0.52)_62%,rgba(3,35,20,0.10)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#02140c]/95 via-[#02140c]/20 to-black/10" />
         <div className="relative mx-auto flex min-h-[700px] max-w-7xl flex-col justify-between px-5 py-14 md:px-10 lg:min-h-[760px] lg:px-8 lg:py-20">
@@ -313,7 +324,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
           <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md leading-7 text-white/65">Papaipay menyediakan pendekatan perundingan kewangan dan aset yang lebih jelas, tersusun dan berpandu melalui Henry's Asset Approach.</p></div>
           <div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-white/65"><a href="#">About</a><a href="#henry">Approach</a><a href="#mohon">Apply Now</a></div></div>
-          <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-2">{socials.map((social) => <span key={social} className="rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white/70">{social}</span>)}</div></div>
+          <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-3">{socials.map(([label, icon]) => <a key={label} href="#" aria-label={label} className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-white/75 transition hover:-translate-y-0.5 hover:border-[#d6b95f]/60 hover:bg-[#d6b95f]/10 hover:text-[#d6b95f]"><SocialIcon name={icon} className="h-[18px] w-[18px]" /></a>)}</div></div>
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between"><span>© Papaipay. All rights reserved.</span><span>Privacy Policy · Terms & Conditions · Sitemap</span></div>
       </footer>
