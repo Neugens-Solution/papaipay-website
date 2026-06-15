@@ -119,10 +119,10 @@ function HeroSlider() {
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.96)_0%,rgba(3,26,14,0.82)_34%,rgba(3,26,14,0.34)_64%,rgba(3,26,14,0.04)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/70 via-transparent to-black/20" />
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center px-5 pb-28 pt-28 lg:px-8 lg:pb-36 lg:pt-32">
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center px-5 pb-32 pt-36 md:pb-28 md:pt-28 lg:px-8 lg:pb-36 lg:pt-32">
         <div className="max-w-[700px]">
           <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.26em] text-white/90 backdrop-blur">Plan Advisor • Pay Advisor</div>
-          <div className="relative min-h-[290px] md:min-h-[330px] lg:min-h-[340px]">
+          <div className="relative min-h-[350px] md:min-h-[330px] lg:min-h-[340px]">
             {heroSlides.map((slide, index) => (
               <div key={slide.title} className={`absolute inset-0 opacity-0 ${index === 0 ? "animate-[copyOne_18s_infinite]" : index === 1 ? "animate-[copyTwo_18s_infinite]" : "animate-[copyThree_18s_infinite]"}`}>
                 <h1 className="max-w-[680px] text-[31px] font-extrabold leading-[1.08] tracking-[-0.045em] md:text-[48px] lg:text-[56px] xl:text-[60px]">{slide.title}</h1>
@@ -130,11 +130,11 @@ function HeroSlider() {
               </div>
             ))}
           </div>
-          <div className="mt-1 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-4 md:mt-1 md:gap-3 sm:flex-row">
             <a href="#mohon" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
             <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
           </div>
-          <div className="mt-9 flex gap-3">
+          <div className="mt-12 flex gap-3 md:mt-9">
             {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
           </div>
         </div>
@@ -216,9 +216,9 @@ export default function Home() {
       <Header />
       <HeroSlider />
 
-      <section className="px-5 py-16 lg:hidden">
-        <div className="mx-auto grid max-w-7xl gap-4 rounded-[2rem] border border-emerald-100 bg-white/80 p-4 shadow-xl shadow-emerald-950/5 backdrop-blur md:grid-cols-4 md:p-5">
-          {heroTrustItems.map(([title, text]) => <div key={title} className="rounded-[1.4rem] bg-slate-50 px-5 py-4"><div className="text-sm font-bold text-slate-800">{title}</div><p className="mt-1 text-sm leading-6 text-slate-600">{text}</p></div>)}
+      <section className="px-5 py-14 lg:hidden">
+        <div className="mx-auto grid max-w-7xl gap-3 rounded-[2rem] border border-emerald-100/80 bg-white/90 p-3.5 shadow-2xl shadow-emerald-950/10 backdrop-blur md:grid-cols-4 md:p-5">
+          {heroTrustItems.map(([title, text]) => <div key={title} className="rounded-[1.5rem] border border-emerald-100/80 bg-gradient-to-br from-white to-emerald-50/55 px-5 py-5 shadow-lg shadow-emerald-950/5"><div className="text-sm font-extrabold tracking-[-0.01em] text-slate-900">{title}</div><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></div>)}
         </div>
       </section>
 
@@ -263,8 +263,8 @@ export default function Home() {
                 <span className="text-lg font-black tracking-[-0.04em] text-brand-700">{number}</span>
                 <span className="h-px flex-1 bg-emerald-100/70" />
               </div>
-              <div className="mx-auto mt-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-emerald-50 to-white text-brand-700 ring-1 ring-emerald-100 shadow-inner shadow-emerald-950/5 md:h-24 md:w-24">
-                <LineIcon name={icon} className="h-8 w-8 md:h-12 md:w-12" />
+              <div className="mx-auto mt-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-emerald-50 to-white text-brand-700 ring-1 ring-emerald-100 shadow-inner shadow-emerald-950/5 md:h-24 md:w-24 lg:h-20 lg:w-20">
+                <LineIcon name={icon} className="h-8 w-8 md:h-12 md:w-12 lg:h-10 lg:w-10" />
               </div>
               <h3 className="mt-5 text-sm font-extrabold leading-tight text-slate-950 md:mt-7 md:text-lg">{title}</h3>
               <p className="mt-3 min-h-[96px] text-xs leading-5 text-slate-600 md:min-h-[72px] md:text-sm md:leading-6">{text}</p>
@@ -286,7 +286,7 @@ export default function Home() {
             {credibilityStats.map(([icon, stat, label, text]) => (
               <div key={label} className="rounded-[1.25rem] border border-[#d6b95f]/30 bg-white/10 p-7 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
                 <LineIcon name={icon} className="mx-auto h-12 w-12 text-[#d6b95f]" />
-                <div className="mt-5 text-5xl font-extrabold tracking-[-0.06em] text-white md:text-6xl">{stat}</div>
+                <div className={`mt-5 font-extrabold tracking-[-0.06em] text-white ${stat === "RM450 Juta" ? "text-4xl md:text-5xl" : "text-5xl md:text-6xl"}`}>{stat}</div>
                 <h3 className="mt-3 text-sm font-extrabold uppercase tracking-[0.08em] text-white/90">{label}</h3>
                 <div className="mx-auto mt-4 h-px w-10 bg-[#d6b95f]" />
                 <p className="mt-4 text-sm leading-6 text-white/65">{text}</p>
@@ -330,8 +330,8 @@ export default function Home() {
 
       <footer className="bg-[#082314] px-5 py-14 text-white lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
-          <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md leading-7 text-white/65">Papaipay menyediakan pendekatan perundingan kewangan dan aset yang lebih jelas, tersusun dan berpandu melalui Henry's Asset Approach.</p></div>
-          <div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-white/65"><a href="#">About</a><a href="#henry">Approach</a><a href="#mohon">Apply Now</a></div></div>
+          <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md text-sm leading-6 text-white/60">Papaipay sentiasa bersedia membantu anda. Sama ada untuk pertanyaan pinjaman, semakan kelayakan, atau maklumat lanjut mengenai perkhidmatan kami.</p></div>
+          <div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-sm text-white/65"><a href="#">About</a><a href="#henry">Approach</a><a href="#services">Services</a><a href="#">Team</a><a href="#">Careers</a><a href="#">FAQ</a><a href="#mohon">Apply Now</a></div></div>
           <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-5">{socials.map((social) => <a key={social} href="#" aria-label={social} className="text-white/65 transition hover:-translate-y-0.5 hover:text-[#d6b95f]"><SocialIcon name={social} className="h-6 w-6" /></a>)}</div></div>
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between"><span>© Papaipay. All rights reserved.</span><span>Privacy Policy · Terms & Conditions · Sitemap</span></div>
