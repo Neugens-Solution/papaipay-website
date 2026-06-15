@@ -3,13 +3,21 @@
 import { useEffect, useState } from "react";
 
 const navItems = ["About", "Approach", "Services", "Team", "Careers", "FAQ"];
-const services = [
-  ["Financial Advisory", "Bimbingan awal untuk memahami kedudukan kewangan dan pilihan yang sesuai."],
-  ["Asset Planning", "Pendekatan tersusun untuk membantu pelanggan melihat peluang dan keperluan aset."],
-  ["Financial Education", "Penerangan mudah difahami supaya pelanggan lebih yakin membuat keputusan."],
-  ["Client Support", "Sokongan susulan untuk memastikan setiap proses berjalan dengan lebih teratur."],
-];
 const socials = ["Facebook", "Instagram", "TikTok"];
+
+const customerJourneySteps = [
+  ["01", "Hantar Permohonan", "Pelanggan berkongsi maklumat asas melalui borang ringkas."],
+  ["02", "Semakan Awal", "Pasukan Papaipay menyemak situasi dan keperluan pelanggan."],
+  ["03", "Sesi Konsultasi", "Pelanggan dibimbing untuk memahami pilihan yang tersedia."],
+  ["04", "Cadangan Penyelesaian", "Cadangan yang lebih jelas dan tersusun diberikan sebagai panduan seterusnya."],
+];
+
+const credibilityItems = [
+  ["10+", "Tahun Pengalaman"],
+  ["Ribuan", "Pelanggan Dibantu"],
+  ["4", "Bidang Perkhidmatan"],
+  ["1", "Pendekatan Tersusun"],
+];
 const heroSlides = [
   {
     image: "/hero-1a.png",
@@ -37,7 +45,7 @@ const whatWeDo = [
   ["01", "Penyatuan Komitmen Kewangan", "Menyusun semula komitmen sedia ada supaya aliran kewangan lebih teratur dan mudah diuruskan."],
   ["02", "Pembiayaan Peribadi", "Membantu pelanggan memahami pilihan pembiayaan yang sesuai berdasarkan keperluan dan kemampuan semasa."],
   ["03", "Penyelesaian SME", "Sokongan kepada usahawan dan pemilik perniagaan yang memerlukan struktur kewangan yang lebih jelas."],
-  ["04", "Henry Asset Approach", "Pendekatan yang memberi fokus kepada pembinaan aset dan perancangan jangka panjang yang lebih strategik."],
+  ["04", "Henry's Asset Approach", "Pendekatan yang memberi fokus kepada pembinaan aset dan perancangan jangka panjang yang lebih strategik."],
 ];
 
 function BrandLogo({ dark = false }: { dark?: boolean }) {
@@ -143,7 +151,7 @@ function WhatWeDoSection() {
 
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {whatWeDo.map(([number, title, text]) => (
-            <a key={title} href={title === "Henry Asset Approach" ? "#henry" : "#mohon"} className="group flex min-h-[320px] flex-col justify-between rounded-[2rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/30 hover:shadow-2xl hover:shadow-emerald-950/10">
+            <a key={title} href={title === "Henry's Asset Approach" ? "#henry" : "#mohon"} className="group flex min-h-[320px] flex-col justify-between rounded-[2rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/30 hover:shadow-2xl hover:shadow-emerald-950/10">
               <div>
                 <div className="text-5xl font-extrabold tracking-[-0.08em] text-brand-700/18 transition group-hover:text-brand-700/28">{number}</div>
                 <h3 className="mt-10 text-2xl font-extrabold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
@@ -173,7 +181,7 @@ export default function Home() {
       <WhatWeDoSection />
 
       <section id="henry" className="bg-white px-5 py-24 lg:px-8">
-        <SectionTitle eyebrow="Approach" title="A Clearer Way To Plan" text="Henry Asset Approach diposisikan sebagai pendekatan perundingan yang menekankan kefahaman, semakan dan bimbingan sebelum sesuatu keputusan dibuat." />
+        <SectionTitle eyebrow="Approach" title="A Clearer Way To Plan" text="Henry's Asset Approach diposisikan sebagai pendekatan perundingan yang menekankan kefahaman, semakan dan bimbingan sebelum sesuatu keputusan dibuat." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-4 md:grid-cols-5">
           {["Understand", "Review", "Guide", "Plan", "Follow Up"].map((step, index) => (
             <div key={step} className="rounded-[1.6rem] bg-slate-50 p-6 text-center transition hover:bg-brand-50">
@@ -184,16 +192,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-24 lg:px-8">
-        <SectionTitle eyebrow="Services" title="Advisory Support For Better Decisions" text="Peranan Papaipay adalah membantu pelanggan mendapatkan kefahaman dan bimbingan yang lebih tersusun sebelum meneruskan langkah seterusnya." />
-        <div className="mx-auto mt-14 grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {services.map(([title, text]) => (
-            <div key={title} className="rounded-[2rem] bg-white p-7 shadow-xl shadow-emerald-950/5 transition hover:-translate-y-1 hover:shadow-2xl">
-              <div className="mb-8 h-24 rounded-[1.5rem] bg-gradient-to-br from-brand-50 to-emerald-100" />
-              <h3 className="text-xl font-extrabold leading-tight text-slate-950">{title}</h3>
-              <p className="mt-3 leading-7 text-slate-600">{text}</p>
+      <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
+        <SectionTitle eyebrow="Bagaimana Ia Berfungsi" title="Dari Permohonan Kepada Cadangan Yang Lebih Jelas" text="Proses Papaipay direka supaya pelanggan memahami langkah seterusnya dengan mudah, tanpa tekanan dan tanpa proses yang mengelirukan." />
+        <div className="mx-auto mt-14 grid max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {customerJourneySteps.map(([number, title, text]) => (
+            <div key={number} className="relative rounded-[2rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5">
+              <div className="mb-10 flex items-center justify-between">
+                <span className="text-sm font-extrabold tracking-[0.18em] text-brand-700">{number}</span>
+                <span className="h-px flex-1 bg-emerald-100 ml-5" />
+              </div>
+              <h3 className="text-xl font-extrabold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#082314] px-6 py-14 text-white shadow-2xl shadow-emerald-950/15 md:px-10 lg:px-14">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-emerald-200/80">Mengapa Pilih Papaipay</p>
+              <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Berpengalaman, Tersusun Dan Berpandu</h2>
+            </div>
+            <p className="max-w-2xl text-base leading-8 text-white/68 md:text-lg lg:ml-auto">Kami membantu pelanggan melihat pilihan kewangan dan aset dengan lebih jelas melalui pendekatan yang profesional dan mudah difahami.</p>
+          </div>
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {credibilityItems.map(([value, label]) => (
+              <div key={label} className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6">
+                <div className="text-4xl font-extrabold tracking-[-0.06em] text-white md:text-5xl">{value}</div>
+                <p className="mt-3 text-sm font-bold leading-6 text-emerald-50/72">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -201,22 +232,22 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] bg-white p-6 shadow-2xl shadow-emerald-950/10 md:p-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[2rem] bg-gradient-to-br from-brand-900 to-brand-700 p-8 text-white">
             <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-white/70">Apply Now</p>
-            <h2 className="mt-4 text-4xl font-extrabold leading-[1.02] tracking-[-0.045em]">Start With A Guided Review.</h2>
-            <p className="mt-5 leading-8 text-white/78">Maklumat akan disimpan ke Supabase dan notification boleh dihantar ke email rasmi Papaipay apabila integrasi backend diaktifkan.</p>
+            <h2 className="mt-4 text-4xl font-extrabold leading-[1.02] tracking-[-0.045em]">Mulakan Semakan Awal Bersama Papaipay.</h2>
+            <p className="mt-5 leading-8 text-white/78">Isi maklumat asas anda dan pasukan Papaipay akan menghubungi anda untuk semakan awal.</p>
           </div>
           <form className="grid gap-4">
             <input className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 outline-none focus:border-brand-700" placeholder="Nama penuh" />
             <input className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 outline-none focus:border-brand-700" placeholder="Nombor telefon" />
             <input className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 outline-none focus:border-brand-700" placeholder="Email" />
             <textarea className="min-h-28 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 outline-none focus:border-brand-700" placeholder="Catatan ringkas" />
-            <button type="button" className="rounded-full bg-brand-700 px-7 py-4 text-xs font-extrabold uppercase tracking-[0.1em] text-white shadow-lg transition hover:bg-brand-900">Submit Application</button>
+            <button type="button" className="rounded-full bg-brand-700 px-7 py-4 text-xs font-extrabold uppercase tracking-[0.1em] text-white shadow-lg transition hover:bg-brand-900">Hantar Permohonan</button>
           </form>
         </div>
       </section>
 
       <footer className="bg-[#082314] px-5 py-14 text-white lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
-          <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md leading-7 text-white/65">Papaipay menyediakan pendekatan perundingan kewangan dan aset yang lebih jelas, tersusun dan berpandu melalui Henry Asset Approach.</p></div>
+          <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md leading-7 text-white/65">Papaipay menyediakan pendekatan perundingan kewangan dan aset yang lebih jelas, tersusun dan berpandu melalui Henry's Asset Approach.</p></div>
           <div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-white/65"><a href="#">About</a><a href="#henry">Approach</a><a href="#mohon">Apply Now</a></div></div>
           <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-2">{socials.map((social) => <span key={social} className="rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white/70">{social}</span>)}</div></div>
         </div>
