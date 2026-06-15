@@ -9,20 +9,23 @@ const services = [
   ["Financial Education", "Penerangan mudah difahami supaya pelanggan lebih yakin membuat keputusan."],
   ["Client Support", "Sokongan susulan untuk memastikan setiap proses berjalan dengan lebih teratur."],
 ];
-const socials = ["Facebook", "Instagram", "TikTok"];
+const socials = ["Facebook", "Instagram", "LinkedIn"];
 const heroSlides = [
   {
     image: "/hero-1a.png",
+    mobileImage: "/hero-1a-mobile.png",
     title: "Ubah Komitmen Kewangan yang membebankan Kepada Aset Yang Membina Nilai.",
     text: "Fahami pilihan yang tersedia dan susun strategi kewangan yang lebih teratur untuk masa hadapan.",
   },
   {
     image: "/hero-2.png",
+    mobileImage: "/hero-2-mobile.png",
     title: "Keluar Daripada Tekanan Kewangan. Melangkah Dengan Lebih Yakin.",
     text: "Perancangan yang tersusun hari ini membantu membentuk kedudukan kewangan yang lebih kukuh pada masa hadapan.",
   },
   {
     image: "/hero-3.png",
+    mobileImage: "/hero-3-mobile.png",
     title: "Lebih Sedekad Membantu Pelanggan membina masa Yang Lebih Baik.",
     text: "Dengan pengalaman melebihi 10 tahun, Papaipay telah membantu ribuan pelanggan memahami pilihan kewangan dan aset dengan lebih jelas.",
   },
@@ -108,7 +111,10 @@ function HeroSlider() {
     <section className="relative min-h-screen overflow-hidden text-white">
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => (
-          <div key={slide.image} className={`absolute inset-0 bg-cover bg-center opacity-0 ${index === 0 ? "animate-[heroOne_18s_infinite]" : index === 1 ? "animate-[heroTwo_18s_infinite]" : "animate-[heroThree_18s_infinite]"}`} style={{ backgroundImage: `url(${slide.image})` }} />
+          <div key={slide.image}>
+            <div className={`absolute inset-0 hidden bg-cover bg-center opacity-0 md:block ${index === 0 ? "animate-[heroOne_18s_infinite]" : index === 1 ? "animate-[heroTwo_18s_infinite]" : "animate-[heroThree_18s_infinite]"}`} style={{ backgroundImage: `url(${slide.image})` }} />
+            <div className={`absolute inset-0 bg-cover bg-center opacity-0 md:hidden ${index === 0 ? "animate-[heroOne_18s_infinite]" : index === 1 ? "animate-[heroTwo_18s_infinite]" : "animate-[heroThree_18s_infinite]"}`} style={{ backgroundImage: `url(${slide.mobileImage})` }} />
+          </div>
         ))}
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.96)_0%,rgba(3,26,14,0.82)_34%,rgba(3,26,14,0.34)_64%,rgba(3,26,14,0.04)_100%)]" />
@@ -193,6 +199,17 @@ function LineIcon({ name, className = "" }: { name: string; className?: string }
   );
 }
 
+function SocialIcon({ name, className = "" }: { name: string; className?: string }) {
+  const common = { fill: "currentColor" };
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      {name === "Facebook" && <path {...common} d="M14 8.4V6.7c0-.8.6-1.1 1.1-1.1h1.7V2.5L14.4 2.5c-3 0-4.4 1.8-4.4 4.3v1.6H7v3.5h3V22h3.7V11.9h2.7l.5-3.5H14Z" />}
+      {name === "Instagram" && <><path {...common} d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Z" /><path {...common} d="M12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM17.1 6.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" /></>}
+      {name === "LinkedIn" && <><path {...common} d="M5.1 8.6H2V22h3.1V8.6ZM3.6 2A1.8 1.8 0 1 0 3.6 5.6 1.8 1.8 0 0 0 3.6 2ZM22 14.2c0-3.6-1.9-5.9-5-5.9-2 0-3.2 1.1-3.7 2.1V8.6h-3.1V22h3.1v-7.2c0-2 .9-3.3 2.7-3.3 1.6 0 2.5 1.1 2.5 3.2V22H22v-7.8Z" /></>}
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
@@ -209,7 +226,10 @@ export default function Home() {
 
       <section id="henry" className="relative min-h-[700px] overflow-hidden bg-[#052315] text-white lg:min-h-[760px]">
         <div className="absolute inset-0">
-          <img src="/henrys-asset.png" alt="Henry's Asset Approach" className="h-full w-full object-cover" />
+          <picture className="block h-full w-full">
+            <source media="(max-width: 767px)" srcSet="/henrys-asset-mobile.png" />
+            <img src="/henrys-asset.png" alt="Henry's Asset Approach" className="h-full w-full object-cover" />
+          </picture>
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,17,10,0.98)_0%,rgba(3,35,20,0.88)_33%,rgba(3,35,20,0.52)_62%,rgba(3,35,20,0.10)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#02140c]/95 via-[#02140c]/20 to-black/10" />
@@ -217,15 +237,16 @@ export default function Home() {
             <div className="max-w-2xl pt-10 lg:pt-14">
               <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Kenali Henry&apos;s Asset Approach</p>
               <h2 className="mt-5 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] md:text-6xl lg:text-7xl">Bina Aset,<br />Bukan Hanya<br />Selesai Hutang.</h2>
-              <p className="mt-6 max-w-lg text-base leading-8 text-white/80 md:text-lg">Papaipay membantu pelanggan melihat peluang aset yang sesuai dan merancang langkah seterusnya dengan lebih jelas dan tersusun.</p>
+              <p className="mt-6 max-w-lg text-base leading-8 text-white/80 md:text-lg">Papaipay membantu pelanggan melihat peluang aset yang sesuai dan merancang langkah seterusnya dengan lebih jelas, tersusun dan berpandu.</p>
               <a href="#mohon" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#d6b95f] px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-emerald-950 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e5cd7a]">Ketahui Lebih Lanjut <span aria-hidden="true">→</span></a>
             </div>
-            <div className="mt-14 grid gap-5 border-t border-white/10 pt-7 md:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-white/10 lg:border-t-0 lg:pt-0">
-              {henryHighlights.map(([icon, title, text]) => (
-                <div key={title} className="rounded-3xl border border-white/10 bg-black/25 p-6 shadow-2xl shadow-black/15 backdrop-blur-md lg:rounded-none lg:border-0 lg:bg-transparent lg:px-10 lg:shadow-none lg:first:pl-0 lg:last:pr-0">
-                  <LineIcon name={icon} className="h-14 w-14 rounded-full border border-[#d6b95f]/50 p-3 text-[#d6b95f]" />
-                  <h3 className="mt-4 text-xl font-extrabold leading-tight text-white">{title}</h3>
+            <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl shadow-black/20 backdrop-blur-md md:grid md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none md:grid-cols-3 lg:mt-14 lg:gap-0 lg:divide-x lg:divide-white/10">
+              {henryHighlights.map(([icon, title, text], index) => (
+                <div key={title} className="text-center md:rounded-3xl md:border md:border-white/10 md:bg-black/25 md:p-6 md:text-left md:shadow-2xl md:shadow-black/15 md:backdrop-blur-md lg:rounded-none lg:border-0 lg:bg-transparent lg:px-10 lg:shadow-none lg:first:pl-0 lg:last:pr-0">
+                  <LineIcon name={icon} className="mx-auto h-12 w-12 rounded-full border border-[#d6b95f]/50 p-3 text-[#d6b95f] md:mx-0 md:h-14 md:w-14" />
+                  <h3 className="mt-4 text-lg font-extrabold leading-tight text-white md:text-xl">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/70">{text}</p>
+                  {index < henryHighlights.length - 1 && <div className="mx-auto my-6 h-px w-[45%] bg-white/20 md:hidden" />}
                 </div>
               ))}
             </div>
@@ -235,18 +256,18 @@ export default function Home() {
       <section className="relative overflow-hidden bg-[#f7fbf8] px-5 py-24 lg:px-8">
         <div className="absolute inset-x-0 top-[58%] hidden border-t border-dashed border-emerald-700/20 lg:block" />
         <SectionTitle eyebrow="Bagaimana Ia Berfungsi" title="Berurusan Dengan Papaipay Dalam 4 Langkah Mudah" text="Daripada permohonan ringkas hingga cadangan penyelesaian, setiap langkah dibimbing dengan jelas oleh pasukan Papaipay." />
-        <div className="relative mx-auto mt-14 grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mx-auto mt-14 grid max-w-7xl grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
           {journeySteps.map(([number, icon, title, text]) => (
-            <div key={number} className="group relative rounded-[1.75rem] border border-emerald-100 bg-white/95 p-7 text-center shadow-xl shadow-emerald-950/5 transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-950/10">
+            <div key={number} className="group relative rounded-[1.5rem] border border-emerald-100 bg-white/95 p-4 text-center shadow-xl shadow-emerald-950/5 transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-950/10 md:rounded-[1.75rem] md:p-7">
               <div className="flex items-start justify-between gap-4">
                 <span className="text-lg font-black tracking-[-0.04em] text-brand-700">{number}</span>
                 <span className="h-px flex-1 bg-emerald-100/70" />
               </div>
-              <div className="mx-auto mt-4 grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-emerald-50 to-white text-brand-700 ring-1 ring-emerald-100 shadow-inner shadow-emerald-950/5">
-                <LineIcon name={icon} className="h-12 w-12" />
+              <div className="mx-auto mt-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-emerald-50 to-white text-brand-700 ring-1 ring-emerald-100 shadow-inner shadow-emerald-950/5 md:h-24 md:w-24">
+                <LineIcon name={icon} className="h-8 w-8 md:h-12 md:w-12" />
               </div>
-              <h3 className="mt-7 text-lg font-extrabold leading-tight text-slate-950">{title}</h3>
-              <p className="mt-3 min-h-[72px] text-sm leading-6 text-slate-600">{text}</p>
+              <h3 className="mt-5 text-sm font-extrabold leading-tight text-slate-950 md:mt-7 md:text-lg">{title}</h3>
+              <p className="mt-3 min-h-[96px] text-xs leading-5 text-slate-600 md:min-h-[72px] md:text-sm md:leading-6">{text}</p>
               <div className="mt-5 text-lg font-bold text-brand-700 transition group-hover:translate-x-1">→</div>
             </div>
           ))}
@@ -311,7 +332,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
           <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md leading-7 text-white/65">Papaipay menyediakan pendekatan perundingan kewangan dan aset yang lebih jelas, tersusun dan berpandu melalui Henry's Asset Approach.</p></div>
           <div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-white/65"><a href="#">About</a><a href="#henry">Approach</a><a href="#mohon">Apply Now</a></div></div>
-          <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-2">{socials.map((social) => <span key={social} className="rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white/70">{social}</span>)}</div></div>
+          <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-5">{socials.map((social) => <a key={social} href="#" aria-label={social} className="text-white/65 transition hover:-translate-y-0.5 hover:text-[#d6b95f]"><SocialIcon name={social} className="h-6 w-6" /></a>)}</div></div>
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between"><span>© Papaipay. All rights reserved.</span><span>Privacy Policy · Terms & Conditions · Sitemap</span></div>
       </footer>
