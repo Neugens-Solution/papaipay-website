@@ -29,8 +29,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-manrope), var(--font-inter), Arial, sans-serif;
-  letter-spacing: -0.035em;
+  font-family: var(--font-heading), var(--font-inter), Arial, sans-serif;
+  letter-spacing: -0.045em;
 }
 
 button,
@@ -47,34 +47,34 @@ textarea {
 
 @keyframes heroOne {
   0%, 30% { opacity: 1; transform: scale(1); }
-  33%, 100% { opacity: 0; transform: scale(1.04); }
+  33%, 100% { opacity: 0; transform: scale(1.035); }
 }
 
 @keyframes heroTwo {
-  0%, 30% { opacity: 0; transform: scale(1.04); }
+  0%, 30% { opacity: 0; transform: scale(1.035); }
   33%, 63% { opacity: 1; transform: scale(1); }
-  66%, 100% { opacity: 0; transform: scale(1.04); }
+  66%, 100% { opacity: 0; transform: scale(1.035); }
 }
 
 @keyframes heroThree {
-  0%, 63% { opacity: 0; transform: scale(1.04); }
+  0%, 63% { opacity: 0; transform: scale(1.035); }
   66%, 96% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 0; transform: scale(1.035); }
 }
 
 @keyframes copyOne {
   0%, 28% { opacity: 1; transform: translateY(0); }
-  31%, 100% { opacity: 0; transform: translateY(14px); }
+  31%, 100% { opacity: 0; transform: translateY(12px); }
 }
 
 @keyframes copyTwo {
-  0%, 31% { opacity: 0; transform: translateY(14px); }
+  0%, 31% { opacity: 0; transform: translateY(12px); }
   34%, 61% { opacity: 1; transform: translateY(0); }
-  64%, 100% { opacity: 0; transform: translateY(14px); }
+  64%, 100% { opacity: 0; transform: translateY(12px); }
 }
 
 @keyframes copyThree {
-  0%, 64% { opacity: 0; transform: translateY(14px); }
+  0%, 64% { opacity: 0; transform: translateY(12px); }
   67%, 94% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 0; transform: translateY(12px); }
 }
