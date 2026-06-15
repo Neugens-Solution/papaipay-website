@@ -41,7 +41,7 @@ const whatWeDo = [
 ];
 
 const henryHighlights = [
-  ["home", "Kenal Pasti Peluang Aset", "Kami bantu pelanggan mengenal pasti aset yang berpotensi dan sesuai dengan keadaan semasa."],
+  ["home", "Kenal Pasti Peluang Aset", "Kami bantu pelanggan mengenal pasti pilihan aset yang berpotensi dan sesuai dengan keadaan semasa."],
   ["clipboard", "Rancang Dengan Strategi", "Setiap langkah dirancang secara tersusun supaya keputusan dibuat dengan lebih yakin."],
   ["shield", "Bina Masa Depan Yang Lebih Stabil", "Dengan aset yang tepat, pelanggan boleh merancang masa depan dengan lebih baik."],
 ];
@@ -52,10 +52,10 @@ const journeySteps = [
   ["04", "briefcase", "Cadangan Penyelesaian", "Cadangan yang lebih jelas dan tersusun diberikan sebagai panduan seterusnya."],
 ];
 const credibilityStats = [
-  ["award", "10+", "Tahun Pengalaman", "Pengalaman luas dalam membantu pelanggan merancang masa depan."],
-  ["users", "Ribuan", "Pelanggan Dibantu", "Telah membantu ribuan pelanggan mencapai keputusan yang lebih baik."],
-  ["briefcase", "4", "Bidang Perkhidmatan", "Penyelesaian komprehensif merangkumi pelbagai keperluan kewangan dan aset."],
-  ["shield", "1", "Pendekatan Tersusun", "Setiap cadangan diberikan berdasarkan semakan yang menyeluruh dan teliti."],
+  ["award", "10", "Tahun Pengalaman", "Pengalaman kukuh dalam membimbing pelanggan membuat keputusan kewangan dan aset."],
+  ["users", "80", "Wakil Penasihat Kewangan", "Pasukan penasihat yang membantu pelanggan dengan pendekatan profesional."],
+  ["briefcase", "16,000", "Pelanggan Berpuas Hati", "Kepercayaan pelanggan menjadi asas kepada setiap cadangan dan semakan."],
+  ["shield", "RM450 Juta", "Aset Di Bawah Nasihat Kami", "Nilai aset di bawah nasihat kami mencerminkan pengalaman dan kepercayaan pelanggan."],
 ];
 
 function BrandLogo({ dark = false }: { dark?: boolean }) {
@@ -207,21 +207,22 @@ export default function Home() {
 
       <WhatWeDoSection />
 
-      <section id="henry" className="bg-[#f7fbf8] px-4 py-10 lg:px-8 lg:py-14">
-        <div className="relative mx-auto min-h-[650px] max-w-7xl overflow-hidden rounded-[2.25rem] bg-[#052315] shadow-2xl shadow-emerald-950/20 lg:min-h-[720px]">
-          <img src="/henrys-asset.png" alt="Henry's Asset Approach" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,20,12,0.95)_0%,rgba(3,35,20,0.86)_34%,rgba(3,35,20,0.46)_64%,rgba(3,35,20,0.16)_100%)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#02140c]/90 via-[#02140c]/10 to-transparent" />
-          <div className="relative flex min-h-[650px] flex-col justify-between p-7 text-white md:p-12 lg:min-h-[720px] lg:p-16">
-            <div className="max-w-2xl pt-8 lg:pt-12">
+      <section id="henry" className="relative min-h-[700px] overflow-hidden bg-[#052315] text-white lg:min-h-[760px]">
+        <div className="absolute inset-0">
+          <img src="/henrys-asset.png" alt="Henry's Asset Approach" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,17,10,0.98)_0%,rgba(3,35,20,0.88)_33%,rgba(3,35,20,0.52)_62%,rgba(3,35,20,0.10)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#02140c]/95 via-[#02140c]/20 to-black/10" />
+        <div className="relative mx-auto flex min-h-[700px] max-w-7xl flex-col justify-between px-5 py-14 md:px-10 lg:min-h-[760px] lg:px-8 lg:py-20">
+            <div className="max-w-2xl pt-10 lg:pt-14">
               <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Kenali Henry&apos;s Asset Approach</p>
-              <h2 className="mt-5 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] md:text-6xl">Bina Aset,<br />Bukan Hanya Selesai Hutang.</h2>
-              <p className="mt-6 max-w-lg text-base leading-8 text-white/80 md:text-lg">Papaipay membantu pelanggan melihat peluang aset yang sesuai dan merancang langkah seterusnya dengan lebih jelas, tersusun dan berpandu.</p>
-              <a href="#mohon" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#d6b95f] px-6 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-emerald-950 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e5cd7a]">Ketahui Lebih Lanjut <span aria-hidden="true">→</span></a>
+              <h2 className="mt-5 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] md:text-6xl lg:text-7xl">Bina Aset,<br />Bukan Hanya<br />Selesai Hutang.</h2>
+              <p className="mt-6 max-w-lg text-base leading-8 text-white/80 md:text-lg">Papaipay membantu pelanggan melihat peluang aset yang sesuai dan merancang langkah seterusnya dengan lebih jelas dan tersusun.</p>
+              <a href="#mohon" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#d6b95f] px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-emerald-950 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e5cd7a]">Ketahui Lebih Lanjut <span aria-hidden="true">→</span></a>
             </div>
-            <div className="mt-12 grid gap-4 border-t border-white/10 pt-6 md:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-white/10 lg:border-t-0 lg:pt-0">
+            <div className="mt-14 grid gap-5 border-t border-white/10 pt-7 md:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-white/10 lg:border-t-0 lg:pt-0">
               {henryHighlights.map(([icon, title, text]) => (
-                <div key={title} className="rounded-3xl border border-white/10 bg-black/20 p-5 backdrop-blur-md lg:rounded-none lg:border-0 lg:bg-transparent lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <div key={title} className="rounded-3xl border border-white/10 bg-black/25 p-6 shadow-2xl shadow-black/15 backdrop-blur-md lg:rounded-none lg:border-0 lg:bg-transparent lg:px-10 lg:shadow-none lg:first:pl-0 lg:last:pr-0">
                   <LineIcon name={icon} className="h-14 w-14 rounded-full border border-[#d6b95f]/50 p-3 text-[#d6b95f]" />
                   <h3 className="mt-4 text-xl font-extrabold leading-tight text-white">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/70">{text}</p>
@@ -229,20 +230,20 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       <section className="relative overflow-hidden bg-[#f7fbf8] px-5 py-24 lg:px-8">
-        <div className="absolute inset-x-0 top-1/2 hidden border-t border-dashed border-emerald-700/20 lg:block" />
+        <div className="absolute inset-x-0 top-[58%] hidden border-t border-dashed border-emerald-700/20 lg:block" />
         <SectionTitle eyebrow="Bagaimana Ia Berfungsi" title="Berurusan Dengan Papaipay Dalam 4 Langkah Mudah" text="Daripada permohonan ringkas hingga cadangan penyelesaian, setiap langkah dibimbing dengan jelas oleh pasukan Papaipay." />
         <div className="relative mx-auto mt-14 grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
           {journeySteps.map(([number, icon, title, text]) => (
-            <div key={number} className="group relative rounded-[1.75rem] border border-emerald-100 bg-white/90 p-6 shadow-xl shadow-emerald-950/5 transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-950/10">
+            <div key={number} className="group relative rounded-[1.75rem] border border-emerald-100 bg-white/95 p-7 text-center shadow-xl shadow-emerald-950/5 transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-950/10">
               <div className="flex items-start justify-between gap-4">
                 <span className="text-lg font-black tracking-[-0.04em] text-brand-700">{number}</span>
-                <div className="grid h-14 w-14 place-items-center rounded-full bg-emerald-50 text-brand-700 ring-1 ring-emerald-100">
-                  <LineIcon name={icon} className="h-7 w-7" />
-                </div>
+                <span className="h-px flex-1 bg-emerald-100/70" />
+              </div>
+              <div className="mx-auto mt-4 grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-emerald-50 to-white text-brand-700 ring-1 ring-emerald-100 shadow-inner shadow-emerald-950/5">
+                <LineIcon name={icon} className="h-12 w-12" />
               </div>
               <h3 className="mt-7 text-lg font-extrabold leading-tight text-slate-950">{title}</h3>
               <p className="mt-3 min-h-[72px] text-sm leading-6 text-slate-600">{text}</p>
@@ -257,15 +258,15 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Mengapa Memilih Papaipay</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Pendekatan Profesional, Hasil Yang Lebih Bermakna</h2>
-            <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">Kami membantu pelanggan melihat pilihan kewangan dan aset dengan lebih jelas melalui pendekatan yang tersusun dan dipercayai.</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Pendekatan Profesional<br />Hasil Yang Terbukti</h2>
+            <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">Kami membantu pelanggan melihat pilihan kewangan dan aset melalui pendekatan yang diperakui dan dipercayai.</p>
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {credibilityStats.map(([icon, stat, label, text]) => (
-              <div key={label} className="rounded-[1.6rem] border border-[#d6b95f]/30 bg-white/10 p-6 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
+              <div key={label} className="rounded-[1.25rem] border border-[#d6b95f]/30 bg-white/10 p-7 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
                 <LineIcon name={icon} className="mx-auto h-12 w-12 text-[#d6b95f]" />
-                <div className="mt-5 text-5xl font-extrabold tracking-[-0.06em] text-white">{stat}</div>
-                <h3 className="mt-2 text-sm font-extrabold text-white">{label}</h3>
+                <div className="mt-5 text-5xl font-extrabold tracking-[-0.06em] text-white md:text-6xl">{stat}</div>
+                <h3 className="mt-3 text-sm font-extrabold uppercase tracking-[0.08em] text-white/90">{label}</h3>
                 <div className="mx-auto mt-4 h-px w-10 bg-[#d6b95f]" />
                 <p className="mt-4 text-sm leading-6 text-white/65">{text}</p>
               </div>
@@ -274,34 +275,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="mohon" className="bg-[#f7fbf8] px-5 py-20 lg:px-8">
-        <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[2rem] border border-emerald-100 bg-white shadow-2xl shadow-emerald-950/10 lg:grid-cols-[0.88fr_1.12fr]">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#06321c] via-[#0b4a2a] to-[#02140c] p-7 text-white md:p-9 lg:p-10">
+      <section id="mohon" className="bg-[#f7fbf8] px-5 py-16 lg:px-8">
+        <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[1.75rem] border border-emerald-100 bg-white shadow-2xl shadow-emerald-950/10 lg:grid-cols-[0.88fr_1.12fr]">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#06321c] via-[#0b4a2a] to-[#02140c] p-7 text-white md:p-8 lg:p-9">
             <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-emerald-300/15 blur-3xl" />
             <div className="relative">
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">Mulakan Hari Ini</p>
               <h2 className="mt-4 max-w-md text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-4xl">Mulakan Semakan Awal Bersama Papaipay</h2>
               <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Isi maklumat asas anda dan pasukan Papaipay akan menghubungi anda untuk semakan awal.</p>
-              <div className="mt-7 grid gap-3 text-sm font-semibold text-white/80">
+              <div className="mt-6 grid gap-2.5 text-sm font-semibold text-white/80">
                 {["Semakan awal tanpa komitmen", "Konsultasi bersama pakar berpengalaman", "Cadangan jelas dan berpandukan fakta"].map((item) => (
                   <div key={item} className="flex items-center gap-3"><span className="grid h-6 w-6 place-items-center rounded-full border border-[#d6b95f]/50 text-[#d6b95f]">✓</span>{item}</div>
                 ))}
               </div>
-              <p className="mt-8 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-xs font-semibold text-white/75">Kami akan hubungi anda dalam masa 1–2 hari bekerja.</p>
+              <p className="mt-6 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-xs font-semibold text-white/75">Kami akan hubungi anda dalam masa 1–2 hari bekerja.</p>
             </div>
           </div>
-          <form className="grid content-center gap-4 bg-white p-6 md:p-8 lg:p-10">
+          <form className="grid content-center gap-3 bg-white p-6 md:p-7 lg:p-8">
             {["Nama penuh", "Nombor telefon", "Email"].map((label) => (
               <label key={label} className="grid gap-1.5 text-xs font-bold text-slate-600">
                 {label}
-                <input className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder={label} />
+                <input className="h-10 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder={label} />
               </label>
             ))}
             <label className="grid gap-1.5 text-xs font-bold text-slate-600">
               Catatan ringkas
-              <textarea className="min-h-24 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder="Catatan ringkas" />
+              <textarea className="min-h-20 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder="Catatan ringkas" />
             </label>
-            <button type="button" className="mt-1 rounded-full bg-brand-700 px-6 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900">Hantar Permohonan</button>
+            <button type="button" className="mt-1 rounded-full bg-brand-700 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900">Hantar Permohonan</button>
           </form>
         </div>
       </section>
