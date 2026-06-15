@@ -119,22 +119,22 @@ function HeroSlider() {
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.96)_0%,rgba(3,26,14,0.82)_34%,rgba(3,26,14,0.34)_64%,rgba(3,26,14,0.04)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/70 via-transparent to-black/20" />
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center px-5 pb-32 pt-36 md:pb-28 md:pt-28 lg:px-8 lg:pb-36 lg:pt-32">
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-start px-5 pb-36 pt-32 md:items-center md:pb-28 md:pt-28 lg:px-8 lg:pb-36 lg:pt-32">
         <div className="max-w-[700px]">
           <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.26em] text-white/90 backdrop-blur">Plan Advisor • Pay Advisor</div>
-          <div className="relative min-h-[350px] md:min-h-[330px] lg:min-h-[340px]">
+          <div className="relative min-h-[380px] md:min-h-[330px] lg:min-h-[340px]">
             {heroSlides.map((slide, index) => (
               <div key={slide.title} className={`absolute inset-0 opacity-0 ${index === 0 ? "animate-[copyOne_18s_infinite]" : index === 1 ? "animate-[copyTwo_18s_infinite]" : "animate-[copyThree_18s_infinite]"}`}>
                 <h1 className="max-w-[680px] text-[31px] font-extrabold leading-[1.08] tracking-[-0.045em] md:text-[48px] lg:text-[56px] xl:text-[60px]">{slide.title}</h1>
-                <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/88 md:text-lg md:leading-8">{slide.text}</p>
+                <p className="mt-7 max-w-2xl text-[15px] leading-7 text-white/88 md:mt-5 md:text-lg md:leading-8">{slide.text}</p>
               </div>
             ))}
           </div>
-          <div className="mt-6 flex flex-col gap-4 md:mt-1 md:gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
             <a href="#mohon" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
             <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
           </div>
-          <div className="mt-12 flex gap-3 md:mt-9">
+          <div className="mt-16 flex gap-3 md:mt-9">
             {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
           </div>
         </div>
@@ -217,8 +217,14 @@ export default function Home() {
       <HeroSlider />
 
       <section className="px-5 py-14 lg:hidden">
-        <div className="mx-auto grid max-w-7xl gap-3 rounded-[2rem] border border-emerald-100/80 bg-white/90 p-3.5 shadow-2xl shadow-emerald-950/10 backdrop-blur md:grid-cols-4 md:p-5">
-          {heroTrustItems.map(([title, text]) => <div key={title} className="rounded-[1.5rem] border border-emerald-100/80 bg-gradient-to-br from-white to-emerald-50/55 px-5 py-5 shadow-lg shadow-emerald-950/5"><div className="text-sm font-extrabold tracking-[-0.01em] text-slate-900">{title}</div><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></div>)}
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#06321c] px-6 py-7 text-white shadow-2xl shadow-emerald-950/20">
+          {heroTrustItems.map(([title, text], index) => (
+            <div key={title}>
+              <div className="text-sm font-extrabold tracking-[-0.01em] text-white">{title}</div>
+              <p className="mt-2 text-sm leading-6 text-white/72">{text}</p>
+              {index < heroTrustItems.length - 1 && <div className="my-6 h-px w-full bg-white/20" />}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -286,7 +292,7 @@ export default function Home() {
             {credibilityStats.map(([icon, stat, label, text]) => (
               <div key={label} className="rounded-[1.25rem] border border-[#d6b95f]/30 bg-white/10 p-7 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
                 <LineIcon name={icon} className="mx-auto h-12 w-12 text-[#d6b95f]" />
-                <div className={`mt-5 font-extrabold tracking-[-0.06em] text-white ${stat === "RM450 Juta" ? "text-4xl md:text-5xl" : "text-5xl md:text-6xl"}`}>{stat}</div>
+                <div className={`mt-5 font-extrabold tracking-[-0.06em] text-white ${stat === "RM450 Juta" ? "text-3xl md:text-4xl lg:text-[2.35rem]" : "text-5xl md:text-6xl"}`}>{stat}</div>
                 <h3 className="mt-3 text-sm font-extrabold uppercase tracking-[0.08em] text-white/90">{label}</h3>
                 <div className="mx-auto mt-4 h-px w-10 bg-[#d6b95f]" />
                 <p className="mt-4 text-sm leading-6 text-white/65">{text}</p>
