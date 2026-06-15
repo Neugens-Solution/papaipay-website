@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const navItems = ["About", "Approach", "Services", "Team", "Careers", "FAQ"];
 const trustCards = [
   ["Guided Approach", "Kami membantu pelanggan memahami pilihan yang tersedia sebelum membuat keputusan."],
@@ -14,18 +18,18 @@ const socials = ["Facebook", "Instagram", "TikTok"];
 const heroSlides = [
   {
     image: "/hero-1a.png",
-    title: "Kejelasan Hari Ini. Ketenangan Masa Hadapan.",
-    text: "Papaipay membantu pelanggan memahami pilihan kewangan dan aset melalui pendekatan perundingan yang jelas, berstruktur dan dipercayai.",
+    title: "Ubah Komitmen Kewangan yang membebankan Kepada Aset Yang Membina Nilai.",
+    text: "Fahami pilihan yang tersedia dan susun strategi kewangan yang lebih teratur untuk masa hadapan.",
   },
   {
     image: "/hero-2.png",
-    title: "Bimbingan Yang Jelas. Keputusan Yang Yakin.",
-    text: "Proses kami bermula dengan memahami keperluan anda, menyemak pilihan yang ada dan memberi panduan yang lebih mudah difahami.",
+    title: "Keluar Daripada Tekanan Kewangan. Melangkah Dengan Lebih Yakin.",
+    text: "Perancangan yang tersusun hari ini membantu membentuk kedudukan kewangan yang lebih kukuh pada masa hadapan.",
   },
   {
     image: "/hero-3.png",
-    title: "Rancang Dengan Jelas. Melangkah Dengan Yakin.",
-    text: "Dengan maklumat yang tersusun dan bimbingan yang betul, pelanggan boleh membuat keputusan dengan lebih yakin untuk keluarga dan masa depan.",
+    title: "Lebih Sedekad Membantu Pelanggan membina masa Yang Lebih Baik.",
+    text: "Dengan pengalaman melebihi 10 tahun, Papaipay telah membantu ribuan pelanggan memahami pilihan kewangan dan aset dengan lebih jelas.",
   },
 ];
 
@@ -38,18 +42,27 @@ function BrandLogo({ dark = false }: { dark?: boolean }) {
 }
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-white/90 backdrop-blur-xl shadow-sm shadow-emerald-950/5">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-white/30 bg-white/75 shadow-sm shadow-emerald-950/5 backdrop-blur-md" : "border-b border-transparent bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
-        <a href="#" aria-label="Papaipay Home"><BrandLogo /></a>
-        <nav className="hidden items-center gap-7 text-[13px] font-semibold tracking-[-0.01em] text-slate-700 lg:flex">
-          {navItems.map((item) => <a key={item} href="#" className="group relative py-3 transition hover:text-brand-700"><span>{item}</span><span className="absolute inset-x-0 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-brand-700 transition group-hover:scale-x-100" /></a>)}
+        <a href="#" aria-label="Papaipay Home"><BrandLogo dark={!scrolled} /></a>
+        <nav className={`hidden items-center gap-7 text-[13px] font-semibold tracking-[-0.01em] lg:flex ${scrolled ? "text-slate-700" : "text-white/90"}`}>
+          {navItems.map((item) => <a key={item} href="#" className={`group relative py-3 transition ${scrolled ? "hover:text-brand-700" : "hover:text-white"}`}><span>{item}</span><span className={`absolute inset-x-0 bottom-1 h-0.5 origin-left scale-x-0 rounded-full transition group-hover:scale-x-100 ${scrolled ? "bg-brand-700" : "bg-white"}`} /></a>)}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <button className="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700">BM | EN</button>
-          <a href="#mohon" className="rounded-full bg-brand-700 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] text-white shadow-lg shadow-emerald-900/20 transition hover:-translate-y-0.5 hover:bg-brand-900">Apply Now</a>
+          <button className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${scrolled ? "border-slate-200 bg-white/70 text-slate-700 hover:border-brand-700 hover:text-brand-700" : "border-white/30 bg-white/10 text-white hover:bg-white/15"}`}>BM | EN</button>
+          <a href="#mohon" className={`rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-lg transition hover:-translate-y-0.5 ${scrolled ? "bg-brand-700 text-white shadow-emerald-900/20 hover:bg-brand-900" : "bg-white text-brand-900 shadow-black/10 hover:bg-white/90"}`}>Apply Now</a>
         </div>
-        <button className="rounded-2xl border border-slate-200 px-4 py-3 text-xs font-black text-slate-800 lg:hidden">MENU</button>
+        <button className={`rounded-2xl border px-4 py-3 text-xs font-black lg:hidden ${scrolled ? "border-slate-200 text-slate-800" : "border-white/30 text-white"}`}>MENU</button>
       </div>
     </header>
   );
@@ -59,7 +72,7 @@ function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string
   return (
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">{eyebrow}</p>
-      <h2 className="mt-4 text-3xl font-extrabold leading-[1.02] tracking-[-0.045em] text-slate-950 md:text-5xl">{title}</h2>
+      <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">{title}</h2>
       <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">{text}</p>
     </div>
   );
@@ -67,26 +80,26 @@ function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string
 
 function HeroSlider() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-24 text-white">
+    <section className="relative min-h-screen overflow-hidden text-white">
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => (
           <div key={slide.image} className={`absolute inset-0 bg-cover bg-center opacity-0 ${index === 0 ? "animate-[heroOne_18s_infinite]" : index === 1 ? "animate-[heroTwo_18s_infinite]" : "animate-[heroThree_18s_infinite]"}`} style={{ backgroundImage: `url(${slide.image})` }} />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#062615]/95 via-[#0b3a22]/70 to-[#0b3a22]/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#062615]/60 via-transparent to-black/10" />
-      <div className="relative mx-auto grid min-h-[calc(100vh-96px)] max-w-7xl items-center px-5 py-16 lg:px-8">
-        <div className="max-w-4xl">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#062615]/88 via-[#0b3a22]/56 to-[#0b3a22]/8" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#062615]/54 via-transparent to-black/18" />
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center px-5 pb-14 pt-28 lg:px-8 lg:pt-32">
+        <div className="max-w-[760px]">
           <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.26em] text-white/90 backdrop-blur">Plan Advisor • Pay Advisor</div>
-          <div className="relative min-h-[270px] md:min-h-[330px]">
+          <div className="relative min-h-[250px] md:min-h-[310px] lg:min-h-[320px]">
             {heroSlides.map((slide, index) => (
               <div key={slide.title} className={`absolute inset-0 opacity-0 ${index === 0 ? "animate-[copyOne_18s_infinite]" : index === 1 ? "animate-[copyTwo_18s_infinite]" : "animate-[copyThree_18s_infinite]"}`}>
-                <h1 className="max-w-4xl text-[42px] font-extrabold leading-[0.98] tracking-[-0.065em] md:text-[72px] lg:text-[86px]">{slide.title}</h1>
-                <p className="mt-7 max-w-2xl text-base leading-8 text-white/84 md:text-xl md:leading-9">{slide.text}</p>
+                <h1 className="max-w-[740px] text-[34px] font-extrabold leading-[1.06] tracking-[-0.05em] md:text-[54px] lg:text-[64px] xl:text-[70px]">{slide.title}</h1>
+                <p className="mt-6 max-w-2xl text-base leading-7 text-white/84 md:text-lg md:leading-8">{slide.text}</p>
               </div>
             ))}
           </div>
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row">
             <a href="#mohon" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
             <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
           </div>
