@@ -32,6 +32,12 @@ const heroSlides = [
     text: "Dengan pengalaman melebihi 10 tahun, Papaipay telah membantu ribuan pelanggan memahami pilihan kewangan dan aset dengan lebih jelas.",
   },
 ];
+const heroTrustItems = [
+  ["Professional Consultation", "Bimbingan oleh perunding berpengalaman dan bertauliah."],
+  ["Structured Approach", "Proses yang tersusun untuk setiap keputusan kewangan anda."],
+  ["Client-Focused Guidance", "Keperluan anda menjadi asas kepada setiap cadangan kami."],
+  ["Long-Term Support", "Kami bersama anda untuk setiap langkah sepanjang perjalanan."],
+];
 
 function BrandLogo({ dark = false }: { dark?: boolean }) {
   return (
@@ -86,26 +92,36 @@ function HeroSlider() {
           <div key={slide.image} className={`absolute inset-0 bg-cover bg-center opacity-0 ${index === 0 ? "animate-[heroOne_18s_infinite]" : index === 1 ? "animate-[heroTwo_18s_infinite]" : "animate-[heroThree_18s_infinite]"}`} style={{ backgroundImage: `url(${slide.image})` }} />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#062615]/88 via-[#0b3a22]/56 to-[#0b3a22]/8" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#062615]/54 via-transparent to-black/18" />
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center px-5 pb-14 pt-28 lg:px-8 lg:pt-32">
-        <div className="max-w-[760px]">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.96)_0%,rgba(3,26,14,0.82)_34%,rgba(3,26,14,0.34)_64%,rgba(3,26,14,0.04)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/70 via-transparent to-black/18" />
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center px-5 pb-28 pt-28 lg:px-8 lg:pb-36 lg:pt-32">
+        <div className="max-w-[700px]">
           <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.26em] text-white/90 backdrop-blur">Plan Advisor • Pay Advisor</div>
-          <div className="relative min-h-[250px] md:min-h-[310px] lg:min-h-[320px]">
+          <div className="relative min-h-[290px] md:min-h-[330px] lg:min-h-[340px]">
             {heroSlides.map((slide, index) => (
               <div key={slide.title} className={`absolute inset-0 opacity-0 ${index === 0 ? "animate-[copyOne_18s_infinite]" : index === 1 ? "animate-[copyTwo_18s_infinite]" : "animate-[copyThree_18s_infinite]"}`}>
-                <h1 className="max-w-[740px] text-[34px] font-extrabold leading-[1.06] tracking-[-0.05em] md:text-[54px] lg:text-[64px] xl:text-[70px]">{slide.title}</h1>
-                <p className="mt-6 max-w-2xl text-base leading-7 text-white/84 md:text-lg md:leading-8">{slide.text}</p>
+                <h1 className="max-w-[680px] text-[31px] font-extrabold leading-[1.08] tracking-[-0.045em] md:text-[48px] lg:text-[56px] xl:text-[60px]">{slide.title}</h1>
+                <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/88 md:text-lg md:leading-8">{slide.text}</p>
               </div>
             ))}
           </div>
-          <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-1 flex flex-col gap-3 sm:flex-row">
             <a href="#mohon" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
             <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
           </div>
-          <div className="mt-10 flex gap-3">
+          <div className="mt-9 flex gap-3">
             {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
           </div>
+        </div>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 hidden border-t border-white/10 bg-[#06321c]/88 backdrop-blur-md lg:block">
+        <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-white/10 px-8 py-7">
+          {heroTrustItems.map(([title, text]) => (
+            <div key={title} className="px-8 first:pl-0 last:pr-0">
+              <div className="text-sm font-extrabold text-white">{title}</div>
+              <p className="mt-2 text-sm leading-6 text-white/72">{text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -118,9 +134,9 @@ export default function Home() {
       <Header />
       <HeroSlider />
 
-      <section className="px-5 py-16 lg:px-8">
+      <section className="px-5 py-16 lg:hidden">
         <div className="mx-auto grid max-w-7xl gap-4 rounded-[2rem] border border-emerald-100 bg-white/80 p-4 shadow-xl shadow-emerald-950/5 backdrop-blur md:grid-cols-4 md:p-5">
-          {["Professional Consultation", "Structured Approach", "Client-Focused Guidance", "Long-Term Support"].map((item) => <div key={item} className="rounded-[1.4rem] bg-slate-50 px-5 py-4 text-sm font-bold text-slate-700">{item}</div>)}
+          {heroTrustItems.map(([title, text]) => <div key={title} className="rounded-[1.4rem] bg-slate-50 px-5 py-4"><div className="text-sm font-bold text-slate-800">{title}</div><p className="mt-1 text-sm leading-6 text-slate-600">{text}</p></div>)}
         </div>
       </section>
 
