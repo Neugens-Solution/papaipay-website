@@ -3,11 +3,6 @@
 import { useEffect, useState } from "react";
 
 const navItems = ["About", "Approach", "Services", "Team", "Careers", "FAQ"];
-const trustCards = [
-  ["Guided Approach", "Kami membantu pelanggan memahami pilihan yang tersedia sebelum membuat keputusan."],
-  ["Structured Process", "Setiap langkah disusun supaya proses perancangan lebih jelas dan mudah diikuti."],
-  ["Client-Centric", "Keperluan pelanggan menjadi asas kepada bimbingan dan cadangan yang diberikan."],
-];
 const services = [
   ["Financial Advisory", "Bimbingan awal untuk memahami kedudukan kewangan dan pilihan yang sesuai."],
   ["Asset Planning", "Pendekatan tersusun untuk membantu pelanggan melihat peluang dan keperluan aset."],
@@ -37,6 +32,12 @@ const heroTrustItems = [
   ["Structured Approach", "Proses yang tersusun untuk setiap keputusan kewangan anda."],
   ["Client-Focused Guidance", "Keperluan anda menjadi asas kepada setiap cadangan kami."],
   ["Long-Term Support", "Kami bersama anda untuk setiap langkah sepanjang perjalanan."],
+];
+const whatWeDo = [
+  ["01", "Penyatuan Komitmen Kewangan", "Menyusun semula komitmen sedia ada supaya aliran kewangan lebih teratur dan mudah diuruskan."],
+  ["02", "Pembiayaan Peribadi", "Membantu pelanggan memahami pilihan pembiayaan yang sesuai berdasarkan keperluan dan kemampuan semasa."],
+  ["03", "Penyelesaian SME", "Sokongan kepada usahawan dan pemilik perniagaan yang memerlukan struktur kewangan yang lebih jelas."],
+  ["04", "Henry Asset Approach", "Pendekatan yang memberi fokus kepada pembinaan aset dan perancangan jangka panjang yang lebih strategik."],
 ];
 
 function BrandLogo({ dark = false }: { dark?: boolean }) {
@@ -128,6 +129,35 @@ function HeroSlider() {
   );
 }
 
+function WhatWeDoSection() {
+  return (
+    <section id="services" className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">What We Do</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Perkhidmatan Utama Papaipay</h2>
+          </div>
+          <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg lg:ml-auto">Kami membantu pelanggan memahami pilihan yang tersedia dan menyusun strategi yang lebih sesuai dengan keperluan kewangan serta aset mereka.</p>
+        </div>
+
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {whatWeDo.map(([number, title, text]) => (
+            <a key={title} href={title === "Henry Asset Approach" ? "#henry" : "#mohon"} className="group flex min-h-[320px] flex-col justify-between rounded-[2rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/30 hover:shadow-2xl hover:shadow-emerald-950/10">
+              <div>
+                <div className="text-5xl font-extrabold tracking-[-0.08em] text-brand-700/18 transition group-hover:text-brand-700/28">{number}</div>
+                <h3 className="mt-10 text-2xl font-extrabold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{text}</p>
+              </div>
+              <div className="mt-8 inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-brand-700">Ketahui Lanjut <span className="ml-2 transition group-hover:translate-x-1">→</span></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
@@ -140,18 +170,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-16 lg:px-8">
-        <SectionTitle eyebrow="Why Papaipay" title="Built On Clarity, Structure And Trust" text="Papaipay membawa pendekatan perundingan yang lebih kemas supaya pelanggan dapat memahami pilihan mereka dengan lebih yakin." />
-        <div className="mx-auto mt-12 grid max-w-7xl gap-5 md:grid-cols-3">
-          {trustCards.map(([title, text]) => (
-            <div key={title} className="rounded-[2rem] border border-emerald-100 bg-white p-8 shadow-xl shadow-emerald-950/5 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-950/10">
-              <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-brand-50 text-xl font-black text-brand-700">✓</div>
-              <h3 className="text-xl font-extrabold leading-tight text-slate-950">{title}</h3>
-              <p className="mt-3 leading-7 text-slate-600">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <WhatWeDoSection />
 
       <section id="henry" className="bg-white px-5 py-24 lg:px-8">
         <SectionTitle eyebrow="Approach" title="A Clearer Way To Plan" text="Henry Asset Approach diposisikan sebagai pendekatan perundingan yang menekankan kefahaman, semakan dan bimbingan sebelum sesuatu keputusan dibuat." />
