@@ -164,10 +164,14 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white px-5 pb-20 lg:px-8 lg:pb-24">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#082314] p-8 text-center text-white shadow-2xl shadow-emerald-950/20 md:p-14">
-          <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] md:text-5xl">Let&apos;s Start The Conversation</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/72">Speak with our team to learn more about the services and solutions available through Papaipay.</p>
-          <a href="tel:0362790080" className="mt-9 inline-flex rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Call Us Now</a>
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#082314_0%,#0b301d_52%,#031a0e_100%)] p-8 text-center text-white shadow-2xl shadow-emerald-950/20 md:p-14">
+          <div className="absolute inset-0 bg-cover bg-center opacity-[0.12]" style={{ backgroundImage: "url('/hero-contact.png')" }} />
+          <div className="absolute inset-0 bg-black/25" />
+          <div className="relative">
+            <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] md:text-5xl">Let&apos;s Start The Conversation</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/78">Speak with our team to learn more about the services and solutions available through Papaipay.</p>
+            <a href="tel:0362790080" className="mt-9 inline-flex rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Call Us Now</a>
+          </div>
         </div>
       </section>
 
