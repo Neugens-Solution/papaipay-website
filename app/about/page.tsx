@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-const navItems = ["About", "Approach", "Services", "Team", "Careers", "FAQ"];
-const socials = ["Facebook", "Instagram", "LinkedIn"];
+import { Footer as SiteFooter, Header as SiteHeader } from "../site-components";
+const navItems = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Team", "/team"], ["Careers", "/careers"], ["Contact Us", "/contact"]];
+const socials = ["Facebook", "Instagram", "TikTok"];
 const missionItems = [
   ["target", "Bertindak untuk Perubahan", "Membantu keluarga mengurus aset dengan bijak, mengurangkan beban hutang, dan mencapai kebebasan kewangan menjadikan cabaran hari ini sebagai peluang untuk masa depan yang lebih baik."],
   ["users", "Fokus kepada Pelanggan", "Membimbing setiap isi rumah dari hutang ke arah kestabilan dan kekayaan melalui strategi aset yang disesuaikan. Kami mendengar, mendidik, dan bertindak agar setiap keputusan kewangan membawa manfaat jangka panjang."],
@@ -24,40 +25,13 @@ function BrandLogo({ dark = false }: { dark?: boolean }) {
   );
 }
 
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-white/30 bg-white/75 shadow-sm shadow-emerald-950/5 backdrop-blur-md" : "border-b border-transparent bg-transparent"}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
-        <a href="#" aria-label="Papaipay Home"><BrandLogo dark={!scrolled} /></a>
-        <nav className={`hidden items-center gap-7 text-[13px] font-semibold tracking-[-0.01em] lg:flex ${scrolled ? "text-slate-700" : "text-white/90"}`}>
-          {navItems.map((item) => <a key={item} href="#" className={`group relative py-3 transition ${scrolled ? "hover:text-brand-700" : "hover:text-white"}`}><span>{item}</span><span className={`absolute inset-x-0 bottom-1 h-0.5 origin-left scale-x-0 rounded-full transition group-hover:scale-x-100 ${scrolled ? "bg-brand-700" : "bg-white"}`} /></a>)}
-        </nav>
-        <div className="hidden items-center gap-3 lg:flex">
-          <button className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${scrolled ? "border-slate-200 bg-white/70 text-slate-700 hover:border-brand-700 hover:text-brand-700" : "border-white/30 bg-white/10 text-white hover:bg-white/15"}`}>BM | EN</button>
-          <a href="#mohon" className={`rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-lg transition hover:-translate-y-0.5 ${scrolled ? "bg-brand-700 text-white shadow-emerald-900/20 hover:bg-brand-900" : "bg-white text-brand-900 shadow-black/10 hover:bg-white/90"}`}>Apply Now</a>
-        </div>
-        <button className={`rounded-2xl border px-4 py-3 text-xs font-black lg:hidden ${scrolled ? "border-slate-200 text-slate-800" : "border-white/30 text-white"}`}>MENU</button>
-      </div>
-    </header>
-  );
-}
-
 function SocialIcon({ name, className = "" }: { name: string; className?: string }) {
   const common = { fill: "currentColor" };
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
       {name === "Facebook" && <path {...common} d="M14 8.4V6.7c0-.8.6-1.1 1.1-1.1h1.7V2.5L14.4 2.5c-3 0-4.4 1.8-4.4 4.3v1.6H7v3.5h3V22h3.7V11.9h2.7l.5-3.5H14Z" />}
       {name === "Instagram" && <><path {...common} d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Z" /><path {...common} d="M12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM17.1 6.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" /></>}
-      {name === "LinkedIn" && <><path {...common} d="M5.1 8.6H2V22h3.1V8.6ZM3.6 2A1.8 1.8 0 1 0 3.6 5.6 1.8 1.8 0 0 0 3.6 2ZM22 14.2c0-3.6-1.9-5.9-5-5.9-2 0-3.2 1.1-3.7 2.1V8.6h-3.1V22h3.1v-7.2c0-2 .9-3.3 2.7-3.3 1.6 0 2.5 1.1 2.5 3.2V22H22v-7.8Z" /></>}
+
     </svg>
   );
 }
@@ -73,23 +47,10 @@ function SmallIcon({ name, className = "" }: { name: string; className?: string 
   );
 }
 
-function Footer() {
-  return (
-    <footer className="bg-[#082314] px-5 py-14 text-white lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
-        <div className="md:col-span-2"><BrandLogo dark /><p className="mt-6 max-w-md text-sm leading-6 text-white/60">Papaipay sentiasa bersedia membantu anda. Sama ada untuk pertanyaan pinjaman, semakan kelayakan, atau maklumat lanjut mengenai perkhidmatan kami.</p></div>
-        <div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-sm text-white/65"><a href="#">About</a><a href="#henry">Approach</a><a href="#services">Services</a><a href="#">Team</a><a href="#">Careers</a><a href="#">FAQ</a><a href="#mohon">Apply Now</a></div></div>
-        <div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-5">{socials.map((social) => <a key={social} href="#" aria-label={social} className="text-white/65 transition hover:-translate-y-0.5 hover:text-[#d6b95f]"><SocialIcon name={social} className="h-6 w-6" /></a>)}</div></div>
-      </div>
-      <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between"><span>© Papaipay. All rights reserved.</span><span>Privacy Policy · Terms & Conditions · Sitemap</span></div>
-    </footer>
-  );
-}
-
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
-      <Header />
+      <SiteHeader active="About" />
 
       <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-about-us.png')" }} />
@@ -166,7 +127,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer />
+      <SiteFooter />
     </main>
   );
 }
