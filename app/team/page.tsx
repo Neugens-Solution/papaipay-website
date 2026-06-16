@@ -20,7 +20,7 @@ const socialLinks = [
 const leadershipTeam = [
   { name: "VICKI O", role: "Manager", quote: "Learn & Live", image: "/vicky-o.jpg" },
   { name: "KENNETH", role: "Pay Advisor", quote: "Lead With Purpose", image: "/kenneth.jpg" },
-  { name: "NURUL IZANIS (ANIS)", role: "Team Leader", quote: "Ex-Banker", image: "/nurul-izanis.jpg" },
+  { name: "NURUL IZANIS (ANIS)", role: "Team Leader", quote: "Ex-Banker", image: "/nurul-izanis.jpg", href: "/anis" },
   { name: "BRYAN", role: "Team Leader", quote: "You Only Live Once", image: "/bryan.jpg" },
 ];
 
@@ -29,7 +29,7 @@ const advisoryTeam = [
   { name: "MANDY", role: "Plan Advisor", quote: "Professional & Problem Solve", image: "/mandy.jpg" },
   { name: "YI JUN", role: "Plan Advisor", quote: "Everything in Professional", image: "/yi-jun.jpg" },
   { name: "ASHIKIN", role: "Plan Advisor", quote: "Keep Moving Forward", image: "/ashikin.jpg" },
-  { name: "FATEN", role: "Plan Advisor", quote: "Positive Vibe", image: "/faten.jpg" },
+  { name: "FATEN", role: "Plan Advisor", quote: "Positive Vibe", image: "/faten.jpg", href: "/kakros" },
   { name: "NURUL", role: "Plan Advisor", quote: "Embrace Your Journey", image: "/nurul.jpg" },
   { name: "ALEX", role: "Plan Advisor", quote: "Focus and Win", image: "/alex.jpg" },
   { name: "SYAHYRAN", role: "Plan Advisor", quote: "Calm, Principled, Mysterious", image: "/shahyran.jpg" },
@@ -47,7 +47,7 @@ const networkStats = [
   ["10+", "Years Experience"],
   ["80+", "Financial Advisors"],
   ["16,000+", "Customers Served"],
-  ["Hundreds of Millions", "Assets Under Advisory"],
+  ["RM450 Mil", "Assets Under Advisory"],
 ];
 
 function BrandLogo({ dark = false }: { dark?: boolean }) {
@@ -94,8 +94,14 @@ function SectionHeading({ eyebrow, title, description, light = false }: { eyebro
   return <div className="mx-auto max-w-3xl text-center">{eyebrow && <p className={`text-xs font-extrabold uppercase tracking-[0.28em] ${light ? "text-[#d6b95f]" : "text-brand-700"}`}>{eyebrow}</p>}<h2 className={`mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl ${light ? "text-white" : "text-slate-950"}`}>{title}</h2><p className={`mt-5 text-base leading-8 md:text-lg ${light ? "text-white/72" : "text-slate-600"}`}>{description}</p></div>;
 }
 
-function TeamCard({ member, featured = false }: { member: { name: string; role: string; quote: string; image: string }; featured?: boolean }) {
-  return <article className={`group overflow-hidden rounded-[1.75rem] border border-emerald-100 bg-white shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/25 hover:shadow-2xl hover:shadow-emerald-950/12 ${featured ? "md:rounded-[2rem]" : ""}`}><div className="relative aspect-[4/5] overflow-hidden bg-[#edf6f0]"><Image src={member.image} alt={member.name} fill sizes={featured ? "(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"} className="object-cover object-top transition duration-500 group-hover:scale-105" /></div><div className={featured ? "p-7" : "p-6"}><div className="mb-5 h-1 w-12 rounded-full bg-[#d6b95f]" /><h3 className={`font-extrabold leading-tight tracking-[-0.04em] text-slate-950 ${featured ? "text-2xl" : "text-xl"}`}>{member.name}</h3><p className="mt-2 text-xs font-extrabold uppercase tracking-[0.18em] text-brand-700">{member.role}</p><p className="mt-4 text-sm italic leading-6 text-slate-500">&ldquo;{member.quote}&rdquo;</p></div></article>;
+function TeamCard({ member, featured = false }: { member: { name: string; role: string; quote: string; image: string; href?: string }; featured?: boolean }) {
+  const cardContent = <><div className="relative aspect-[4/5] overflow-hidden bg-[#edf6f0]"><Image src={member.image} alt={member.name} fill sizes={featured ? "(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"} className="object-cover object-top transition duration-500 group-hover:scale-105" /></div><div className={featured ? "p-7" : "p-6"}><div className="mb-5 h-1 w-12 rounded-full bg-[#d6b95f]" /><h3 className={`font-extrabold leading-tight tracking-[-0.04em] text-slate-950 ${featured ? "text-2xl" : "text-xl"}`}>{member.name}</h3><p className="mt-2 text-xs font-extrabold uppercase tracking-[0.18em] text-brand-700">{member.role}</p><p className="mt-4 text-sm italic leading-6 text-slate-500">&ldquo;{member.quote}&rdquo;</p>{member.href && <span className="mt-5 inline-flex rounded-full border border-brand-700/15 bg-brand-50 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.14em] text-brand-700 transition group-hover:border-brand-700/35 group-hover:bg-brand-700 group-hover:text-white">View Profile</span>}</div></>;
+
+  if (member.href) {
+    return <a href={member.href} className={`group block cursor-pointer overflow-hidden rounded-[1.75rem] border border-emerald-100 bg-white shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1.5 hover:border-brand-700/35 hover:shadow-2xl hover:shadow-emerald-950/15 focus:outline-none focus:ring-4 focus:ring-brand-700/15 ${featured ? "md:rounded-[2rem]" : ""}`}>{cardContent}</a>;
+  }
+
+  return <article className={`group overflow-hidden rounded-[1.75rem] border border-emerald-100 bg-white shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/25 hover:shadow-2xl hover:shadow-emerald-950/12 ${featured ? "md:rounded-[2rem]" : ""}`}>{cardContent}</article>;
 }
 
 export default function TeamPage() {
