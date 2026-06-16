@@ -66,9 +66,9 @@ export default function ApplyPage() {
       <SiteHeader active="Apply Now" />
 
       <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-apply.png')" }} />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/hero-apply.png')" }} />
+        <div className="absolute inset-0 bg-[rgba(0,35,20,0.68)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/55 via-transparent to-black/20" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
           <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Apply Now</h1>
         </div>
