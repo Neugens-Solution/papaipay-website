@@ -66,9 +66,9 @@ export default function ApplyPage() {
       <SiteHeader active="Apply Now" />
 
       <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(31,143,77,0.42),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(214,185,95,0.18),transparent_28%),linear-gradient(135deg,#082314_0%,#0b301d_52%,#031a0e_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.82)_0%,rgba(3,26,14,0.58)_48%,rgba(3,26,14,0.82)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/25" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-apply.png')" }} />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
           <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Apply Now</h1>
         </div>
@@ -94,6 +94,11 @@ export default function ApplyPage() {
                 {['Semakan awal berdasarkan maklumat anda', 'Panduan langkah seterusnya', 'Tiada jaminan kelulusan diberikan'].map((item) => <li key={item} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#d6b95f]" />{item}</li>)}
               </ul>
               <div className="mt-10 rounded-2xl border border-white/10 bg-white/10 p-5 text-sm font-semibold leading-7 text-white/78">Your information will be reviewed by our team.</div>
+
+              <div className="mt-10 border-t border-white/10 pt-8">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#d6b95f]/90">NOTA PENTING</p>
+                <p className="mt-4 text-xs font-medium leading-6 text-white/60 md:text-sm md:leading-7">Maklumat yang dikemukakan adalah untuk tujuan semakan awal sahaja dan tidak menjamin kelulusan mana-mana kemudahan pembiayaan, penyelesaian kewangan atau penyertaan aset. Sebarang cadangan adalah tertakluk kepada penilaian lanjut berdasarkan profil, dokumen dan kelayakan pelanggan.</p>
+              </div>
             </div>
           </aside>
 
@@ -142,14 +147,6 @@ export default function ApplyPage() {
             </button>
           </form>
         </div>
-      </section>
-
-      <section className="bg-[#f7fbf8] px-5 pb-20 lg:px-8 lg:pb-24">
-        <article className="mx-auto max-w-5xl rounded-[2rem] border border-emerald-100 bg-white p-8 shadow-xl shadow-emerald-950/5 md:p-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-brand-700">Nota Penting</p>
-          <h2 className="mt-4 text-2xl font-extrabold tracking-[-0.04em] text-slate-950 md:text-3xl">Nota Penting</h2>
-          <p className="mt-5 text-sm leading-7 text-slate-600 md:text-base md:leading-8">Maklumat yang dikemukakan adalah untuk tujuan semakan awal sahaja dan tidak menjamin kelulusan mana-mana kemudahan pembiayaan, penyelesaian kewangan atau penyertaan aset. Sebarang cadangan adalah tertakluk kepada penilaian lanjut berdasarkan profil, dokumen dan kelayakan pelanggan.</p>
-        </article>
       </section>
 
       <section className="bg-white px-5 pb-20 lg:px-8 lg:pb-24">
