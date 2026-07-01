@@ -191,7 +191,7 @@ function SocialIcon({ name, className = "" }: { name: string; className?: string
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
-      <SiteHeader active="Home" />
+      <SiteHeader active="home" />
       <HeroSlider />
 
       <section className="bg-[#06321c] px-5 pb-10 pt-8 text-white lg:hidden">

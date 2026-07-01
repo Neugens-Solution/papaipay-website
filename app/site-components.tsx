@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react";
 
 const navItems = [
-  ["Home", "/"],
-  ["About", "/about"],
-  ["Services", "/services"],
-  ["Team", "/team"],
-  ["Careers", "/careers"],
-  ["Contact Us", "/contact"],
+  { key: "home", label: "Utama", href: "/" },
+  { key: "about", label: "Tentang Kami", href: "/about" },
+  { key: "services", label: "Perkhidmatan", href: "/services" },
+  { key: "team", label: "Pasukan", href: "/team" },
+  { key: "careers", label: "Kerjaya", href: "/careers" },
+  { key: "contact", label: "Hubungi Kami", href: "/contact" },
 ];
 
-const footerLinks = [...navItems, ["Apply Now", "/apply"]];
+const footerLinks = [...navItems, { key: "apply", label: "MULAKAN SEMAKAN AWAL", href: "/apply" }];
 
 export const socialLinks = [
   ["Facebook", "https://www.facebook.com/papaipay.my"],
@@ -39,12 +39,12 @@ export function Header({ active }: { active?: string }) {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
         <a href="/" aria-label="Papaipay Home"><BrandLogo dark={!(scrolled || open)} /></a>
         <nav className={`hidden items-center gap-7 text-[13px] font-semibold tracking-[-0.01em] lg:flex ${scrolled ? "text-slate-700" : "text-white/90"}`}>
-          {navItems.map(([item, href]) => <a key={item} href={href} className={`group relative py-3 transition ${scrolled ? "hover:text-brand-700" : "hover:text-white"}`}><span>{item}</span><span className={`absolute inset-x-0 bottom-1 h-0.5 origin-left rounded-full transition group-hover:scale-x-100 ${item === active ? "scale-x-100" : "scale-x-0"} ${scrolled ? "bg-brand-700" : "bg-white"}`} /></a>)}
+          {navItems.map(({ key, label, href }) => <a key={key} href={href} className={`group relative py-3 transition ${scrolled ? "hover:text-brand-700" : "hover:text-white"}`}><span>{label}</span><span className={`absolute inset-x-0 bottom-1 h-0.5 origin-left rounded-full transition group-hover:scale-x-100 ${key === active ? "scale-x-100" : "scale-x-0"} ${scrolled ? "bg-brand-700" : "bg-white"}`} /></a>)}
         </nav>
-        <a href="/apply" className={`hidden rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-lg transition hover:-translate-y-0.5 lg:inline-flex ${scrolled ? "bg-brand-700 text-white shadow-emerald-900/20 hover:bg-brand-900" : "bg-white text-brand-900 shadow-black/10 hover:bg-white/90"}`}>APPLY NOW</a>
-        <button type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)} className={`rounded-2xl border px-4 py-3 text-xs font-black lg:hidden ${scrolled || open ? "border-slate-200 text-slate-800" : "border-white/30 text-white"}`}>{open ? "CLOSE" : "MENU"}</button>
+        <a href="/apply" className={`hidden rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-lg transition hover:-translate-y-0.5 lg:inline-flex ${scrolled ? "bg-brand-700 text-white shadow-emerald-900/20 hover:bg-brand-900" : "bg-white text-brand-900 shadow-black/10 hover:bg-white/90"}`}>MULAKAN SEMAKAN AWAL</a>
+        <button type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)} className={`rounded-2xl border px-4 py-3 text-xs font-black lg:hidden ${scrolled || open ? "border-slate-200 text-slate-800" : "border-white/30 text-white"}`}>{open ? "Tutup" : "Menu"}</button>
       </div>
-      {open && <div id="mobile-menu" className="border-t border-emerald-100 bg-white px-5 py-5 shadow-xl shadow-emerald-950/10 lg:hidden"><nav className="mx-auto grid max-w-7xl gap-2 text-sm font-extrabold text-slate-800">{navItems.map(([item, href]) => <a key={item} href={href} onClick={() => setOpen(false)} className="rounded-2xl px-4 py-3 transition hover:bg-emerald-50 hover:text-brand-700">{item}</a>)}<a href="/apply" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-brand-700 px-5 py-3 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15">APPLY NOW</a></nav></div>}
+      {open && <div id="mobile-menu" className="border-t border-emerald-100 bg-white px-5 py-5 shadow-xl shadow-emerald-950/10 lg:hidden"><nav className="mx-auto grid max-w-7xl gap-2 text-sm font-extrabold text-slate-800">{navItems.map(({ key, label, href }) => <a key={key} href={href} onClick={() => setOpen(false)} className="rounded-2xl px-4 py-3 transition hover:bg-emerald-50 hover:text-brand-700">{label}</a>)}<a href="/apply" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-brand-700 px-5 py-3 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15">MULAKAN SEMAKAN AWAL</a></nav></div>}
     </header>
   );
 }
@@ -55,5 +55,5 @@ export function SocialIcon({ name, className = "" }: { name: string; className?:
 }
 
 export function Footer() {
-  return <footer className="bg-[#082314] px-5 py-14 text-white lg:px-8"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4"><div className="md:col-span-2"><a href="/" aria-label="Papaipay Home"><BrandLogo dark /></a><p className="mt-6 max-w-md text-sm leading-6 text-white/60">Papaipay sentiasa bersedia membantu anda. Sama ada untuk pertanyaan pinjaman, semakan kelayakan, atau maklumat lanjut mengenai perkhidmatan kami.</p></div><div><h4 className="font-extrabold">Links</h4><div className="mt-4 grid gap-2 text-sm text-white/65">{footerLinks.map(([label, href]) => <a key={label} href={href} className="transition hover:text-white">{label}</a>)}</div></div><div><h4 className="font-extrabold">Follow Us</h4><div className="mt-4 flex flex-wrap gap-5">{socialLinks.map(([social, href]) => <a key={social} href={href} aria-label={social} className="text-white/65 transition hover:-translate-y-0.5 hover:text-[#d6b95f]"><SocialIcon name={social} className="h-6 w-6" /></a>)}</div></div></div><div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between"><span>© Papaipay. All rights reserved.</span><span className="flex flex-wrap gap-x-4 gap-y-2"><a href="/privacy-policy" className="hover:text-white">Privacy Policy</a><a href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</a><a href="/sitemap.xml" className="hover:text-white">Sitemap</a></span></div></footer>;
+  return <footer className="bg-[#082314] px-5 py-14 text-white lg:px-8"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4"><div className="md:col-span-2"><a href="/" aria-label="Papaipay Home"><BrandLogo dark /></a><p className="mt-6 max-w-md text-sm leading-6 text-white/60">Papaipay sentiasa bersedia membantu anda. Sama ada untuk pertanyaan pinjaman, semakan kelayakan, atau maklumat lanjut mengenai perkhidmatan kami.</p></div><div><h4 className="font-extrabold">Pautan</h4><div className="mt-4 grid gap-2 text-sm text-white/65">{footerLinks.map(({ key, label, href }) => <a key={key} href={href} className="transition hover:text-white">{label}</a>)}</div></div><div><h4 className="font-extrabold">Ikuti Kami</h4><div className="mt-4 flex flex-wrap gap-5">{socialLinks.map(([social, href]) => <a key={social} href={href} aria-label={social} className="text-white/65 transition hover:-translate-y-0.5 hover:text-[#d6b95f]"><SocialIcon name={social} className="h-6 w-6" /></a>)}</div></div></div><div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between"><span>© Papaipay. Hak cipta terpelihara.</span><span className="flex flex-wrap gap-x-4 gap-y-2"><a href="/privacy-policy" className="hover:text-white">Polisi Privasi</a><a href="/terms-and-conditions" className="hover:text-white">Terma & Syarat</a><a href="/sitemap.xml" className="hover:text-white">Peta Laman</a></span></div></footer>;
 }

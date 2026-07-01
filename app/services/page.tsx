@@ -109,7 +109,7 @@ function ServiceTabs() {
 }
 
 export default function ServicesPage() {
-  return <main className="min-h-screen bg-[#f7fbf8] text-slate-950"><SiteHeader active="Services" />
+  return <main className="min-h-screen bg-[#f7fbf8] text-slate-950"><SiteHeader active="services" />
     <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16"><div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-service.png')" }} /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" /><div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" /><div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8"><h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Perkhidmatan Kami</h1></div></section>
     <ServiceTabs />
     <section className="bg-[#f7fbf8] px-5 py-20 lg:px-8 lg:py-24"><div className="mx-auto max-w-7xl"><SectionHeading title="Cara Kami Membantu" intro="Pendekatan kami bermula dengan memahami keadaan pelanggan sebelum mencadangkan pilihan yang lebih sesuai dan tersusun." /><div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{processSteps.map(([num, title, text]) => <article key={num} className="rounded-[1.75rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5"><div className="text-5xl font-extrabold tracking-[-0.08em] text-brand-700/20">{num}</div><h3 className="mt-8 text-xl font-extrabold leading-tight tracking-[-0.04em]">{title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">{text}</p></article>)}</div></div></section>

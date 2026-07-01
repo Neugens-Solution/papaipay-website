@@ -77,7 +77,7 @@ function Field({ label, placeholder, type = "text" }: { label: string; placehold
 export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
-      <SiteHeader active="Careers" />
+      <SiteHeader active="careers" />
 
       <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-career.png')" }} />
