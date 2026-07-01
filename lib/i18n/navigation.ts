@@ -22,7 +22,7 @@ export const navigationLabels: Record<Locale, Record<Exclude<PageKey, "apply">, 
 
 export const ctaLabels: Record<Locale, string> = {
   ms: "MULAKAN SEMAKAN AWAL",
-  en: "START PRE-CHECK",
+  en: "START INITIAL REVIEW",
 };
 
 export const languageLabels: Record<Locale, string> = {
