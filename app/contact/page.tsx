@@ -64,7 +64,7 @@ function Field({ label, placeholder, type = "text" }: { label: string; placehold
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
-      <SiteHeader active="Contact Us" />
+      <SiteHeader active="contact" />
 
       <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-contact.png')" }} />

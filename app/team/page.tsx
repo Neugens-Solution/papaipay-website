@@ -75,7 +75,7 @@ function TeamCard({ member, featured = false }: { member: { name: string; role: 
 }
 
 export default function TeamPage() {
-  return <main className="min-h-screen bg-[#f7fbf8] text-slate-950"><SiteHeader active="Team" />
+  return <main className="min-h-screen bg-[#f7fbf8] text-slate-950"><SiteHeader active="team" />
     <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16"><div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero-team.png')" }} /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" /><div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" /><div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8"><h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Pasukan Kami</h1></div></section>
     <section className="bg-white px-5 py-16 lg:px-8 lg:py-20"><SectionHeading eyebrow="Kenali Pasukan Kami" title="Pasukan Di Sebalik Papaipay" description="Papaipay disokong oleh pasukan profesional yang komited membantu pelanggan membuat keputusan kewangan yang lebih jelas, yakin dan tersusun." /></section>
     <section className="bg-[#f7fbf8] px-5 py-20 lg:px-8 lg:py-24"><div className="mx-auto max-w-7xl"><SectionHeading title="Pasukan Kepimpinan" description="Pasukan kepimpinan yang membantu memacu hala tuju, pertumbuhan dan pengalaman pelanggan Papaipay." /><div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">{leadershipTeam.map((member) => <TeamCard key={member.name} member={member} featured />)}</div></div></section>
