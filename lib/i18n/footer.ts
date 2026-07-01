@@ -30,6 +30,6 @@ export const footerLabels: Record<Locale, { linksHeading: string; socialHeading:
 export function getFooterLinks(locale: Locale) {
   return [
     ...getNavigationItems(locale),
-    { key: "apply" as const, label: ctaLabels[locale], href: getRoute("apply", locale) },
+    { key: "apply" as const, label: ctaLabels[locale], href: locale === "en" ? getRoute("apply", "ms") : getRoute("apply", locale) },
   ];
 }

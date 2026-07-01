@@ -286,7 +286,7 @@ export default function Home() {
           <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Start Initial Review With Papaipay</h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">Share your basic situation with our team so we can help you understand the next suitable step.</p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a href="/en/apply" className="rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Start Initial Review</a>
+            <a href="/apply" className="rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Start Initial Review</a>
             <a href="/en/services" className="rounded-full border border-white/25 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-white transition hover:bg-white/10">Find Out More</a>
           </div>
         </div>
