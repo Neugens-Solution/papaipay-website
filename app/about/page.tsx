@@ -6,14 +6,14 @@ import { Footer as SiteFooter, Header as SiteHeader } from "../site-components";
 const navItems = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Team", "/team"], ["Careers", "/careers"], ["Contact Us", "/contact"]];
 const socials = ["Facebook", "Instagram", "TikTok"];
 const missionItems = [
-  ["target", "Bertindak untuk Perubahan", "Membantu keluarga mengurus aset dengan bijak, mengurangkan beban hutang, dan mencapai kebebasan kewangan menjadikan cabaran hari ini sebagai peluang untuk masa depan yang lebih baik."],
-  ["users", "Fokus kepada Pelanggan", "Membimbing setiap isi rumah dari hutang ke arah kestabilan dan kekayaan melalui strategi aset yang disesuaikan. Kami mendengar, mendidik, dan bertindak agar setiap keputusan kewangan membawa manfaat jangka panjang."],
-  ["spark", "Didorong oleh Impak", "Komited untuk memutuskan kitaran hutang dengan memanfaatkan kekuatan aset. Kami menyediakan ilmu, pembiayaan, dan strategi bagi membina masa depan kewangan yang kukuh dan mampan."],
+  ["target", "Bertindak untuk Perubahan", "Membantu pelanggan menyusun semula komitmen kewangan mereka dan merancang langkah yang lebih teratur untuk masa hadapan."],
+  ["users", "Fokus kepada Pelanggan", "Mendengar keperluan pelanggan, memahami situasi mereka, dan memberi panduan yang sesuai berdasarkan maklumat serta pilihan yang tersedia."],
+  ["spark", "Didorong oleh Impak", "Memberi nilai melalui pendidikan kewangan, perancangan aset dan sokongan berterusan supaya pelanggan lebih yakin membuat keputusan."],
 ];
 const coreValues = [
   ["Integriti", "Kami mengutamakan ketelusan dan kepercayaan dalam setiap urusan."],
   ["Profesionalisme", "Setiap nasihat dan panduan diberikan dengan penuh tanggungjawab dan etika."],
-  ["Komitmen Jangka Panjang", "Kami fokus kepada hubungan yang berterusan dan kejayaan pelanggan dalam jangka panjang."],
+  ["Komitmen Jangka Panjang", "Kami fokus kepada hubungan yang berterusan dan sokongan yang konsisten untuk pelanggan."],
   ["Pembelajaran Berterusan", "Kami sentiasa menambah ilmu dan kemahiran untuk memberi nilai dan penyelesaian yang lebih baik."],
 ];
 
@@ -67,10 +67,10 @@ export default function AboutPage() {
             <img src="/tentang-papaipay.png" alt="Tentang Papaipay" className="h-full min-h-[315px] w-full object-cover" />
           </div>
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Tentang Papaipay</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Mengenai Kami</p>
             <div className="mt-8 space-y-5 text-base leading-8 text-slate-600">
-              <p>Dengan pengalaman melebihi 10 tahun dalam bidang perundingan kewangan serta rangkaian lebih 80 wakil penasihat kewangan, Papaipay telah membantu ribuan pelanggan memahami situasi kewangan mereka dan yang merancang langkah kewangan yang lebih sesuai dengan keperluan masing-masing.</p>
-              <p>Kami percaya bahawa setiap situasi kewangan adalah berbeza. Atas sebab itu, pendekatan kami bermula dengan memahami keadaan pelanggan secara menyeluruh sebelum sebarang nasihat diberikan. Fokus kami bukan sekadar kepada penyelesaian jangka pendek, tetapi membantu pelanggan membuat keputusan yang lebih selamat, berbaloi dan lebih mampan untuk masa hadapan.</p>
+              <p>Dengan pengalaman lebih 10 tahun dalam bidang perundingan kewangan serta rangkaian lebih 80 wakil penasihat kewangan, Papaipay telah membantu ribuan pelanggan memahami situasi kewangan mereka dan merancang langkah kewangan yang lebih sesuai dengan keperluan masing-masing.</p>
+              <p>Kami percaya bahawa setiap situasi kewangan adalah berbeza. Atas sebab itu, pendekatan kami bermula dengan memahami keadaan pelanggan secara menyeluruh sebelum sebarang cadangan diberikan. Fokus kami bukan sekadar kepada penyelesaian jangka pendek, tetapi membantu pelanggan membuat keputusan yang lebih jelas, selamat dan sesuai untuk masa hadapan.</p>
               <p>Melalui pengalaman yang dibina bersama lebih 16,000 pelanggan berpuas hati dan nilai aset di bawah nasihat yang mencecah ratusan juta ringgit, Papaipay terus komited untuk menjadi rakan perunding yang dipercayai dalam membantu pelanggan mencapai matlamat kewangan mereka.</p>
               <p>Hari ini, Papaipay terus berkembang dengan satu matlamat yang sama iaitu membantu lebih ramai individu dan keluarga membuat keputusan kewangan yang lebih baik dengan telus, profesional dan berorientasikan hasil.</p>
             </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
             <SmallIcon name="target" className="h-6 w-6 opacity-80" />
           </div>
           <h2 className="mt-6 text-3xl font-extrabold uppercase leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">VISI KAMI</h2>
-          <blockquote className="mx-auto mt-7 max-w-4xl text-lg font-medium leading-8 tracking-[-0.02em] text-slate-700 md:text-xl md:leading-9">“Untuk memperkasakan isi rumah dengan mengubah liabiliti kewangan kepada peluang melalui pengurusan aset strategik, memupuk kesihatan kewangan yang mampan dan kestabilan jangka panjang. Kami berhasrat untuk mengurangkan beban hutang dengan melengkapkan individu dengan alat, pengetahuan dan sumber untuk mengembangkan dan memanfaatkan aset yang membuka jalan kepada kebebasan kewangan dan kemakmuran generasi.”</blockquote>
+          <blockquote className="mx-auto mt-7 max-w-4xl text-lg font-medium leading-8 tracking-[-0.02em] text-slate-700 md:text-xl md:leading-9">“Untuk membantu individu dan keluarga mengurus komitmen kewangan dengan lebih terancang, memahami peluang aset yang sesuai, dan membina kedudukan kewangan yang lebih stabil untuk jangka panjang.”</blockquote>
         </div>
       </section>
 
@@ -111,9 +111,9 @@ export default function AboutPage() {
       <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">PHILOSOPHY KAMI</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Nilai-Nilai Yang Membentuk Cara Kami Berkhidmat</h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">Prinsip ini menjadi asas kepada cara Papaipay membina kepercayaan, memberi panduan dan menyokong pelanggan dalam membuat keputusan kewangan yang lebih baik.</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">PRINSIP KAMI</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Nilai Yang Membentuk Cara Kami Berkhidmat</h2>
+            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">Prinsip ini menjadi asas kepada cara Papaipay membina kepercayaan, memberi panduan dan menyokong pelanggan dalam membuat keputusan kewangan yang lebih jelas.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {coreValues.map(([title, text]) => (
