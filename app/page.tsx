@@ -28,18 +28,18 @@ const heroSlides = [
     image: "/hero-3.png",
     mobileImage: "/hero-3-mobile.png",
     title: "Lebih Sedekad Membantu Pelanggan membina masa Yang Lebih Baik.",
-    text: "Dengan pengalaman melebihi 10 tahun, Papaipay telah membantu ribuan pelanggan memahami pilihan kewangan dan aset dengan lebih jelas.",
+    text: "Dengan pengalaman lebih 10 tahun, Papaipay telah membantu ribuan pelanggan memahami pilihan kewangan dan aset dengan lebih jelas.",
   },
 ];
 const heroTrustItems = [
-  ["Professional Consultation", "Bimbingan oleh perunding berpengalaman dan bertauliah."],
-  ["Structured Approach", "Proses yang tersusun untuk setiap keputusan kewangan anda."],
-  ["Client-Focused Guidance", "Keperluan anda menjadi asas kepada setiap cadangan kami."],
-  ["Long-Term Support", "Kami bersama anda untuk setiap langkah sepanjang perjalanan."],
+  ["Perunding Profesional", "Bimbingan oleh perunding berpengalaman dan bertauliah."],
+  ["Pendekatan Terancang", "Proses yang tersusun untuk setiap keputusan kewangan anda."],
+  ["Bantuan Pelanggan", "Keperluan anda menjadi asas kepada setiap cadangan kami."],
+  ["Sokongan Berterusan", "Kami bersama anda untuk setiap langkah sepanjang perjalanan."],
 ];
 const whatWeDo = [
   ["01", "Penyatuan Komitmen Kewangan", "Menyusun semula komitmen sedia ada supaya aliran kewangan lebih teratur dan mudah diuruskan."],
-  ["02", "Pembiayaan Peribadi", "Membantu pelanggan memahami pilihan pembiayaan yang sesuai berdasarkan keperluan dan kemampuan semasa."],
+  ["02", "Pengurusan Pembiayaan Peribadi", "Membantu pelanggan memahami pilihan pembiayaan yang sesuai berdasarkan keperluan dan kemampuan semasa."],
   ["03", "Penyelesaian SME", "Sokongan kepada usahawan dan pemilik perniagaan yang memerlukan struktur kewangan yang lebih jelas."],
   ["04", "Henry's Asset Approach", "Pendekatan yang memberi fokus kepada pembinaan aset dan perancangan jangka panjang yang lebih strategik."],
 ];
@@ -137,7 +137,7 @@ function WhatWeDoSection() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">What We Do</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Perkhidmatan Kami</p>
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Perkhidmatan Utama Papaipay</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg lg:ml-auto">Kami membantu pelanggan memahami pilihan yang tersedia dan menyusun strategi yang lebih sesuai dengan keperluan kewangan serta aset mereka.</p>
@@ -262,7 +262,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(31,143,77,0.28),transparent_34%),radial-gradient(circle_at_78%_30%,rgba(214,185,95,0.16),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.05)_0_1px,transparent_1px_24px)]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Mengapa Memilih Papaipay</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Kenapa Pilih Papaipay</p>
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Pendekatan Profesional<br />Hasil Yang Terbukti</h2>
             <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">Kami membantu pelanggan melihat pilihan kewangan dan aset melalui pendekatan yang diperakui dan dipercayai.</p>
           </div>
@@ -289,7 +289,7 @@ export default function Home() {
               <h2 className="mt-4 max-w-md text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-4xl">Mulakan Semakan Awal Bersama Papaipay</h2>
               <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Isi maklumat asas anda dan pasukan Papaipay akan menghubungi anda untuk semakan awal.</p>
               <div className="mt-6 grid gap-2.5 text-sm font-semibold text-white/80">
-                {["Semakan awal tanpa komitmen", "Konsultasi bersama pakar berpengalaman", "Cadangan jelas dan berpandukan fakta"].map((item) => (
+                {["Semakan Awal Percuma", "Sesi konsultasi bersama perunding berpengalaman", "Cadangan Pelan Penyelesaian"].map((item) => (
                   <div key={item} className="flex items-center gap-3"><span className="grid h-6 w-6 place-items-center rounded-full border border-[#d6b95f]/50 text-[#d6b95f]">✓</span>{item}</div>
                 ))}
               </div>
