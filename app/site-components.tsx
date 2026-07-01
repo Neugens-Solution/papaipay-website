@@ -20,7 +20,7 @@ export const socialLinks = [
 ];
 
 export function BrandLogo({ dark = false }: { dark?: boolean }) {
-  return <div className="flex items-center"><img src="/papaipay-logo.svg" alt="Papaipay" className={`h-11 w-auto object-contain md:h-14 ${dark ? "brightness-0 invert" : ""}`} /></div>;
+  return <div className="flex items-center"><img src="/papaipay-logo-header-02.svg" alt="Papaipay" className={`h-11 w-auto object-contain md:h-14 ${dark ? "brightness-0 invert" : ""}`} /></div>;
 }
 
 export function Header({ active }: { active?: string }) {
