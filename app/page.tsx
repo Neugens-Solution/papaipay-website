@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { Footer as SiteFooter, Header as SiteHeader } from "./site-components";
 const navItems = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Team", "/team"], ["Careers", "/careers"], ["Contact Us", "/contact"]];
 const services = [
-  ["Financial Advisory", "Bimbingan awal untuk memahami kedudukan kewangan dan pilihan yang sesuai."],
-  ["Asset Planning", "Pendekatan tersusun untuk membantu pelanggan melihat peluang dan keperluan aset."],
-  ["Financial Education", "Penerangan mudah difahami supaya pelanggan lebih yakin membuat keputusan."],
-  ["Client Support", "Sokongan susulan untuk memastikan setiap proses berjalan dengan lebih teratur."],
+  ["Khidmat Nasihat Kewangan", "Bimbingan awal untuk memahami kedudukan kewangan dan pilihan yang sesuai."],
+  ["Perancangan Aset", "Pendekatan tersusun untuk membantu pelanggan melihat peluang dan keperluan aset."],
+  ["Pendidikan Kewangan", "Penerangan mudah difahami supaya pelanggan lebih yakin membuat keputusan."],
+  ["Sokongan Pelanggan", "Sokongan susulan untuk memastikan setiap proses berjalan dengan lebih teratur."],
 ];
 const socials = ["Facebook", "Instagram", "TikTok"];
 const heroSlides = [
@@ -108,8 +108,8 @@ function HeroSlider() {
           </div>
           <div className="mt-auto pt-10 md:mt-0 md:pt-0">
             <div className="flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
-              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Apply Now</a>
-              <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Learn More</a>
+              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Mulakan Semakan Awal</a>
+              <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Ketahui Lanjut</a>
             </div>
             <div className="mt-12 flex gap-3 md:mt-9">
               {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
@@ -297,7 +297,7 @@ export default function Home() {
             </div>
           </div>
           <form className="grid content-center gap-3 bg-white p-6 md:p-7 lg:p-8">
-            {["Nama penuh", "Nombor telefon", "Email"].map((label) => (
+            {["Nama penuh", "Nombor telefon", "Alamat E-mel"].map((label) => (
               <label key={label} className="grid gap-1.5 text-xs font-bold text-slate-600">
                 {label}
                 <input className="h-10 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder={label} />
