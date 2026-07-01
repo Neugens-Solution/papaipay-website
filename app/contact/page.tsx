@@ -107,7 +107,7 @@ export default function ContactPage() {
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Nama Penuh" placeholder="Nama anda" />
               <Field label="Nombor Telefon" placeholder="03-6279 0080" type="tel" />
-              <Field label="Alamat E-mel" placeholder="you@example.com" type="email" />
+              <Field label="Alamat E-mel" placeholder="nama@contoh.com" type="email" />
               <label className="grid gap-2 text-sm font-extrabold text-slate-800"><span>Perkhidmatan Yang Diminati</span><select className="h-14 rounded-2xl border border-emerald-100 bg-white px-5 text-sm font-semibold text-slate-800 outline-none transition focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10">{enquiryTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
             </div>
             <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800"><span>Mesej</span><textarea rows={6} placeholder="Ceritakan secara ringkas tentang pertanyaan anda." className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" /></label>
@@ -124,7 +124,7 @@ export default function ContactPage() {
             <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">Pejabat kami terletak di Bandar Sri Damansara dan boleh dikunjungi untuk sesi konsultasi serta temujanji yang telah dijadualkan.</p>
           </div>
           <div className="mt-12 overflow-hidden rounded-[2rem] border border-emerald-100 bg-white shadow-2xl shadow-emerald-950/10">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.8001775262276!2d101.61816179839475!3d3.199201799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa291ee52eb679911%3A0x9e7d9e7d1d5418fb!2sPAPA%20IPAY!5e0!3m2!1sen!2smy!4v1781586680115!5m2!1sen!2smy" width="100%" height="420" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Papaipay office location" className="h-[320px] w-full md:h-[420px]" />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.8001775262276!2d101.61816179839475!3d3.199201799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa291ee52eb679911%3A0x9e7d9e7d1d5418fb!2sPAPA%20IPAY!5e0!3m2!1sen!2smy!4v1781586680115!5m2!1sen!2smy" width="100%" height="420" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Lokasi Pejabat Papaipay" className="h-[320px] w-full md:h-[420px]" />
           </div>
         </div>
       </section>

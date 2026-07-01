@@ -111,7 +111,7 @@ export default function ApplyPage() {
                 <div className="mt-5 grid gap-5 md:grid-cols-2">
                   <TextField label="Nama Penuh" name="fullName" placeholder="Nama penuh anda" />
                   <TextField label="Nombor Telefon" name="phone" type="tel" placeholder="012-345 6789" />
-                  <TextField label="Alamat E-mel" name="email" type="email" placeholder="you@example.com" />
+                  <TextField label="Alamat E-mel" name="email" type="email" placeholder="nama@contoh.com" />
                 </div>
               </section>
 
