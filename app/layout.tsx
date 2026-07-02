@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { metadataBase } from "../lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,9 +16,13 @@ const heading = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Papaipay | Perunding Kewangan & Henry's Asset Approach",
+  metadataBase,
+  title: {
+    default: "Papaipay | Perunding Kewangan & Perancangan Aset",
+    template: "%s",
+  },
   description:
-    "Papaipay menyediakan pendekatan perundingan kewangan dan aset yang lebih jelas, tersusun dan berpandu melalui Henry's Asset Approach.",
+    "Papaipay membantu individu dan keluarga mengurus komitmen kewangan, memahami pilihan pembiayaan, dan merancang peluang aset dengan lebih teratur.",
   icons: {
     icon: "/papaipay-icon.svg",
   },
