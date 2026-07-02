@@ -74,7 +74,7 @@ function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string
   return (
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">{eyebrow}</p>
-      <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">{title}</h2>
+      <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">{title}</h2>
       <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">{text}</p>
     </div>
   );
@@ -100,7 +100,7 @@ function HeroSlider() {
           <div className="relative min-h-[310px] md:min-h-[330px] lg:min-h-[340px]">
             {heroSlides.map((slide, index) => (
               <div key={slide.title} className={`absolute inset-0 opacity-0 ${index === 0 ? "animate-[copyOne_18s_infinite]" : index === 1 ? "animate-[copyTwo_18s_infinite]" : "animate-[copyThree_18s_infinite]"}`}>
-                <h1 className="max-w-[680px] text-[31px] font-extrabold leading-[1.08] tracking-[-0.045em] md:text-[48px] lg:text-[56px] xl:text-[60px]">{slide.title}</h1>
+                <h1 className="max-w-[680px] text-[31px] font-bold leading-[1.08] tracking-[-0.045em] md:text-[48px] lg:text-[56px] xl:text-[60px]">{slide.title}</h1>
                 <p className="mt-7 max-w-2xl text-[15px] leading-7 text-white/88 md:mt-5 md:text-lg md:leading-8">{slide.text}</p>
               </div>
             ))}
@@ -108,7 +108,7 @@ function HeroSlider() {
           </div>
           <div className="mt-auto pt-10 md:mt-0 md:pt-0">
             <div className="flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
-              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Mulakan Semakan Awal</a>
+              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Semak Sekarang</a>
               <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Ketahui Lanjut</a>
             </div>
             <div className="mt-12 flex gap-3 md:mt-9">
@@ -138,7 +138,7 @@ function WhatWeDoSection() {
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Perkhidmatan Kami</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Perkhidmatan Utama Papaipay</h2>
+            <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Perkhidmatan Utama Papaipay</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg lg:ml-auto">Kami membantu pelanggan memahami pilihan yang tersedia dan menyusun strategi yang lebih sesuai dengan keperluan kewangan serta aset mereka.</p>
         </div>
@@ -148,7 +148,7 @@ function WhatWeDoSection() {
             <a key={title} href={title === "Henry's Asset Approach" ? "#henry" : "/apply"} className="group flex min-h-[320px] flex-col justify-between rounded-[2rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/30 hover:shadow-2xl hover:shadow-emerald-950/10">
               <div>
                 <div className="text-5xl font-extrabold tracking-[-0.08em] text-brand-700/20 transition group-hover:text-brand-700/28">{number}</div>
-                <h3 className="mt-10 text-2xl font-extrabold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
+                <h3 className="mt-10 text-2xl font-bold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">{text}</p>
               </div>
               <div className="mt-8 inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-brand-700">Ketahui Lanjut <span className="ml-2 transition group-hover:translate-x-1">→</span></div>
@@ -220,7 +220,7 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[700px] max-w-7xl flex-col justify-between px-5 py-14 md:px-10 lg:min-h-[760px] lg:px-8 lg:py-20">
             <div className="max-w-2xl pt-10 lg:pt-14">
               <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Kenali Henry&apos;s Asset Approach</p>
-              <h2 className="mt-5 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] md:text-6xl lg:text-7xl">Bina Aset,<br />Bukan Hanya<br />Selesai Hutang.</h2>
+              <h2 className="mt-5 max-w-xl text-4xl font-bold leading-[0.98] tracking-[-0.055em] md:text-6xl lg:text-7xl">Bina Aset,<br />Bukan Hanya<br />Selesai Hutang.</h2>
               <p className="mt-6 max-w-lg text-base leading-8 text-white/80 md:text-lg">Papaipay membantu pelanggan melihat peluang aset yang sesuai dan merancang langkah seterusnya dengan lebih jelas, tersusun dan berpandu.</p>
               <a href="/apply" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#d6b95f] px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-emerald-950 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e5cd7a]">Ketahui Lebih Lanjut <span aria-hidden="true">→</span></a>
             </div>
@@ -228,7 +228,7 @@ export default function Home() {
               {henryHighlights.map(([icon, title, text], index) => (
                 <div key={title} className="text-center md:rounded-3xl md:border md:border-white/10 md:bg-black/25 md:p-6 md:text-left md:shadow-2xl md:shadow-black/15 md:backdrop-blur-md lg:rounded-none lg:border-0 lg:bg-transparent lg:px-10 lg:shadow-none lg:first:pl-0 lg:last:pr-0">
                   <LineIcon name={icon} className="mx-auto h-12 w-12 rounded-full border border-[#d6b95f]/50 p-3 text-[#d6b95f] md:mx-0 md:h-14 md:w-14" />
-                  <h3 className="mt-4 text-lg font-extrabold leading-tight text-white md:text-xl">{title}</h3>
+                  <h3 className="mt-4 text-lg font-bold leading-tight text-white md:text-xl">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/70">{text}</p>
                   {index < henryHighlights.length - 1 && <div className="mx-auto my-6 h-px w-[45%] bg-white/20 md:hidden" />}
                 </div>
@@ -250,7 +250,7 @@ export default function Home() {
               <div className="mx-auto mt-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-emerald-50 to-white text-brand-700 ring-1 ring-emerald-100 shadow-inner shadow-emerald-950/5 md:h-24 md:w-24 lg:h-20 lg:w-20">
                 <LineIcon name={icon} className="h-8 w-8 md:h-12 md:w-12 lg:h-10 lg:w-10" />
               </div>
-              <h3 className="mt-5 text-sm font-extrabold leading-tight text-slate-950 md:mt-7 md:text-lg">{title}</h3>
+              <h3 className="mt-5 text-sm font-bold leading-tight text-slate-950 md:mt-7 md:text-lg">{title}</h3>
               <p className="mt-3 min-h-[96px] text-xs leading-5 text-slate-600 md:min-h-[72px] md:text-sm md:leading-6">{text}</p>
               <div className="mt-5 text-lg font-bold text-brand-700 transition group-hover:translate-x-1">→</div>
             </div>
@@ -263,7 +263,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Kenapa Pilih Papaipay</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Pendekatan Profesional<br />Hasil Yang Terbukti</h2>
+            <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl">Pendekatan Profesional<br />Hasil Yang Terbukti</h2>
             <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">Kami membantu pelanggan melihat pilihan kewangan dan aset melalui pendekatan yang diperakui dan dipercayai.</p>
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -271,7 +271,7 @@ export default function Home() {
               <div key={label} className="rounded-[1.25rem] border border-[#d6b95f]/30 bg-white/10 p-7 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
                 <LineIcon name={icon} className="mx-auto h-12 w-12 text-[#d6b95f]" />
                 <div className={`mt-5 font-extrabold tracking-[-0.06em] text-white ${stat === "RM450 Juta" ? "text-3xl md:text-4xl lg:text-[2.35rem]" : "text-5xl md:text-6xl"}`}>{stat}</div>
-                <h3 className="mt-3 text-sm font-extrabold uppercase tracking-[0.08em] text-white/90">{label}</h3>
+                <h3 className="mt-3 text-sm font-bold uppercase tracking-[0.08em] text-white/90">{label}</h3>
                 <div className="mx-auto mt-4 h-px w-10 bg-[#d6b95f]" />
                 <p className="mt-4 text-sm leading-6 text-white/65">{text}</p>
               </div>
@@ -286,7 +286,7 @@ export default function Home() {
             <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-emerald-300/15 blur-3xl" />
             <div className="relative">
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">Mulakan Hari Ini</p>
-              <h2 className="mt-4 max-w-md text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-4xl">Mulakan Semakan Awal Bersama Papaipay</h2>
+              <h2 className="mt-4 max-w-md text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-4xl">Mulakan Semakan Awal Bersama Papaipay</h2>
               <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Isi maklumat asas anda dan pasukan Papaipay akan menghubungi anda untuk semakan awal.</p>
               <div className="mt-6 grid gap-2.5 text-sm font-semibold text-white/80">
                 {["Semakan Awal Percuma", "Sesi konsultasi bersama perunding berpengalaman", "Cadangan Pelan Penyelesaian"].map((item) => (
