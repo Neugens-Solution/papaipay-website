@@ -1,16 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import { Footer as SiteFooter, Header as SiteHeader } from "./site-components";
-const navItems = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Team", "/team"], ["Careers", "/careers"], ["Contact Us", "/contact"]];
-const services = [
-  ["Khidmat Nasihat Kewangan", "Bimbingan awal untuk memahami kedudukan kewangan dan pilihan yang sesuai."],
-  ["Perancangan Aset", "Pendekatan tersusun untuk membantu pelanggan melihat peluang dan keperluan aset."],
-  ["Pendidikan Kewangan", "Penerangan mudah difahami supaya pelanggan lebih yakin membuat keputusan."],
-  ["Sokongan Pelanggan", "Sokongan susulan untuk memastikan setiap proses berjalan dengan lebih teratur."],
-];
-const socials = ["Facebook", "Instagram", "TikTok"];
 const heroSlides = [
   {
     image: "/hero-1a.png",
@@ -61,14 +51,6 @@ const credibilityStats = [
   ["briefcase", "16,000", "Pelanggan Berpuas Hati", "Kepercayaan pelanggan menjadi asas kepada setiap cadangan dan semakan."],
   ["shield", "RM450 Juta", "Aset Di Bawah Nasihat Kami", "Nilai aset di bawah nasihat kami mencerminkan pengalaman dan kepercayaan pelanggan."],
 ];
-
-function BrandLogo({ dark = false }: { dark?: boolean }) {
-  return (
-    <div className="flex items-center">
-      <img src="/papaipay-logo.svg" alt="Papaipay" className={`h-11 w-auto object-contain md:h-14 ${dark ? "brightness-0 invert" : ""}`} />
-    </div>
-  );
-}
 
 function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
@@ -173,17 +155,6 @@ function LineIcon({ name, className = "" }: { name: string; className?: string }
       {name === "briefcase" && <><path {...common} d="M4 8h16v11H4z" /><path {...common} d="M9 8V5h6v3" /><path {...common} d="M4 12h16" /><path {...common} d="M11 12v2h2v-2" /></>}
       {name === "award" && <><circle {...common} cx="12" cy="9" r="4" /><path {...common} d="m9.5 12.5-2 7 4.5-2 4.5 2-2-7" /><path {...common} d="M12 7v4" /></>}
       {name === "users" && <><circle {...common} cx="9" cy="8" r="3" /><circle {...common} cx="17" cy="9" r="2.5" /><path {...common} d="M3.5 19a5.5 5.5 0 0 1 11 0" /><path {...common} d="M14 16.5a4.5 4.5 0 0 1 6.5 2.5" /></>}
-    </svg>
-  );
-}
-
-function SocialIcon({ name, className = "" }: { name: string; className?: string }) {
-  const common = { fill: "currentColor" };
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
-      {name === "Facebook" && <path {...common} d="M14 8.4V6.7c0-.8.6-1.1 1.1-1.1h1.7V2.5L14.4 2.5c-3 0-4.4 1.8-4.4 4.3v1.6H7v3.5h3V22h3.7V11.9h2.7l.5-3.5H14Z" />}
-      {name === "Instagram" && <><path {...common} d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Z" /><path {...common} d="M12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM17.1 6.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" /></>}
-
     </svg>
   );
 }
