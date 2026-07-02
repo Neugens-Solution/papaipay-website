@@ -101,11 +101,31 @@ function getSmtpConfig(): SmtpConfig {
 }
 
 function assertSmtpConfig(config: SmtpConfig) {
-  return Boolean(config.host && config.port && config.user && config.pass && config.from && config.to);
+  return Boolean(
+    config.host &&
+      Number.isInteger(config.port) &&
+      config.port > 0 &&
+      config.user &&
+      config.pass &&
+      isEmailAddress(config.from) &&
+      isEmailAddress(config.to),
+  );
+}
+
+function isEmailAddress(value: string) {
+  return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value);
 }
 
 function escapeHeader(value: string) {
   return value.replace(/[\r\n]+/g, " ").trim();
+}
+
+function escapeMailbox(value: string) {
+  return escapeHeader(value).replace(/[<>]/g, "");
+}
+
+function dotStuff(value: string) {
+  return value.replace(/(^|\r\n|\n)\./g, "$1..");
 }
 
 function escapeHtml(value: string) {
@@ -142,8 +162,8 @@ function buildEmail(complaint: Complaint, config: SmtpConfig) {
   const boundary = `papaipay-${Date.now().toString(36)}`;
 
   return [
-    `From: ${escapeHeader(config.from)}`,
-    `To: ${escapeHeader(config.to)}`,
+    `From: ${escapeMailbox(config.from)}`,
+    `To: ${escapeMailbox(config.to)}`,
     `Reply-To: ${escapeHeader(complaint.email)}`,
     `Subject: ${escapeHeader(subject)}`,
     "MIME-Version: 1.0",
@@ -161,7 +181,7 @@ function buildEmail(complaint: Complaint, config: SmtpConfig) {
     html,
     `--${boundary}--`,
     "",
-  ].join("\r\n");
+  ].join("\r\n").replace(/\r?\n/g, "\r\n");
 }
 
 async function sendSmtp(message: string, config: SmtpConfig) {
@@ -223,10 +243,10 @@ async function sendSmtp(message: string, config: SmtpConfig) {
   }
 
   await command(`AUTH PLAIN ${Buffer.from(`\0${config.user}\0${config.pass}`).toString("base64")}`, [235]);
-  await command(`MAIL FROM:<${config.from}>`, [250]);
-  await command(`RCPT TO:<${config.to}>`, [250, 251]);
+  await command(`MAIL FROM:<${escapeMailbox(config.from)}>`, [250]);
+  await command(`RCPT TO:<${escapeMailbox(config.to)}>`, [250, 251]);
   await command("DATA", [354]);
-  await command(`${message}\r\n.`, [250]);
+  await command(`${dotStuff(message)}\r\n.`, [250]);
   await command("QUIT", [221]);
   socket.end();
 }
@@ -252,7 +272,7 @@ export async function POST(request: Request) {
   const config = getSmtpConfig();
   if (!assertSmtpConfig(config)) {
     console.error("Complaint email configuration is incomplete.");
-    return NextResponse.json({ ok: false, error: "Complaint service is not configured." }, { status: 500 });
+    return NextResponse.json({ ok: false, error: "Unable to send complaint right now." }, { status: 500 });
   }
 
   try {
