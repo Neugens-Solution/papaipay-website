@@ -35,3 +35,6 @@ jobs:
 
       - name: Run lint
         run: npm run lint
+
+      - name: Run TypeScript check
+        run: npx tsc --noEmit --pretty false
