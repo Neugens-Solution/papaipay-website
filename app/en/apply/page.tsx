@@ -70,14 +70,14 @@ export default function ApplyPage() {
         <div className="absolute inset-0 bg-[rgba(0,35,20,0.68)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/55 via-transparent to-black/20" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
-          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Start Initial Review</h1>
+          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Request an Initial Review</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">INITIAL REVIEW</p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Start an Initial Review With Papaipay</h2>
+          <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Request an Initial Review With Papaipay</h2>
           <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">Complete the brief details below to help our team understand your financial situation before recommendations or next steps are shared.</p>
         </div>
       </section>
@@ -143,7 +143,7 @@ export default function ApplyPage() {
             {status === "error" && <p role="alert" className="mt-6 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm font-bold leading-7 text-red-700">Please complete the required information before submitting your application.</p>}
 
             <button type="submit" disabled={status === "loading"} className="mt-7 w-full rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-70 md:w-auto">
-              {status === "loading" ? "Submitting..." : "Submit Initial Review"}
+              {status === "loading" ? "Submitting..." : "Submit for Review"}
             </button>
           </form>
         </div>
