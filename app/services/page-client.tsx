@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Footer as SiteFooter, Header as SiteHeader } from "../site-components";
-const navItems = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Team", "/team"], ["Careers", "/careers"], ["Contact Us", "/contact"]];
-const socials = ["Facebook", "Instagram", "TikTok"];
 
 const services = [
   {
@@ -78,15 +76,6 @@ const faqCategories = [
   { category: "Permohonan", items: [["Bagaimana Papaipay membantu pelanggan?", "Papaipay bertindak sebagai perunding dengan membantu proses semakan, penyediaan dokumen dan panduan sepanjang proses permohonan."], ["Apakah dokumen yang perlu disediakan?", "Salinan Kad Pengenalan, slip gaji terkini, penyata bank dan dokumen sokongan pekerjaan yang berkaitan."], ["Adakah terdapat caj untuk perkhidmatan ini?", "Caj bergantung kepada jenis perkhidmatan yang diperlukan dan akan diterangkan dengan jelas sebelum sebarang proses dimulakan."]] },
   { category: "Proses", items: [["Berapa lama proses semakan biasanya mengambil masa?", "Kebiasaannya antara 1 hingga 3 hari bekerja selepas dokumen lengkap diterima dan dihantar untuk semakan."], ["Adakah Papaipay yang membuat kelulusan?", "Tidak. Kelulusan adalah tertakluk kepada pihak institusi kewangan yang berkaitan. Papaipay membantu dalam proses semakan dan penyediaan permohonan."], ["Bagaimana saya akan menerima status semakan?", "Status semakan akan dimaklumkan melalui WhatsApp, e-mel atau panggilan telefon."]] },
 ];
-
-function BrandLogo({ dark = false }: { dark?: boolean }) {
-  return <div className="flex items-center"><img src="/papaipay-logo.svg" alt="Papaipay" className={`h-11 w-auto object-contain md:h-14 ${dark ? "brightness-0 invert" : ""}`} /></div>;
-}
-
-function SocialIcon({ name, className = "" }: { name: string; className?: string }) {
-  const common = { fill: "currentColor" };
-  return <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>{name === "Facebook" && <path {...common} d="M14 8.4V6.7c0-.8.6-1.1 1.1-1.1h1.7V2.5L14.4 2.5c-3 0-4.4 1.8-4.4 4.3v1.6H7v3.5h3V22h3.7V11.9h2.7l.5-3.5H14Z" />}{name === "Instagram" && <><path {...common} d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Z" /><path {...common} d="M12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM17.1 6.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" /></>}</svg>;
-}
 
 function SectionHeading({ eyebrow, title, intro, light = false }: { eyebrow?: string; title: string; intro?: string; light?: boolean }) {
   return <div className="mx-auto max-w-3xl text-center">{eyebrow && <p className={`text-xs font-bold uppercase tracking-[0.28em] ${light ? "text-[#d6b95f]" : "text-brand-700"}`}>{eyebrow}</p>}<h2 className={`mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl ${light ? "text-white" : "text-slate-950"}`}>{title}</h2>{intro && <p className={`mt-5 text-base leading-8 md:text-lg ${light ? "text-white/72" : "text-slate-600"}`}>{intro}</p>}</div>;
