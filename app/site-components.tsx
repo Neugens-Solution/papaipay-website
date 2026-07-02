@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { getFooterLinks, footerLabels } from "../lib/i18n/footer";
 import { defaultLocale, getAlternateLocale, type Locale } from "../lib/i18n/locales";
-import { ctaLabels, getNavigationItems, languageLabels } from "../lib/i18n/navigation";
+import { compactCtaLabels, getNavigationItems, languageLabels } from "../lib/i18n/navigation";
 import { getRoute, type PageKey } from "../lib/i18n/routes";
 
 export const socialLinks = [
@@ -41,11 +41,11 @@ export function Header({ active, locale = defaultLocale }: { active?: PageKey; l
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <a href={alternateHref} className={`rounded-full border px-4 py-3 text-xs font-extrabold uppercase tracking-[0.08em] transition hover:-translate-y-0.5 ${scrolled ? "border-emerald-200 text-brand-900 hover:border-brand-700 hover:text-brand-700" : "border-white/40 text-white hover:border-white hover:bg-white/10"}`} aria-label={locale === "en" ? "Tukar kepada Bahasa Malaysia" : "Switch to English"}>{languageLabels[alternateLocale]}</a>
-          <a href={applyHref} className={`rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-lg transition hover:-translate-y-0.5 ${scrolled ? "bg-brand-700 text-white shadow-emerald-900/20 hover:bg-brand-900" : "bg-white text-brand-900 shadow-black/10 hover:bg-white/90"}`}>{ctaLabels[locale]}</a>
+          <a href={applyHref} className={`rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-lg transition hover:-translate-y-0.5 ${scrolled ? "bg-brand-700 text-white shadow-emerald-900/20 hover:bg-brand-900" : "bg-white text-brand-900 shadow-black/10 hover:bg-white/90"}`}>{compactCtaLabels[locale]}</a>
         </div>
         <button type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)} className={`rounded-2xl border px-4 py-3 text-xs font-black lg:hidden ${scrolled || open ? "border-slate-200 text-slate-800" : "border-white/30 text-white"}`}>{open ? (locale === "en" ? "Close" : "Tutup") : "Menu"}</button>
       </div>
-      {open && <div id="mobile-menu" className="border-t border-emerald-100 bg-white px-5 py-5 shadow-xl shadow-emerald-950/10 lg:hidden"><nav className="mx-auto grid max-w-7xl gap-2 text-sm font-extrabold text-slate-800">{navItems.map(({ key, label, href }) => <a key={key} href={href} onClick={() => setOpen(false)} className="rounded-2xl px-4 py-3 transition hover:bg-emerald-50 hover:text-brand-700">{label}</a>)}<a href={alternateHref} onClick={() => setOpen(false)} className="rounded-2xl px-4 py-3 transition hover:bg-emerald-50 hover:text-brand-700" aria-label={locale === "en" ? "Tukar kepada Bahasa Malaysia" : "Switch to English"}>{languageLabels[alternateLocale]}</a><a href={applyHref} onClick={() => setOpen(false)} className="mt-2 rounded-full bg-brand-700 px-5 py-3 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15">{ctaLabels[locale]}</a></nav></div>}
+      {open && <div id="mobile-menu" className="border-t border-emerald-100 bg-white px-5 py-5 shadow-xl shadow-emerald-950/10 lg:hidden"><nav className="mx-auto grid max-w-7xl gap-2 text-sm font-extrabold text-slate-800">{navItems.map(({ key, label, href }) => <a key={key} href={href} onClick={() => setOpen(false)} className="rounded-2xl px-4 py-3 transition hover:bg-emerald-50 hover:text-brand-700">{label}</a>)}<a href={alternateHref} onClick={() => setOpen(false)} className="rounded-2xl px-4 py-3 transition hover:bg-emerald-50 hover:text-brand-700" aria-label={locale === "en" ? "Tukar kepada Bahasa Malaysia" : "Switch to English"}>{languageLabels[alternateLocale]}</a><a href={applyHref} onClick={() => setOpen(false)} className="mt-2 rounded-full bg-brand-700 px-5 py-3 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15">{compactCtaLabels[locale]}</a></nav></div>}
     </header>
   );
 }

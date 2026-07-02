@@ -25,6 +25,11 @@ export const ctaLabels: Record<Locale, string> = {
   en: "GET STARTED",
 };
 
+export const compactCtaLabels: Record<Locale, string> = {
+  ms: "SEMAK SEKARANG",
+  en: "GET STARTED",
+};
+
 export const languageLabels: Record<Locale, string> = {
   ms: "BM",
   en: "EN",

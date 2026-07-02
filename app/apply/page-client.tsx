@@ -70,14 +70,14 @@ export default function ApplyPage() {
         <div className="absolute inset-0 bg-[rgba(0,35,20,0.68)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/55 via-transparent to-black/20" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
-          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Mulakan Semakan Awal</h1>
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Mulakan Semakan Awal</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">SEMAKAN AWAL</p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Mulakan Semakan Awal Bersama Papaipay</h2>
+          <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Mulakan Semakan Awal Bersama Papaipay</h2>
           <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">Lengkapkan maklumat ringkas di bawah untuk membantu pasukan kami memahami situasi kewangan anda sebelum cadangan atau langkah seterusnya diberikan.</p>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function ApplyPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,185,95,0.22),transparent_32%),radial-gradient(circle_at_85%_15%,rgba(31,143,77,0.35),transparent_36%)]" />
             <div className="relative">
               <span className="inline-flex rounded-full border border-[#d6b95f]/30 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">BORANG SEMAKAN AWAL</span>
-              <h2 className="mt-6 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Kongsikan Situasi Anda</h2>
+              <h2 className="mt-6 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl">Kongsikan Situasi Anda</h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/74">Maklumat ini membantu pasukan Papaipay membuat semakan awal berdasarkan profil dan keperluan anda.</p>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-white/82">
                 {['Semakan awal berdasarkan maklumat anda', 'Panduan langkah seterusnya', 'Tiada jaminan kelulusan diberikan'].map((item) => <li key={item} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#d6b95f]" />{item}</li>)}
@@ -103,11 +103,11 @@ export default function ApplyPage() {
           </aside>
 
           <form noValidate onSubmit={handleSubmit} className="p-6 md:p-10" action="/api/apply" method="post">
-            <h2 className="text-2xl font-extrabold tracking-[-0.04em] text-slate-950 md:text-3xl">Mohon Semakan Awal</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.04em] text-slate-950 md:text-3xl">Mohon Semakan Awal</h2>
 
             <div className="mt-8 space-y-8">
               <section aria-labelledby="personal-info-title">
-                <h3 id="personal-info-title" className="text-xs font-extrabold uppercase tracking-[0.22em] text-brand-700">Bahagian A: Maklumat Peribadi</h3>
+                <h3 id="personal-info-title" className="text-xs font-bold uppercase tracking-[0.22em] text-brand-700">Bahagian A: Maklumat Peribadi</h3>
                 <div className="mt-5 grid gap-5 md:grid-cols-2">
                   <TextField label="Nama Penuh" name="fullName" placeholder="Nama penuh anda" />
                   <TextField label="Nombor Telefon" name="phone" type="tel" placeholder="012-345 6789" />
@@ -116,7 +116,7 @@ export default function ApplyPage() {
               </section>
 
               <section aria-labelledby="current-situation-title">
-                <h3 id="current-situation-title" className="text-xs font-extrabold uppercase tracking-[0.22em] text-brand-700">Bahagian B: Situasi Semasa</h3>
+                <h3 id="current-situation-title" className="text-xs font-bold uppercase tracking-[0.22em] text-brand-700">Bahagian B: Situasi Semasa</h3>
                 <div className="mt-5 grid gap-5">
                   <RadioGroup legend="Adakah anda mempunyai pinjaman bank atau kad kredit yang telah aktif melebihi 6 bulan?" name="hasActiveCredit" />
                   <RadioGroup legend="Pernah lewat membuat bayaran selama 2 bulan berturut-turut?" name="hasLatePayment" />
@@ -131,7 +131,7 @@ export default function ApplyPage() {
               </section>
 
               <section aria-labelledby="additional-info-title">
-                <h3 id="additional-info-title" className="text-xs font-extrabold uppercase tracking-[0.22em] text-brand-700">Bahagian C: Maklumat Tambahan</h3>
+                <h3 id="additional-info-title" className="text-xs font-bold uppercase tracking-[0.22em] text-brand-700">Bahagian C: Maklumat Tambahan</h3>
                 <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800">
                   <span>Catatan Ringkas</span>
                   <textarea name="message" rows={5} placeholder="Ceritakan secara ringkas keperluan atau situasi anda." className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" />
@@ -154,7 +154,7 @@ export default function ApplyPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,185,95,0.2),transparent_30%),radial-gradient(circle_at_86%_16%,rgba(31,143,77,0.35),transparent_34%)]" />
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative">
-            <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] md:text-5xl">Perlukan Bantuan Sebelum Memohon?</h2>
+            <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-[-0.045em] md:text-5xl">Perlukan Bantuan Sebelum Memohon?</h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/78">Jika anda mempunyai pertanyaan, pasukan kami sedia membantu anda memahami pilihan yang sesuai sebelum meneruskan semakan.</p>
             <a href="/contact" className="mt-9 inline-flex rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Hubungi Kami</a>
           </div>

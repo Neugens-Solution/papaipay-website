@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
-          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">About Us</h1>
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">About Us</h1>
         </div>
       </section>
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white/80 text-brand-700 ring-1 ring-emerald-100 shadow-lg shadow-emerald-950/5">
             <SmallIcon name="target" className="h-6 w-6 opacity-80" />
           </div>
-          <h2 className="mt-6 text-3xl font-extrabold uppercase leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">VISI KAMI</h2>
+          <h2 className="mt-6 text-3xl font-bold uppercase leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">VISI KAMI</h2>
           <blockquote className="mx-auto mt-7 max-w-4xl text-lg font-medium leading-8 tracking-[-0.02em] text-slate-700 md:text-xl md:leading-9">“To help individuals and families manage financial commitments more systematically, understand suitable asset opportunities, and build a more stable long-term financial position.”</blockquote>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 <div className="mx-auto grid h-11 w-11 place-items-center rounded-full border border-[#d6b95f]/35 bg-white/10 text-[#d6b95f]">
                   <SmallIcon name={icon} className="h-5 w-5" />
                 </div>
-                <h3 className="mt-6 text-2xl font-extrabold leading-tight tracking-[-0.04em] text-white">{title}</h3>
+                <h3 className="mt-6 text-2xl font-bold leading-tight tracking-[-0.04em] text-white">{title}</h3>
                 <p className="mt-5 text-sm leading-7 text-white/72">{text}</p>
               </div>
             ))}
@@ -112,14 +112,14 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">PRINSIP KAMI</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Values That Shape How We Serve</h2>
+            <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Values That Shape How We Serve</h2>
             <p className="mt-6 max-w-md text-base leading-8 text-slate-600">These principles form the foundation of how Papaipay builds trust, provides guidance and supports customers in making clearer financial decisions.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {coreValues.map(([title, text]) => (
               <div key={title} className="rounded-[1.5rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5">
                 <div className="mb-7 h-1 w-12 rounded-full bg-[#d6b95f]" />
-                <h3 className="text-xl font-extrabold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
+                <h3 className="text-xl font-bold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">{text}</p>
               </div>
             ))}

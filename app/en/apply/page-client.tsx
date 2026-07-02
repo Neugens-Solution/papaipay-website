@@ -70,14 +70,14 @@ export default function ApplyPage() {
         <div className="absolute inset-0 bg-[rgba(0,35,20,0.68)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/55 via-transparent to-black/20" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
-          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Request an Initial Review</h1>
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Request an Initial Review</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">INITIAL REVIEW</p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Request an Initial Review With Papaipay</h2>
+          <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Request an Initial Review With Papaipay</h2>
           <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">Complete the brief details below to help our team understand your financial situation before recommendations or next steps are shared.</p>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function ApplyPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,185,95,0.22),transparent_32%),radial-gradient(circle_at_85%_15%,rgba(31,143,77,0.35),transparent_36%)]" />
             <div className="relative">
               <span className="inline-flex rounded-full border border-[#d6b95f]/30 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">INITIAL REVIEW FORM</span>
-              <h2 className="mt-6 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Share Your Situation</h2>
+              <h2 className="mt-6 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl">Share Your Situation</h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/74">This information helps the Papaipay team conduct an initial review based on your profile and needs.</p>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-white/82">
                 {['Initial review based on your information', 'Guidance on next steps', 'No approval guarantee is provided'].map((item) => <li key={item} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#d6b95f]" />{item}</li>)}
@@ -103,11 +103,11 @@ export default function ApplyPage() {
           </aside>
 
           <form noValidate onSubmit={handleSubmit} className="p-6 md:p-10" action="/api/apply" method="post">
-            <h2 className="text-2xl font-extrabold tracking-[-0.04em] text-slate-950 md:text-3xl">Apply for Initial Review</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.04em] text-slate-950 md:text-3xl">Apply for Initial Review</h2>
 
             <div className="mt-8 space-y-8">
               <section aria-labelledby="personal-info-title">
-                <h3 id="personal-info-title" className="text-xs font-extrabold uppercase tracking-[0.22em] text-brand-700">Section A: Personal Information</h3>
+                <h3 id="personal-info-title" className="text-xs font-bold uppercase tracking-[0.22em] text-brand-700">Section A: Personal Information</h3>
                 <div className="mt-5 grid gap-5 md:grid-cols-2">
                   <TextField label="Full Name" name="fullName" placeholder="Your full name" />
                   <TextField label="Phone Number" name="phone" type="tel" placeholder="012-345 6789" />
@@ -116,7 +116,7 @@ export default function ApplyPage() {
               </section>
 
               <section aria-labelledby="current-situation-title">
-                <h3 id="current-situation-title" className="text-xs font-extrabold uppercase tracking-[0.22em] text-brand-700">Section B: Current Situation</h3>
+                <h3 id="current-situation-title" className="text-xs font-bold uppercase tracking-[0.22em] text-brand-700">Section B: Current Situation</h3>
                 <div className="mt-5 grid gap-5">
                   <RadioGroup legend="Do you have a bank loan or credit card that has been active for more than 6 months?" name="hasActiveCredit" />
                   <RadioGroup legend="Have you ever been late on payments for 2 consecutive months?" name="hasLatePayment" />
@@ -131,7 +131,7 @@ export default function ApplyPage() {
               </section>
 
               <section aria-labelledby="additional-info-title">
-                <h3 id="additional-info-title" className="text-xs font-extrabold uppercase tracking-[0.22em] text-brand-700">Section C: Additional Information</h3>
+                <h3 id="additional-info-title" className="text-xs font-bold uppercase tracking-[0.22em] text-brand-700">Section C: Additional Information</h3>
                 <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800">
                   <span>Brief Notes</span>
                   <textarea name="message" rows={5} placeholder="Briefly tell us about your needs or situation." className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" />
@@ -154,7 +154,7 @@ export default function ApplyPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,185,95,0.2),transparent_30%),radial-gradient(circle_at_86%_16%,rgba(31,143,77,0.35),transparent_34%)]" />
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative">
-            <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] md:text-5xl">Need Help Before Applying?</h2>
+            <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-[-0.045em] md:text-5xl">Need Help Before Applying?</h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/78">If you have questions, our team is ready to help you understand suitable options before proceeding with the review.</p>
             <a href="/en/contact" className="mt-9 inline-flex rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Contact Us</a>
           </div>

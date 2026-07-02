@@ -71,21 +71,21 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
-          <h1 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Contact Us</h1>
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Contact Us</h1>
         </div>
       </section>
 
       <section className="px-5 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Connect With Papaipay</p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">We Are Ready To Help</h2>
+          <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">We Are Ready To Help</h2>
           <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">Contact Papaipay for enquiries, consultation sessions and appointment arrangements with our team.</p>
         </div>
       </section>
 
       <section className="px-5 pb-20 lg:px-8 lg:pb-24">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {contactCards.map((card) => <article key={card.title} className="rounded-[1.75rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/25 hover:shadow-2xl hover:shadow-emerald-950/10"><div className="mb-7 h-1 w-12 rounded-full bg-[#d6b95f]" /><p className="text-xs font-extrabold uppercase tracking-[0.24em] text-brand-700">{card.title}</p><h3 className="mt-4 whitespace-pre-line text-lg font-extrabold leading-7 tracking-[-0.035em] text-slate-950">{card.value}</h3><p className="mt-4 text-sm leading-7 text-slate-600">{card.description}</p></article>)}
+          {contactCards.map((card) => <article key={card.title} className="rounded-[1.75rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/25 hover:shadow-2xl hover:shadow-emerald-950/10"><div className="mb-7 h-1 w-12 rounded-full bg-[#d6b95f]" /><p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-700">{card.title}</p><h3 className="mt-4 whitespace-pre-line text-lg font-bold leading-7 tracking-[-0.035em] text-slate-950">{card.value}</h3><p className="mt-4 text-sm leading-7 text-slate-600">{card.description}</p></article>)}
         </div>
       </section>
 
@@ -95,7 +95,7 @@ export default function ContactPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,185,95,0.22),transparent_32%),radial-gradient(circle_at_85%_15%,rgba(31,143,77,0.35),transparent_36%)]" />
             <div className="relative">
               <span className="inline-flex rounded-full border border-[#d6b95f]/30 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">ENQUIRY FORM</span>
-              <h2 className="mt-6 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Share Your Details With Our Team</h2>
+              <h2 className="mt-6 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl">Share Your Details With Our Team</h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/74">Complete this form and our team will review your enquiry before contacting you with the next steps.</p>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-white/82">
                 {['Professional advisory support', 'Clearer next steps', 'Document guidance if needed'].map((item) => <li key={item} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#d6b95f]" />{item}</li>)}
@@ -120,7 +120,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Visit Our Office</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Visit Our Office</h2>
+            <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Visit Our Office</h2>
             <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">Our office is located in Bandar Sri Damansara and is available for scheduled consultation sessions and appointments.</p>
           </div>
           <div className="mt-12 overflow-hidden rounded-[2rem] border border-emerald-100 bg-white shadow-2xl shadow-emerald-950/10">
@@ -132,7 +132,7 @@ export default function ContactPage() {
       <section className="bg-white px-5 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-5xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Follow Us</p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Stay connected with Papaipay.</h2>
+          <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Stay connected with Papaipay.</h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {socialLinks.map(([social, href]) => <a key={social} href={href} className="flex items-center justify-center gap-3 rounded-[1.25rem] border border-emerald-100 bg-[#f7fbf8] px-5 py-4 text-sm font-extrabold text-slate-800 shadow-lg shadow-emerald-950/5 transition hover:-translate-y-0.5 hover:border-brand-700/30 hover:text-brand-700"><SocialIcon name={social} className="h-5 w-5" />{social}</a>)}
           </div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-cover bg-center opacity-[0.12]" style={{ backgroundImage: "url('/hero-contact.png')" }} />
           <div className="absolute inset-0 bg-black/25" />
           <div className="relative">
-            <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] md:text-5xl">Speak With Us</h2>
+            <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-[-0.045em] md:text-5xl">Speak With Us</h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/78">Connect with our team to learn more about the services we provide.</p>
             <a href="tel:0362790080" className="mt-9 inline-flex rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Contact Us Now</a>
           </div>
