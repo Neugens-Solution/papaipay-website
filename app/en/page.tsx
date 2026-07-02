@@ -108,7 +108,7 @@ function HeroSlider() {
           </div>
           <div className="mt-auto pt-10 md:mt-0 md:pt-0">
             <div className="flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
-              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Get Started</a>
+              <a href="/en/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Get Started</a>
               <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Find Out More</a>
             </div>
             <div className="mt-12 flex gap-3 md:mt-9">
@@ -222,7 +222,7 @@ export default function Home() {
               <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Discover Henry&apos;s Asset Approach</p>
               <h2 className="mt-5 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] md:text-6xl lg:text-7xl">Build Assets,<br />Not Just<br />Settle Debt.</h2>
               <p className="mt-6 max-w-lg text-base leading-8 text-white/80 md:text-lg">Papaipay helps customers identify suitable asset opportunities and plan the next step with clarity, structure and guidance.</p>
-              <a href="/apply" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#d6b95f] px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-emerald-950 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e5cd7a]">Find Out More <span aria-hidden="true">→</span></a>
+              <a href="#henry" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#d6b95f] px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-emerald-950 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e5cd7a]">Find Out More <span aria-hidden="true">→</span></a>
             </div>
             <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl shadow-black/20 backdrop-blur-md md:grid md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none md:grid-cols-3 lg:mt-14 lg:gap-0 lg:divide-x lg:divide-white/10">
               {henryHighlights.map(([icon, title, text], index) => (
@@ -286,7 +286,7 @@ export default function Home() {
           <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Request an Initial Review With Papaipay</h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">Share your basic situation with our team so we can help you understand the next suitable step.</p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a href="/apply" className="rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Get Started</a>
+            <a href="/en/apply" className="rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Get Started</a>
             <a href="/en/services" className="rounded-full border border-white/25 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-white transition hover:bg-white/10">Find Out More</a>
           </div>
         </div>
