@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { Footer as SiteFooter, Header as SiteHeader } from "../../site-components";
 const missionItems = [
   ["target", "Act for Change", "Helping customers restructure their financial commitments and plan more organised steps for the future."],
@@ -40,8 +42,8 @@ export default function AboutPage() {
 
       <section className="bg-white px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
-          <div className="hidden min-h-[315px] overflow-hidden border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5 md:block">
-            <img src="/tentang-papaipay.png" alt="About Papaipay" className="h-full min-h-[315px] w-full object-cover" />
+          <div className="relative hidden min-h-[315px] overflow-hidden border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5 md:block">
+            <Image src="/tentang-papaipay.png" alt="About Papaipay" fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" />
           </div>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">About Papaipay</p>
