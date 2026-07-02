@@ -103,7 +103,7 @@ export default function CareersPage() {
               <div className="mt-10 rounded-2xl border border-white/10 bg-white/10 p-5 text-sm font-semibold leading-7 text-white/78">Our team will review your application and contact shortlisted candidates.</div>
             </div>
           </div>
-          <form className="bg-[#f7fbf8] p-6 md:p-10">
+          <form onSubmit={(event) => event.preventDefault()} className="bg-[#f7fbf8] p-6 md:p-10">
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Full Name" placeholder="Your full name" />
               <Field label="Email Address" placeholder="you@example.com" type="email" />
@@ -112,7 +112,7 @@ export default function CareersPage() {
             </div>
             <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800"><span>Message</span><textarea rows={5} required placeholder="Briefly tell us about your experience and career interests." className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" /></label>
             <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800"><span>Upload Resume</span><input required type="file" accept=".pdf,.doc,.docx" className="rounded-2xl border border-dashed border-emerald-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 outline-none file:mr-4 file:rounded-full file:border-0 file:bg-brand-700 file:px-5 file:py-2.5 file:text-xs file:font-extrabold file:uppercase file:tracking-[0.1em] file:text-white focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" /></label>
-            <button type="submit" className="mt-7 w-full rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">Submit Application</button>
+            <p role="status" className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-bold leading-7 text-amber-900">The online application form and resume upload are being prepared. Please send your application and resume by email until this feature is activated.</p><a href="mailto:career@papaipay.com" className="mt-7 inline-flex w-full justify-center rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">Email Resume</a>
           </form>
         </div>
       </section>
