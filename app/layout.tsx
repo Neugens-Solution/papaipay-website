@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { metadataBase } from "../lib/seo";
+import { ComplaintWidget } from "./complaint-widget";
 
 export const metadata: Metadata = {
   metadataBase,
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ms">
-      <body>{children}</body>
+      <body>{children}<ComplaintWidget /></body>
     </html>
   );
 }
