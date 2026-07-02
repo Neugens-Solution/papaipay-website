@@ -53,7 +53,7 @@ const approaches = ["More organised commitment structuring", "Financial review a
 const requirements = [
   "Warganegara Malaysia berumur 21 hingga 60 tahun.",
   "Mempunyai pendapatan tetap setiap bulan.",
-  "Mempunyai rekod pinjaman bank atau kad kredit melebihi 6 bulan.",
+  "Has an active bank loan or credit card record for more than 6 months.",
   "Tidak mempunyai tunggakan bayaran bank melebihi 2 bulan berturut-turut.",
   "Open to Government, GLC and Private sector employees.",
   "Provides supporting documents such as an identity card copy, latest payslips and 3 to 6 months of bank statements.",
