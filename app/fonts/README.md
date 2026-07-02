@@ -1,15 +1,11 @@
-# Local website fonts needed for stable builds
+# Website font approach
 
-The corporate website currently uses `next/font/google` for:
+The corporate website uses a system font stack to keep production builds independent from external font fetching.
 
-- Inter (`--font-inter`) for body text
-- Plus Jakarta Sans (`--font-heading`) for headings
+Current stack:
 
-To make `npm run build` independent from Google Fonts network access, provide licensed local webfont files in this directory before switching `app/layout.tsx` to `next/font/local`.
+```css
+-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif
+```
 
-Recommended filenames:
-
-- `inter-latin.woff2`
-- `plus-jakarta-sans-latin.woff2`
-
-Do not add unverified font files. The replacement should preserve the existing CSS variables (`--font-inter` and `--font-heading`) and `display: "swap"`.
+Do not add font binaries or switch to `next/font/google`. Only use `next/font/local` if licensed local font files already exist and the project intentionally adopts them.
