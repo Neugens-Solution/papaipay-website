@@ -50,7 +50,7 @@ const henryHighlights = [
   ["shield", "Build a More Stable Future", "With the right assets, customers can plan their future more effectively."],
 ];
 const journeySteps = [
-  ["01", "edit", "Hantar Application", "Isi maklumat asas melalui borang ringkas."],
+  ["01", "edit", "Submit Your Details", "Fill in basic information through a simple form."],
   ["02", "search", "Initial Review", "The Papaipay team reviews the customer situation and needs."],
   ["03", "chat", "Consultation Session", "A short discussion to understand suitable options."],
   ["04", "briefcase", "Proposed Solution", "A clearer and more structured proposal is provided as the next guide."],
@@ -138,7 +138,7 @@ function WhatWeDoSection() {
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Our Services</p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Services Utama Papaipay</h2>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Papaipay’s Key Services</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg lg:ml-auto">We help customers understand available options and organise strategies that better fit their financial and asset needs.</p>
         </div>
