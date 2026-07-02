@@ -21,7 +21,7 @@ export function Header({ active, locale = defaultLocale }: { active?: PageKey; l
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const navItems = getNavigationItems(locale);
-  const applyHref = locale === "en" ? getRoute("apply", "ms") : getRoute("apply", locale);
+  const applyHref = getRoute("apply", locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);

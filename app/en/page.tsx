@@ -108,7 +108,7 @@ function HeroSlider() {
           </div>
           <div className="mt-auto pt-10 md:mt-0 md:pt-0">
             <div className="flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
-              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Start Initial Review</a>
+              <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Get Started</a>
               <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Find Out More</a>
             </div>
             <div className="mt-12 flex gap-3 md:mt-9">
@@ -283,10 +283,10 @@ export default function Home() {
       <section id="initial-review" className="bg-[#f7fbf8] px-5 py-16 lg:px-8">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-[1.75rem] bg-[#082314] p-8 text-center text-white shadow-2xl shadow-emerald-950/20 md:p-14">
           <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">Start Today</p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Start Initial Review With Papaipay</h2>
+          <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-extrabold leading-[1.04] tracking-[-0.045em] md:text-5xl">Request an Initial Review With Papaipay</h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">Share your basic situation with our team so we can help you understand the next suitable step.</p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a href="/apply" className="rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Start Initial Review</a>
+            <a href="/apply" className="rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90">Get Started</a>
             <a href="/en/services" className="rounded-full border border-white/25 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-white transition hover:bg-white/10">Find Out More</a>
           </div>
         </div>
