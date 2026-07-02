@@ -258,16 +258,16 @@ export default function Home() {
             <div className="relative">
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">Mulakan Hari Ini</p>
               <h2 className="mt-4 max-w-md text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-4xl">Mulakan Semakan Awal Bersama Papaipay</h2>
-              <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Isi maklumat asas anda dan pasukan Papaipay akan menghubungi anda untuk semakan awal.</p>
+              <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Borang dalam talian ini sedang disediakan. Untuk pertanyaan segera, sila hubungi pasukan Papaipay melalui telefon atau e-mel.</p>
               <div className="mt-6 grid gap-2.5 text-sm font-semibold text-white/80">
                 {["Semakan Awal Percuma", "Sesi konsultasi bersama perunding berpengalaman", "Cadangan Pelan Penyelesaian"].map((item) => (
                   <div key={item} className="flex items-center gap-3"><span className="grid h-6 w-6 place-items-center rounded-full border border-[#d6b95f]/50 text-[#d6b95f]">✓</span>{item}</div>
                 ))}
               </div>
-              <p className="mt-6 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-xs font-semibold text-white/75">Kami akan hubungi anda dalam masa 1–2 hari bekerja.</p>
+              <p className="mt-6 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-xs font-semibold text-white/75">Gunakan pautan di bawah untuk meneruskan ke halaman semakan awal atau hubungi pasukan kami.</p>
             </div>
           </div>
-          <form className="grid content-center gap-3 bg-white p-6 md:p-7 lg:p-8">
+          <div className="grid content-center gap-3 bg-white p-6 md:p-7 lg:p-8">
             {["Nama penuh", "Nombor telefon", "Alamat E-mel"].map((label) => (
               <label key={label} className="grid gap-1.5 text-xs font-bold text-slate-600">
                 {label}
@@ -278,8 +278,8 @@ export default function Home() {
               Catatan ringkas
               <textarea className="min-h-20 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder="Catatan ringkas" />
             </label>
-            <button type="button" className="mt-1 rounded-full bg-brand-700 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900">Hantar Permohonan</button>
-          </form>
+            <a href="/apply" className="mt-1 rounded-full bg-brand-700 px-6 py-2.5 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900">Mohon Semakan Awal</a>
+          </div>
         </div>
       </section>
 

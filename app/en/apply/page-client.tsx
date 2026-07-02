@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 
 import { Footer as SiteFooter, Header as SiteHeader } from "../../site-components";
 
@@ -41,24 +41,8 @@ function RadioGroup({ legend, name }: { legend: string; name: string }) {
 }
 
 export default function ApplyPage() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = event.currentTarget;
-
-    if (!form.checkValidity()) {
-      setStatus("error");
-      form.reportValidity();
-      return;
-    }
-
-    setStatus("loading");
-
-    window.setTimeout(() => {
-      setStatus("success");
-      form.reset();
-    }, 700);
   }
 
   return (
@@ -102,7 +86,7 @@ export default function ApplyPage() {
             </div>
           </aside>
 
-          <form noValidate onSubmit={handleSubmit} className="p-6 md:p-10" action="/api/apply" method="post">
+          <form noValidate onSubmit={handleSubmit} className="p-6 md:p-10">
             <h2 className="text-2xl font-bold tracking-[-0.04em] text-slate-950 md:text-3xl">Apply for Initial Review</h2>
 
             <div className="mt-8 space-y-8">
@@ -139,12 +123,11 @@ export default function ApplyPage() {
               </section>
             </div>
 
-            {status === "success" && <p role="status" className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-bold leading-7 text-brand-900">Thank you. Your information has been received for initial review. The Papaipay team will contact you for the next steps.</p>}
-            {status === "error" && <p role="alert" className="mt-6 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm font-bold leading-7 text-red-700">Please complete the required information before submitting your application.</p>}
+            <p role="status" className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-bold leading-7 text-amber-900">This online form is being prepared. For immediate enquiries, please contact the Papaipay team by phone or email.</p>
 
-            <button type="submit" disabled={status === "loading"} className="mt-7 w-full rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-70 md:w-auto">
-              {status === "loading" ? "Submitting..." : "Submit for Review"}
-            </button>
+            <a href="/en/contact" className="mt-7 inline-flex w-full justify-center rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">
+              Contact Us
+            </a>
           </form>
         </div>
       </section>

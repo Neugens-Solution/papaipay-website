@@ -96,7 +96,7 @@ export default function ContactPage() {
               <div className="mt-10 rounded-2xl border border-white/10 bg-white/10 p-5 text-sm font-semibold leading-7 text-white/78">Untuk pertanyaan segera, sila hubungi kami melalui telefon pada waktu pejabat.</div>
             </div>
           </div>
-          <form className="p-6 md:p-10">
+          <form onSubmit={(event) => event.preventDefault()} className="p-6 md:p-10">
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Nama Penuh" placeholder="Nama anda" />
               <Field label="Nombor Telefon" placeholder="03-6279 0080" type="tel" />
@@ -104,7 +104,7 @@ export default function ContactPage() {
               <label className="grid gap-2 text-sm font-extrabold text-slate-800"><span>Perkhidmatan Yang Diminati</span><select className="h-14 rounded-2xl border border-emerald-100 bg-white px-5 text-sm font-semibold text-slate-800 outline-none transition focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10">{enquiryTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
             </div>
             <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800"><span>Mesej</span><textarea rows={6} placeholder="Ceritakan secara ringkas tentang pertanyaan anda." className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" /></label>
-            <button type="submit" className="mt-7 w-full rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">Hantar Pertanyaan</button>
+            <p role="status" className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-bold leading-7 text-amber-900">Borang dalam talian ini sedang disediakan. Untuk pertanyaan segera, sila hubungi pasukan Papaipay melalui telefon atau e-mel.</p><a href="tel:0362790080" className="mt-7 inline-flex w-full justify-center rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">Hubungi Kami</a>
           </form>
         </div>
       </section>
