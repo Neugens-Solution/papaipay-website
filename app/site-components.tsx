@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { getFooterLinks, footerLabels } from "../lib/i18n/footer";
@@ -14,7 +15,7 @@ export const socialLinks = [
 ];
 
 export function BrandLogo({ dark = false }: { dark?: boolean }) {
-  return <div className="flex items-center"><img src="/papaipay-logo-header-02.svg" alt="Papaipay" className={`h-11 w-auto object-contain md:h-14 ${dark ? "brightness-0 invert" : ""}`} /></div>;
+  return <div className="flex items-center"><Image src="/papaipay-logo-header-02.svg" alt="Papaipay" width={170} height={56} priority className={`h-11 w-auto object-contain md:h-14 ${dark ? "brightness-0 invert" : ""}`} /></div>;
 }
 
 export function Header({ active, locale = defaultLocale }: { active?: PageKey; locale?: Locale }) {
