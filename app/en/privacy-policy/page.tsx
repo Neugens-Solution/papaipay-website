@@ -53,13 +53,11 @@ export default function PrivacyPolicyPage() {
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
       <SiteHeader active="privacyPolicy" locale="en" />
 
-      <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[360px]">
+      <section className="relative flex min-h-[190px] items-center justify-center overflow-hidden pt-16 text-center text-white md:min-h-[320px] md:pt-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(214,185,95,0.26),transparent_34%),linear-gradient(135deg,#031a0e_0%,#0d3b24_55%,#082314_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/70 via-transparent to-black/20" />
-        <div className="relative mx-auto max-w-4xl px-5 py-16 lg:px-8">
-          <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#d6b95f]">Papaipay</p>
-          <h1 className="mt-4 text-4xl font-bold leading-[1.05] tracking-[-0.05em] md:text-5xl lg:text-6xl">Privacy Policy</h1>
-          <p className="mt-6 text-base leading-8 text-white/75 md:text-lg">This page explains how Papaipay manages personal information shared through this website.</p>
+        <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Privacy Policy</h1>
         </div>
       </section>
 
