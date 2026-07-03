@@ -1,6 +1,6 @@
 import type { Locale } from "./locales";
 
-export type PageKey = "home" | "about" | "services" | "team" | "careers" | "contact" | "apply";
+export type PageKey = "home" | "about" | "services" | "team" | "careers" | "contact" | "apply" | "privacyPolicy";
 
 export const routeMap: Record<PageKey, Record<Locale, string>> = {
   home: { ms: "/", en: "/en" },
@@ -10,6 +10,7 @@ export const routeMap: Record<PageKey, Record<Locale, string>> = {
   careers: { ms: "/careers", en: "/en/careers" },
   contact: { ms: "/contact", en: "/en/contact" },
   apply: { ms: "/apply", en: "/en/apply" },
+  privacyPolicy: { ms: "/privacy-policy", en: "/en/privacy-policy" },
 };
 
 export function getRoute(pageKey: PageKey, locale: Locale): string {
