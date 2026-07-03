@@ -58,6 +58,10 @@ const pageSeo: Record<Locale, Record<PageKey, PageSeo>> = {
       title: "Terma & Syarat | Papaipay",
       description: "Terma penggunaan laman web dan perkhidmatan Papaipay.",
     },
+    sitemap: {
+      title: "Peta Laman | Papaipay",
+      description: "Peta laman Papaipay untuk membantu pelawat mencari halaman penting laman web.",
+    },
   },
   en: {
     home: {
@@ -103,6 +107,10 @@ const pageSeo: Record<Locale, Record<PageKey, PageSeo>> = {
     termsAndConditions: {
       title: "Terms & Conditions | Papaipay",
       description: "Terms for using the Papaipay website and services.",
+    },
+    sitemap: {
+      title: "Sitemap | Papaipay",
+      description: "Papaipay sitemap to help website visitors find important pages.",
     },
   },
 };

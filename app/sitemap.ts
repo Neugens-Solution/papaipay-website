@@ -12,6 +12,7 @@ const priorities: Record<string, number> = {
   careers: 0.7,
   privacyPolicy: 0.5,
   termsAndConditions: 0.5,
+  sitemap: 0.5,
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
