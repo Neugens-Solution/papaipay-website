@@ -49,6 +49,11 @@ const pageSeo: Record<Locale, Record<PageKey, PageSeo>> = {
       description:
         "Hantar maklumat asas anda untuk semakan awal oleh pasukan Papaipay dan fahami pilihan kewangan yang mungkin sesuai.",
     },
+    privacyPolicy: {
+      title: "Dasar Privasi | Papaipay",
+      description:
+        "Ketahui bagaimana Papaipay menguruskan maklumat peribadi yang dikongsi melalui laman web ini.",
+    },
   },
   en: {
     home: {
@@ -85,6 +90,11 @@ const pageSeo: Record<Locale, Record<PageKey, PageSeo>> = {
       title: "Request an Initial Review | Papaipay",
       description:
         "Submit your basic details for an initial review by the Papaipay team and understand financial options that may suit your needs.",
+    },
+    privacyPolicy: {
+      title: "Privacy Policy | Papaipay",
+      description:
+        "Learn how Papaipay manages personal information shared through this website.",
     },
   },
 };

@@ -1,7 +1,7 @@
 import type { Locale } from "./locales";
 import { getRoute, type PageKey } from "./routes";
 
-export const navigationLabels: Record<Locale, Record<Exclude<PageKey, "apply">, string>> = {
+export const navigationLabels: Record<Locale, Record<Exclude<PageKey, "apply" | "privacyPolicy">, string>> = {
   ms: {
     home: "Utama",
     about: "Tentang Kami",
