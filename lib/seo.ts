@@ -54,6 +54,10 @@ const pageSeo: Record<Locale, Record<PageKey, PageSeo>> = {
       description:
         "Ketahui bagaimana Papaipay menguruskan maklumat peribadi yang dikongsi melalui laman web ini.",
     },
+    termsAndConditions: {
+      title: "Terma & Syarat | Papaipay",
+      description: "Terma penggunaan laman web dan perkhidmatan Papaipay.",
+    },
   },
   en: {
     home: {
@@ -95,6 +99,10 @@ const pageSeo: Record<Locale, Record<PageKey, PageSeo>> = {
       title: "Privacy Policy | Papaipay",
       description:
         "Learn how Papaipay manages personal information shared through this website.",
+    },
+    termsAndConditions: {
+      title: "Terms & Conditions | Papaipay",
+      description: "Terms for using the Papaipay website and services.",
     },
   },
 };
