@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Footer as SiteFooter, Header as SiteHeader } from "./site-components";
 const heroSlides = [
   {
@@ -92,6 +93,7 @@ function HeroSlider() {
             <div className="flex flex-col gap-5 md:mt-1 md:gap-3 sm:flex-row">
               <a href="/apply" className="rounded-full bg-white px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-brand-900 shadow-2xl transition hover:-translate-y-0.5">Semak Sekarang</a>
               <a href="#henry" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Ketahui Lanjut</a>
+              <Link href="/business-profiles" className="rounded-full border border-white/30 px-7 py-4 text-center text-xs font-extrabold uppercase tracking-[0.1em] text-white backdrop-blur transition hover:bg-white/10">Manage Business Profiles</Link>
             </div>
             <div className="mt-12 flex gap-3 md:mt-9">
               {heroSlides.map((slide, index) => <span key={slide.image} className={`h-2.5 rounded-full bg-white/70 ${index === 0 ? "w-10" : "w-2.5"}`} />)}
