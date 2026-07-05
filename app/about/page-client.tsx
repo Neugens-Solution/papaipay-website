@@ -3,17 +3,7 @@
 import Image from "next/image";
 
 import { Footer as SiteFooter, Header as SiteHeader } from "../site-components";
-const missionItems = [
-  ["target", "Bertindak untuk Perubahan", "Membantu pelanggan menyusun semula komitmen kewangan mereka dan merancang langkah yang lebih teratur untuk masa hadapan."],
-  ["users", "Fokus kepada Pelanggan", "Mendengar keperluan pelanggan, memahami situasi mereka, dan memberi panduan yang sesuai berdasarkan maklumat serta pilihan yang tersedia."],
-  ["spark", "Didorong oleh Impak", "Memberi nilai melalui pendidikan kewangan, perancangan aset dan sokongan berterusan supaya pelanggan lebih yakin membuat keputusan."],
-];
-const coreValues = [
-  ["Integriti", "Kami mengutamakan ketelusan dan kepercayaan dalam setiap urusan."],
-  ["Profesionalisme", "Setiap nasihat dan panduan diberikan dengan penuh tanggungjawab dan etika."],
-  ["Komitmen Jangka Panjang", "Kami fokus kepada hubungan yang berterusan dan sokongan yang konsisten untuk pelanggan."],
-  ["Pembelajaran Berterusan", "Kami sentiasa menambah ilmu dan kemahiran untuk memberi nilai dan penyelesaian yang lebih baik."],
-];
+import { aboutLabels } from "../../lib/i18n/about";
 
 function SmallIcon({ name, className = "" }: { name: string; className?: string }) {
   const common = { fill: "none", stroke: "currentColor", strokeLinecap: "round" as const, strokeLinejoin: "round" as const, strokeWidth: 1.8 };
@@ -27,6 +17,8 @@ function SmallIcon({ name, className = "" }: { name: string; className?: string 
 }
 
 export default function AboutPage() {
+  const labels = aboutLabels.ms;
+
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
       <SiteHeader active="about" />
@@ -36,22 +28,21 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,26,14,0.9)_0%,rgba(3,26,14,0.72)_48%,rgba(3,26,14,0.88)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031a0e]/82 via-black/10 to-black/30" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-8 md:py-16 lg:px-8">
-          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">Tentang Kami</h1>
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-[-0.05em] md:text-4xl lg:text-5xl">{labels.heroTitle}</h1>
         </div>
       </section>
 
       <section className="bg-white px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
           <div className="relative hidden min-h-[315px] overflow-hidden border border-emerald-100 bg-[#f7fbf8] shadow-xl shadow-emerald-950/5 md:block">
-            <Image src="/tentang-papaipay.png" alt="Tentang Papaipay" fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" />
+            <Image src="/tentang-papaipay.png" alt={labels.imageAlt} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" />
           </div>
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">Mengenai Kami</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">{labels.introEyebrow}</p>
             <div className="mt-8 space-y-5 text-base leading-8 text-slate-600">
-              <p>Dengan pengalaman lebih 10 tahun dalam bidang perundingan kewangan serta rangkaian lebih 80 wakil penasihat kewangan, Papaipay telah membantu ribuan pelanggan memahami situasi kewangan mereka dan merancang langkah kewangan yang lebih sesuai dengan keperluan masing-masing.</p>
-              <p>Kami percaya bahawa setiap situasi kewangan adalah berbeza. Atas sebab itu, pendekatan kami bermula dengan memahami keadaan pelanggan secara menyeluruh sebelum sebarang cadangan diberikan. Fokus kami bukan sekadar kepada penyelesaian jangka pendek, tetapi membantu pelanggan membuat keputusan yang lebih jelas, selamat dan sesuai untuk masa hadapan.</p>
-              <p>Melalui pengalaman yang dibina bersama lebih 16,000 pelanggan berpuas hati dan nilai aset di bawah nasihat yang mencecah ratusan juta ringgit, Papaipay terus komited untuk menjadi rakan perunding yang dipercayai dalam membantu pelanggan mencapai matlamat kewangan mereka.</p>
-              <p>Hari ini, Papaipay terus berkembang dengan satu matlamat yang sama iaitu membantu lebih ramai individu dan keluarga membuat keputusan kewangan yang lebih baik dengan telus, profesional dan berorientasikan hasil.</p>
+              {labels.introParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>
@@ -62,8 +53,8 @@ export default function AboutPage() {
           <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white/80 text-brand-700 ring-1 ring-emerald-100 shadow-lg shadow-emerald-950/5">
             <SmallIcon name="target" className="h-6 w-6 opacity-80" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold uppercase leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">VISI KAMI</h2>
-          <blockquote className="mx-auto mt-7 max-w-4xl text-lg font-medium leading-8 tracking-[-0.02em] text-slate-700 md:text-xl md:leading-9">“Untuk membantu individu dan keluarga mengurus komitmen kewangan dengan lebih terancang, memahami peluang aset yang sesuai, dan membina kedudukan kewangan yang lebih stabil untuk jangka panjang.”</blockquote>
+          <h2 className="mt-6 text-3xl font-bold uppercase leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">{labels.visionTitle}</h2>
+          <blockquote className="mx-auto mt-7 max-w-4xl text-lg font-medium leading-8 tracking-[-0.02em] text-slate-700 md:text-xl md:leading-9">{labels.visionQuote}</blockquote>
         </div>
       </section>
 
@@ -71,10 +62,10 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(31,143,77,0.36),transparent_34%),radial-gradient(circle_at_84%_24%,rgba(214,185,95,0.18),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.05)_0_1px,transparent_1px_24px)]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.32em] text-[#d6b95f]">MISI KAMI</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.32em] text-[#d6b95f]">{labels.missionTitle}</p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {missionItems.map(([icon, title, text]) => (
+            {labels.missionItems.map(([icon, title, text]) => (
               <div key={title} className="rounded-[1.75rem] border border-white/10 bg-white/10 p-8 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
                 <div className="mx-auto grid h-11 w-11 place-items-center rounded-full border border-[#d6b95f]/35 bg-white/10 text-[#d6b95f]">
                   <SmallIcon name={icon} className="h-5 w-5" />
@@ -90,12 +81,12 @@ export default function AboutPage() {
       <section className="bg-[#f7fbf8] px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">PRINSIP KAMI</p>
-            <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">Nilai Yang Membentuk Cara Kami Berkhidmat</h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">Prinsip ini menjadi asas kepada cara Papaipay membina kepercayaan, memberi panduan dan menyokong pelanggan dalam membuat keputusan kewangan yang lebih jelas.</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-700">{labels.principlesTitle}</p>
+            <h2 className="mt-4 text-3xl font-bold leading-[1.04] tracking-[-0.045em] text-slate-950 md:text-5xl">{labels.principlesHeading}</h2>
+            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">{labels.principlesIntro}</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
-            {coreValues.map(([title, text]) => (
+            {labels.coreValues.map(([title, text]) => (
               <div key={title} className="rounded-[1.5rem] border border-emerald-100 bg-white p-7 shadow-xl shadow-emerald-950/5">
                 <div className="mb-7 h-1 w-12 rounded-full bg-[#d6b95f]" />
                 <h3 className="text-xl font-bold leading-tight tracking-[-0.04em] text-slate-950">{title}</h3>
