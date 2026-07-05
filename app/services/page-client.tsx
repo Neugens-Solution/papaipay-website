@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { Footer as SiteFooter, Header as SiteHeader } from "../site-components";
+import { serviceRequirements } from "../../lib/i18n/services";
 
 const services = [
   {
@@ -49,14 +50,7 @@ const situationCards = [
 
 const challenges = ["Komitmen kewangan bertindih", "Aliran tunai tidak seimbang", "Rekod pembayaran kurang konsisten", "Pilihan kewangan yang kurang jelas"];
 const approaches = ["Penyusunan komitmen yang lebih teratur", "Semakan dan perancangan kewangan", "Panduan berdasarkan situasi individu", "Penilaian pilihan yang bersesuaian"];
-const requirements = [
-  "Warganegara Malaysia berumur 21 hingga 60 tahun.",
-  "Mempunyai pendapatan tetap setiap bulan.",
-  "Mempunyai rekod pinjaman bank atau kad kredit melebihi 6 bulan.",
-  "Tidak mempunyai tunggakan bayaran bank melebihi 2 bulan berturut-turut.",
-  "Terbuka kepada sektor Kerajaan, GLC dan Swasta.",
-  "Menyediakan dokumen sokongan seperti salinan kad pengenalan, slip gaji terkini dan penyata bank 3 hingga 6 bulan.",
-];
+const requirements = serviceRequirements.ms;
 const tableTenures = ["2 Tahun", "3 Tahun", "4 Tahun", "5 Tahun", "6 Tahun", "7 Tahun", "8 Tahun", "9 Tahun", "10 Tahun"];
 const tableRows = [
   ["RM50,000", "2,212", "1,517", "1,177", "969", "832", "733", "660", "603", "558"],
