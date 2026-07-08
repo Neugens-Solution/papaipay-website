@@ -1,0 +1,17 @@
+{
+  "name": "Papaipay",
+  "short_name": "Papaipay",
+  "description": "Financial advisory and asset planning by Papaipay.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7fbf8",
+  "theme_color": "#06321c",
+  "icons": [
+    {
+      "src": "/papaipay-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -3,7 +3,15 @@ import type { Metadata } from "next";
 import { getRoute, routeMap, type PageKey } from "./i18n/routes";
 import type { Locale } from "./i18n/locales";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://papaipay.my";
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://papaipay.my";
+
+export const ogImage = {
+  url: "/OG-papaipay.png",
+  width: 1200,
+  height: 630,
+  alt: "Papaipay financial advisory and asset planning",
+};
 
 export const metadataBase = new URL(siteUrl);
 
@@ -147,6 +155,13 @@ export function createPageMetadata(pageKey: PageKey, locale: Locale): Metadata {
       siteName: "Papaipay",
       locale: locale === "ms" ? "ms_MY" : "en_US",
       type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description,
+      images: [ogImage.url],
     },
   };
 }

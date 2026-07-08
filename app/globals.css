@@ -79,3 +79,19 @@ textarea {
   67%, 94% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(12px); }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

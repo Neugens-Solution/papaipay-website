@@ -2,7 +2,6 @@ type MondayColumnValues = Record<
   string,
   | string
   | { email: string; text: string }
-  | { phone: string; countryShortName?: string }
   | { date: string }
 >;
 
@@ -85,7 +84,7 @@ function buildColumnValues(submission: MondaySubmission) {
 
   const phoneColumnId = env(columnEnv.phone);
   const phone = compact(submission.phone);
-  if (phoneColumnId && phone) values[phoneColumnId] = { phone };
+  if (phoneColumnId && phone) values[phoneColumnId] = truncate(phone);
 
   const dateColumnId = env(columnEnv.submittedDate);
   if (dateColumnId)
