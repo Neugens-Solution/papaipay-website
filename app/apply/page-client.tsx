@@ -123,7 +123,7 @@ export default function ApplyPage() {
             "Maaf, borang tidak dapat dihantar. Sila cuba lagi sebentar nanti.",
         );
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(

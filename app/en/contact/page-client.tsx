@@ -122,7 +122,8 @@ export default function ContactPage() {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     try {
       const response = await fetch("/api/forms", {
         method: "POST",
@@ -147,7 +148,7 @@ export default function ContactPage() {
             "Sorry, we could not submit your enquiry. Please try again later.",
         );
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(

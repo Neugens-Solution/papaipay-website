@@ -183,7 +183,8 @@ export default function CareersPage() {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const position = String(formData.get("position") || "");
     try {
       const response = await fetch("/api/forms", {
@@ -212,7 +213,7 @@ export default function CareersPage() {
             "Sorry, we could not submit your application. Please try again later.",
         );
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(

@@ -119,7 +119,8 @@ export default function ContactPage() {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     try {
       const response = await fetch("/api/forms", {
         method: "POST",
@@ -144,7 +145,7 @@ export default function ContactPage() {
             "Maaf, pertanyaan tidak dapat dihantar. Sila cuba lagi sebentar nanti.",
         );
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(
