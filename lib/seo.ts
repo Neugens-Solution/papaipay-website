@@ -147,6 +147,14 @@ export function createPageMetadata(pageKey: PageKey, locale: Locale): Metadata {
       siteName: "Papaipay",
       locale: locale === "ms" ? "ms_MY" : "en_US",
       type: "website",
+      images: [
+        {
+          url: "/OG-papaipay.png",
+          width: 1672,
+          height: 941,
+          alt: "Papaipay financial advisory and asset planning",
+        },
+      ],
     },
   };
 }
