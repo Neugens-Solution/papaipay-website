@@ -76,6 +76,8 @@ export default function ApplyPage() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!event.currentTarget.reportValidity()) return;
+
     setStatus("submitting");
     setErrorMessage("");
     const formData = new FormData(event.currentTarget);

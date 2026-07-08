@@ -418,8 +418,8 @@ export default function CareersPage() {
                 Send Us Your Resume
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/74">
-                Complete your details and share your resume for our team’s
-                consideration.
+                Complete your details here and email your resume to
+                papaipay.my@gmail.com for our team’s consideration.
               </p>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-white/82">
                 {[
@@ -434,8 +434,8 @@ export default function CareersPage() {
                 ))}
               </ul>
               <div className="mt-10 rounded-2xl border border-white/10 bg-white/10 p-5 text-sm font-semibold leading-7 text-white/78">
-                Our team will review your application and contact shortlisted
-                candidates.
+                Our team will review your application details with the resume you
+                email us and contact shortlisted candidates.
               </div>
             </div>
           </div>
@@ -481,14 +481,16 @@ export default function CareersPage() {
                 className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10"
               />
             </label>
-            <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800">
-              <span>Upload Resume</span>
-              <input
-                type="file"
-                accept=".pdf,.doc,.docx"
-                className="rounded-2xl border border-dashed border-emerald-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 outline-none file:mr-4 file:rounded-full file:border-0 file:bg-brand-700 file:px-5 file:py-2.5 file:text-xs file:font-extrabold file:uppercase file:tracking-[0.1em] file:text-white focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10"
-              />
-            </label>
+            <p className="mt-5 rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-bold leading-7 text-slate-700">
+              Please email your resume to{" "}
+              <a
+                href="mailto:papaipay.my@gmail.com"
+                className="text-brand-700 underline decoration-brand-700/30 underline-offset-4 transition hover:text-brand-900"
+              >
+                papaipay.my@gmail.com
+              </a>{" "}
+              after submitting this form.
+            </p>
             {status === "success" && (
               <p
                 role="status"
