@@ -12,7 +12,7 @@ Set these environment variables in production:
 - `MONDAY_GROUP_ID` - optional destination group ID. Leave blank to use the board default group.
 - `MONDAY_NAME_COLUMN_ID` - optional column ID for the submitter name/full name.
 - `MONDAY_EMAIL_COLUMN_ID` - optional email column ID for the submitter email address.
-- `MONDAY_PHONE_COLUMN_ID` - optional phone column ID for the submitter phone number.
+- `MONDAY_PHONE_COLUMN_ID` - optional text column ID for the submitter phone number (configure this as a Monday.com text column, not a phone column).
 - `MONDAY_COMPANY_COLUMN_ID` - optional text column ID for company/organisation when a form provides it.
 - `MONDAY_ENQUIRY_TYPE_COLUMN_ID` - optional text/status column ID for enquiry type, complaint category, or career position.
 - `MONDAY_MESSAGE_COLUMN_ID` - optional long-text/text column ID for the submitted message and extra form details.
@@ -25,5 +25,5 @@ The generic website forms submit to `POST /api/forms`. The complaint widget keep
 
 - Contact forms (`/contact`, `/en/contact`): name, email, phone, enquiry type, message, source page, submitted date.
 - Apply forms (`/apply`, `/en/apply`): name, email, phone, fixed enquiry type `Initial Review / Apply`, message, source page, submitted date, and extra details for active credit, late payment, and monthly income.
-- Careers forms (`/careers`, `/en/careers`): name, email, phone, enquiry type `Career Application: {position}`, message, source page, submitted date, and selected position in extra details. Resume file upload is not sent to Monday.com by this implementation.
+- Careers forms (`/careers`, `/en/careers`): name, email, phone, enquiry type `Career Application: {position}`, message, source page, submitted date, and selected position in extra details. Applicants are instructed to email resumes to papaipay.my@gmail.com; resume file upload is not collected by this implementation.
 - Complaint widget: full name, email, phone, complaint category, message, source `Complaint widget`, and submitted date.

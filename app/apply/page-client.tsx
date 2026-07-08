@@ -76,9 +76,23 @@ export default function ApplyPage() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("submitting");
     setErrorMessage("");
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const hasActiveCredit = String(formData.get("hasActiveCredit") || "");
+    const hasLatePayment = String(formData.get("hasLatePayment") || "");
+    const monthlyIncome = String(formData.get("monthlyIncome") || "");
+
+    if (!hasActiveCredit || !hasLatePayment || !monthlyIncome) {
+      setStatus("error");
+      setErrorMessage(
+        "Sila lengkapkan pilihan kredit aktif, rekod bayaran lewat dan pendapatan bulanan sebelum menghantar.",
+      );
+      form.reportValidity();
+      return;
+    }
+
+    setStatus("submitting");
 
     try {
       const response = await fetch("/api/forms", {
@@ -93,9 +107,9 @@ export default function ApplyPage() {
           enquiryType: "Initial Review / Apply",
           message: String(formData.get("message") || ""),
           details: {
-            hasActiveCredit: String(formData.get("hasActiveCredit") || ""),
-            hasLatePayment: String(formData.get("hasLatePayment") || ""),
-            monthlyIncome: String(formData.get("monthlyIncome") || ""),
+            hasActiveCredit,
+            hasLatePayment,
+            monthlyIncome,
           },
         }),
       });
