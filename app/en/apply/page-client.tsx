@@ -126,7 +126,7 @@ export default function ApplyPage() {
             "Sorry, we could not submit the form. Please try again later.",
         );
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(

@@ -183,7 +183,8 @@ export default function CareersPage() {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const position = String(formData.get("position") || "");
     try {
       const response = await fetch("/api/forms", {
@@ -212,7 +213,7 @@ export default function CareersPage() {
             "Maaf, permohonan tidak dapat dihantar. Sila cuba lagi sebentar nanti.",
         );
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(
