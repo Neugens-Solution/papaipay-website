@@ -7,9 +7,9 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://papaipay.my";
 
 export const ogImage = {
-  url: "/hero-1a.png",
-  width: 1600,
-  height: 900,
+  url: "/OG-papaipay.png",
+  width: 1200,
+  height: 630,
   alt: "Papaipay financial advisory and asset planning",
 };
 
