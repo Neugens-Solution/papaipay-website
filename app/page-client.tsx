@@ -327,10 +327,10 @@ export default function Home() {
               <textarea required name="message" className="min-h-20 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder="Catatan ringkas" />
             </label>
             {miniFormStatus === "success" && (
-              <p className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm font-semibold text-brand-900">Terima kasih. Maklumat awal anda telah dihantar kepada pasukan Papaipay.</p>
+              <p role="status" aria-live="polite" className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm font-semibold text-brand-900">Terima kasih. Maklumat awal anda telah dihantar kepada pasukan Papaipay.</p>
             )}
             {miniFormStatus === "error" && (
-              <p className="rounded-2xl border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{miniFormError || "Maaf, maklumat anda tidak dapat dihantar buat masa ini. Sila cuba lagi sebentar nanti."}</p>
+              <p role="alert" className="rounded-2xl border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{miniFormError || "Maaf, maklumat anda tidak dapat dihantar buat masa ini. Sila cuba lagi sebentar nanti."}</p>
             )}
             <button type="submit" disabled={miniFormStatus === "submitting"} className="mt-1 rounded-full bg-brand-700 px-6 py-2.5 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-60">{miniFormStatus === "submitting" ? "Menghantar..." : "Mohon Semakan Awal"}</button>
           </form>

@@ -81,6 +81,14 @@ export default function ApplyPage() {
     event.preventDefault();
     setErrorMessage("");
     const form = event.currentTarget;
+
+    if (!form.checkValidity()) {
+      setStatus("error");
+      setErrorMessage("Please complete all required fields before submitting.");
+      form.reportValidity();
+      return;
+    }
+
     const formData = new FormData(form);
     const hasActiveCredit = String(formData.get("hasActiveCredit") || "");
     const hasLatePayment = String(formData.get("hasLatePayment") || "");
@@ -216,7 +224,7 @@ export default function ApplyPage() {
             </div>
           </aside>
 
-          <form noValidate onSubmit={handleSubmit} className="p-6 md:p-10">
+          <form onSubmit={handleSubmit} className="p-6 md:p-10">
             <h2 className="text-2xl font-bold tracking-[-0.04em] text-slate-950 md:text-3xl">
               Apply for Initial Review
             </h2>

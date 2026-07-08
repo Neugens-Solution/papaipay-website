@@ -7,6 +7,7 @@ All public website forms submit to server-side API routes and create items in Mo
 
 Set these environment variables in production:
 
+- `NEXT_PUBLIC_SITE_URL` - public canonical site URL for metadata, social previews, `robots.txt`, and `sitemap.xml`; use `https://papaipay.my` for production.
 - `MONDAY_API_TOKEN` - Monday.com API token with permission to create items on the destination board.
 - `MONDAY_BOARD_ID` - destination Monday.com board ID.
 - `MONDAY_GROUP_ID` - optional destination group ID. Leave blank to use the board default group.
@@ -27,3 +28,15 @@ The generic website forms submit to `POST /api/forms`. The complaint widget keep
 - Apply forms (`/apply`, `/en/apply`): name, email, phone, fixed enquiry type `Initial Review / Apply`, message, source page, submitted date, and extra details for active credit, late payment, and monthly income.
 - Careers forms (`/careers`, `/en/careers`): name, email, phone, enquiry type `Career Application: {position}`, message, source page, submitted date, and selected position in extra details. Applicants are instructed to email resumes to papaipay.my@gmail.com; resume file upload is not collected by this implementation.
 - Complaint widget: full name, email, phone, complaint category, message, source `Complaint widget`, and submitted date.
+
+## Launch readiness checklist
+
+Before pointing the public domain at production, verify these items in Vercel and in the live browser:
+
+1. **Canonical production URL** - set `NEXT_PUBLIC_SITE_URL=https://papaipay.my` in Vercel so canonical links, Open Graph URLs, `robots.txt`, and `sitemap.xml` use the launch domain instead of the Vercel preview URL.
+2. **Monday.com environment variables** - confirm `MONDAY_API_TOKEN`, `MONDAY_BOARD_ID`, and the optional `MONDAY_GROUP_ID` are present in Vercel Production.
+3. **Monday.com column IDs** - confirm each configured column ID matches the expected Monday.com column type. `MONDAY_PHONE_COLUMN_ID` must be a text column because the website sends the phone value as plain text.
+4. **Domain and DNS** - add `papaipay.my` to the Vercel project, configure DNS records with the registrar/DNS provider, and confirm Vercel shows the domain as valid with HTTPS issued.
+5. **Indexing files** - after deployment, open `https://papaipay.my/robots.txt` and `https://papaipay.my/sitemap.xml` and confirm both return 200 responses with `https://papaipay.my` URLs.
+6. **Form smoke tests** - submit the BM and EN contact, apply, careers, homepage mini, and complaint forms from production and confirm matching items are created in Monday.com with name, email, phone, message/source, submitted date, and form-specific details.
+7. **Social previews** - test the launch URL in social preview tools and confirm the title, description, canonical URL, and large preview image render correctly.
