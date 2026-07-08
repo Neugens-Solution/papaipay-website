@@ -95,8 +95,8 @@ export default function CareersPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,185,95,0.22),transparent_32%),radial-gradient(circle_at_85%_15%,rgba(31,143,77,0.35),transparent_36%)]" />
             <div className="relative">
               <span className="inline-flex rounded-full border border-[#d6b95f]/30 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">BORANG PERMOHONAN</span>
-              <h2 className="mt-6 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl">Hantar Resume Anda</h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-white/74">Lengkapkan maklumat anda dan kongsikan resume untuk pertimbangan pasukan kami.</p>
+              <h2 className="mt-6 text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-5xl">Hantar Permohonan Anda</h2>
+              <p className="mt-5 max-w-xl text-base leading-8 text-white/74">Lengkapkan maklumat anda dan hantar resume melalui e-mel untuk pertimbangan pasukan kami.</p>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-white/82">
                 {['Terbuka kepada individu yang bermotivasi', 'Peluang perkembangan profesional', 'Calon yang disenarai pendek akan dihubungi'].map((item) => <li key={item} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#d6b95f]" />{item}</li>)}
               </ul>
@@ -111,8 +111,7 @@ export default function CareersPage() {
               <label className="grid gap-2 text-sm font-extrabold text-slate-800"><span>Jawatan Dipohon</span><select required className="h-14 rounded-2xl border border-emerald-100 bg-white px-5 text-sm font-semibold text-slate-800 outline-none transition focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10">{positions.map((position) => <option key={position}>{position}</option>)}</select></label>
             </div>
             <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800"><span>Mesej</span><textarea rows={5} required placeholder="Ceritakan secara ringkas tentang pengalaman dan minat kerjaya anda." className="resize-none rounded-2xl border border-emerald-100 bg-white px-5 py-4 text-sm font-semibold text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" /></label>
-            <label className="mt-5 grid gap-2 text-sm font-extrabold text-slate-800"><span>Muat Naik Resume</span><input required type="file" accept=".pdf,.doc,.docx" className="rounded-2xl border border-dashed border-emerald-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 outline-none file:mr-4 file:rounded-full file:border-0 file:bg-brand-700 file:px-5 file:py-2.5 file:text-xs file:font-extrabold file:uppercase file:tracking-[0.1em] file:text-white focus:border-brand-700 focus:ring-4 focus:ring-brand-700/10" /></label>
-            <p role="status" className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-bold leading-7 text-amber-900">Borang permohonan dalam talian dan muat naik resume sedang disediakan. Sila hantar permohonan dan resume anda melalui e-mel sehingga fungsi ini diaktifkan.</p><a href="mailto:career@papaipay.com" className="mt-7 inline-flex w-full justify-center rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">E-mel Resume</a>
+            <p role="status" className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-bold leading-7 text-amber-900">Muat naik resume belum tersedia di laman web. Sila hantar permohonan dan resume anda melalui e-mel sementara fungsi ini disediakan.</p><a href="mailto:career@papaipay.com" className="mt-7 inline-flex w-full justify-center rounded-full bg-brand-700 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-xl shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 md:w-auto">E-mel Resume</a>
           </form>
         </div>
       </section>

@@ -43,6 +43,7 @@ function RadioGroup({ legend, name }: { legend: string; name: string }) {
 export default function ApplyPage() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    event.currentTarget.reportValidity();
   }
 
   return (
@@ -86,7 +87,7 @@ export default function ApplyPage() {
             </div>
           </aside>
 
-          <form noValidate onSubmit={handleSubmit} className="p-6 md:p-10">
+          <form onSubmit={handleSubmit} className="p-6 md:p-10">
             <h2 className="text-2xl font-bold tracking-[-0.04em] text-slate-950 md:text-3xl">Mohon Semakan Awal</h2>
 
             <div className="mt-8 space-y-8">
