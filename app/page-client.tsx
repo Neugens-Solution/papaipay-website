@@ -1,5 +1,7 @@
 "use client";
 
+import { FormEvent, useState } from "react";
+
 import { Footer as SiteFooter, Header as SiteHeader } from "./site-components";
 const heroSlides = [
   {
@@ -142,6 +144,8 @@ function WhatWeDoSection() {
   );
 }
 
+type SubmitState = "idle" | "submitting" | "success" | "error";
+
 function LineIcon({ name, className = "" }: { name: string; className?: string }) {
   const common = { fill: "none", stroke: "currentColor", strokeLinecap: "round" as const, strokeLinejoin: "round" as const, strokeWidth: 1.8 };
   return (
@@ -160,6 +164,46 @@ function LineIcon({ name, className = "" }: { name: string; className?: string }
 }
 
 export default function Home() {
+  const [miniFormStatus, setMiniFormStatus] = useState<SubmitState>("idle");
+  const [miniFormError, setMiniFormError] = useState("");
+
+  async function handleMiniFormSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMiniFormStatus("submitting");
+    setMiniFormError("");
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Homepage Initial Review",
+          source: "/",
+          name: String(formData.get("name") || ""),
+          phone: String(formData.get("phone") || ""),
+          email: String(formData.get("email") || ""),
+          enquiryType: "Homepage Initial Review",
+          message: String(formData.get("message") || ""),
+        }),
+      });
+      const result = (await response.json()) as {
+        ok?: boolean;
+      };
+
+      if (!response.ok || !result.ok) {
+        throw new Error("Unable to submit homepage mini form.");
+      }
+
+      setMiniFormStatus("success");
+      form.reset();
+    } catch {
+      setMiniFormStatus("error");
+      setMiniFormError("Maaf, maklumat anda tidak dapat dihantar buat masa ini. Sila cuba lagi sebentar nanti.");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#f7fbf8] text-slate-950">
       <SiteHeader active="home" />
@@ -258,28 +302,38 @@ export default function Home() {
             <div className="relative">
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d6b95f]">Mulakan Hari Ini</p>
               <h2 className="mt-4 max-w-md text-3xl font-bold leading-[1.04] tracking-[-0.045em] md:text-4xl">Mulakan Semakan Awal Bersama Papaipay</h2>
-              <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Borang dalam talian ini sedang disediakan. Untuk pertanyaan segera, sila hubungi pasukan Papaipay melalui telefon atau e-mel.</p>
+              <p className="mt-4 max-w-md text-sm leading-7 text-white/75">Isi maklumat asas anda dan pasukan Papaipay akan menghubungi anda untuk langkah seterusnya.</p>
               <div className="mt-6 grid gap-2.5 text-sm font-semibold text-white/80">
                 {["Semakan Awal Percuma", "Sesi konsultasi bersama perunding berpengalaman", "Cadangan Pelan Penyelesaian"].map((item) => (
                   <div key={item} className="flex items-center gap-3"><span className="grid h-6 w-6 place-items-center rounded-full border border-[#d6b95f]/50 text-[#d6b95f]">✓</span>{item}</div>
                 ))}
               </div>
-              <p className="mt-6 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-xs font-semibold text-white/75">Gunakan pautan di bawah untuk meneruskan ke halaman semakan awal atau hubungi pasukan kami.</p>
+              <p className="mt-6 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-xs font-semibold text-white/75">Hantar maklumat ringkas anda dan pasukan kami akan menghubungi anda secepat mungkin.</p>
             </div>
           </div>
-          <div className="grid content-center gap-3 bg-white p-6 md:p-7 lg:p-8">
-            {["Nama penuh", "Nombor telefon", "Alamat E-mel"].map((label) => (
-              <label key={label} className="grid gap-1.5 text-xs font-bold text-slate-600">
+          <form onSubmit={handleMiniFormSubmit} className="grid content-center gap-3 bg-white p-6 md:p-7 lg:p-8">
+            {[
+              ["Nama penuh", "name", "text"],
+              ["Nombor telefon", "phone", "tel"],
+              ["Alamat E-mel", "email", "email"],
+            ].map(([label, name, type]) => (
+              <label key={name} className="grid gap-1.5 text-xs font-bold text-slate-600">
                 {label}
-                <input className="h-10 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder={label} />
+                <input required name={name} type={type} className="h-10 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder={label} />
               </label>
             ))}
             <label className="grid gap-1.5 text-xs font-bold text-slate-600">
               Catatan ringkas
-              <textarea className="min-h-20 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder="Catatan ringkas" />
+              <textarea required name="message" className="min-h-20 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-700 focus:bg-white" placeholder="Catatan ringkas" />
             </label>
-            <a href="/apply" className="mt-1 rounded-full bg-brand-700 px-6 py-2.5 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900">Mohon Semakan Awal</a>
-          </div>
+            {miniFormStatus === "success" && (
+              <p className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm font-semibold text-brand-900">Terima kasih. Maklumat awal anda telah dihantar kepada pasukan Papaipay.</p>
+            )}
+            {miniFormStatus === "error" && (
+              <p className="rounded-2xl border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{miniFormError || "Maaf, maklumat anda tidak dapat dihantar buat masa ini. Sila cuba lagi sebentar nanti."}</p>
+            )}
+            <button type="submit" disabled={miniFormStatus === "submitting"} className="mt-1 rounded-full bg-brand-700 px-6 py-2.5 text-center text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-60">{miniFormStatus === "submitting" ? "Menghantar..." : "Mohon Semakan Awal"}</button>
+          </form>
         </div>
       </section>
 
