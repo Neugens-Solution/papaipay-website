@@ -4,11 +4,6 @@ export type TeamMember = {
   image: string;
 };
 
-export const executiveManagementGroup: TeamMember[] = [
-  { name: "Weng", role: "Chief Operating Officer", image: "/Weng-Chief-Operating-Officer.png" },
-  { name: "David", role: "Chief Financial Officer", image: "/Chief-Financial-Officer-David.png" },
-];
-
 export const teamLeadershipGroup: TeamMember[] = [
   { name: "Vicki", role: "Team Manager", image: "/Vicki-Team-Manager.png" },
   { name: "Anis", role: "Team Leader", image: "/Team-Leader-Anis.png" },
@@ -44,7 +39,6 @@ export const operationsSupportGroup: TeamMember[] = [
 ];
 
 export const totalStaffCount =
-  executiveManagementGroup.length +
   teamLeadershipGroup.length +
   financialPlanningGroup.length +
   operationsSupportGroup.length;
