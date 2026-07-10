@@ -4,15 +4,18 @@ export type TeamMember = {
   image: string;
 };
 
-export const teamLeaderGroup: TeamMember[] = [
+export const executiveManagementGroup: TeamMember[] = [
   { name: "Weng", role: "Chief Operating Officer", image: "/chief-operating-officer-weng.png" },
   { name: "David", role: "Chief Financial Officer", image: "/chief-financial-officer-david.png" },
+];
+
+export const teamLeadershipGroup: TeamMember[] = [
   { name: "Vicki", role: "Team Manager", image: "/team-manager-vicky.png" },
   { name: "Anis", role: "Team Leader", image: "/team-leader-anis.png" },
   { name: "Bryan", role: "Team Leader", image: "/team-leader-bryan.png" },
 ];
 
-export const financialStaffGroup: TeamMember[] = [
+export const financialPlanningGroup: TeamMember[] = [
   { name: "Alex", role: "Financial Plan", image: "/financial-plan-alex.png" },
   { name: "Ashikin", role: "Financial Plan", image: "/financial-plan-ashikin.png" },
   { name: "Christine", role: "Financial Plan", image: "/financial-plan-christine.png" },
@@ -30,7 +33,7 @@ export const financialStaffGroup: TeamMember[] = [
   { name: "Zane", role: "Financial Plan", image: "/financial-plan-zane.png" },
 ];
 
-export const operationStaffGroup: TeamMember[] = [
+export const operationsSupportGroup: TeamMember[] = [
   { name: "Edayu", role: "Admin", image: "/admin-edayu.png" },
   { name: "Jeney", role: "Admin", image: "/admin-jeney.png" },
   { name: "Andy", role: "Content Marketing", image: "/content-marketing-andy.png" },
@@ -40,4 +43,8 @@ export const operationStaffGroup: TeamMember[] = [
   { name: "Hazim", role: "Social Media Admin", image: "/social-media-admin-hazim.png" },
 ];
 
-export const totalStaffCount = teamLeaderGroup.length + financialStaffGroup.length + operationStaffGroup.length;
+export const totalStaffCount =
+  executiveManagementGroup.length +
+  teamLeadershipGroup.length +
+  financialPlanningGroup.length +
+  operationsSupportGroup.length;
