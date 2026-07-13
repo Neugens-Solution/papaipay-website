@@ -1,21 +1,11 @@
+import type { FormSubmission } from "./form-submission";
+
 type MondayColumnValues = Record<
   string,
   | string
   | { email: string; text: string }
   | { date: string }
 >;
-
-export type MondaySubmission = {
-  formType: string;
-  source: string;
-  name: string;
-  email?: string;
-  phone?: string;
-  company?: string;
-  enquiryType?: string;
-  message?: string;
-  details?: Record<string, string>;
-};
 
 const MONDAY_API_URL = "https://api.monday.com/v2";
 
@@ -42,7 +32,7 @@ function truncate(value: string, max = 4000) {
   return value.length > max ? `${value.slice(0, max - 1)}…` : value;
 }
 
-function itemNameFor(submission: MondaySubmission) {
+function itemNameFor(submission: FormSubmission) {
   const type = compact(submission.formType) || "Website form";
   const name = compact(submission.name) || "Website visitor";
   return truncate(`${type} - ${name}`, 255);
@@ -61,7 +51,7 @@ function appendDetails(message: string, details?: Record<string, string>) {
     .join("\n\nAdditional details:\n");
 }
 
-function buildColumnValues(submission: MondaySubmission) {
+function buildColumnValues(submission: FormSubmission) {
   const values: MondayColumnValues = {};
   const setText = (envName: string, value?: string) => {
     const columnId = env(envName);
@@ -97,7 +87,7 @@ export function assertMondayConfig() {
   return Boolean(env("MONDAY_API_TOKEN") && env("MONDAY_BOARD_ID"));
 }
 
-export async function createMondayItem(submission: MondaySubmission) {
+export async function createMondayItem(submission: FormSubmission) {
   const token = env("MONDAY_API_TOKEN");
   const boardId = env("MONDAY_BOARD_ID");
   const groupId = env("MONDAY_GROUP_ID");
