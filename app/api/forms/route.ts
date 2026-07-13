@@ -1,14 +1,22 @@
 import { NextResponse } from "next/server";
 
+import type { FormSubmission } from "../../../lib/form-submission";
 import {
-  assertMondayConfig,
-  createMondayItem,
-  type MondaySubmission,
-} from "../../../lib/monday";
+  assertGoogleSheetsConfig,
+  saveGoogleSheetsSubmission,
+} from "../../../lib/google-sheets";
+import { assertMondayConfig, createMondayItem } from "../../../lib/monday";
 
 export const runtime = "nodejs";
 
-type Payload = Partial<MondaySubmission> & { website?: unknown };
+type Payload = Partial<
+  Omit<FormSubmission, "submissionId" | "details">
+> & {
+  details?: unknown;
+  website?: unknown;
+};
+
+type ValidatedSubmission = Omit<FormSubmission, "submissionId">;
 
 const limits = {
   formType: 80,
@@ -25,10 +33,14 @@ function text(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function safeErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : "Unknown error";
+}
+
 function validate(payload: Payload) {
   if (text(payload.website)) return { ok: true as const, spam: true as const };
 
-  const submission: MondaySubmission = {
+  const submission: ValidatedSubmission = {
     formType: text(payload.formType),
     source: text(payload.source),
     name: text(payload.name),
@@ -60,7 +72,7 @@ function validate(payload: Payload) {
     return { ok: false as const, error: "Phone number is required." };
 
   for (const [field, max] of Object.entries(limits)) {
-    const value = submission[field as keyof MondaySubmission];
+    const value = submission[field as keyof ValidatedSubmission];
     if (typeof value === "string" && value.length > max)
       return { ok: false as const, error: `${field} is too long.` };
   }
@@ -92,22 +104,44 @@ export async function POST(request: Request) {
     );
   if (validation.spam) return NextResponse.json({ ok: true });
 
-  if (!assertMondayConfig()) {
-    console.error("Monday.com form configuration is incomplete.");
+  if (!assertGoogleSheetsConfig()) {
+    console.error("Google Sheets form configuration is incomplete or invalid.");
     return NextResponse.json(
       { ok: false, error: "Unable to submit the form right now." },
       { status: 500 },
     );
   }
 
+  const submission: FormSubmission = {
+    ...validation.submission,
+    submissionId: crypto.randomUUID(),
+  };
+
   try {
-    await createMondayItem(validation.submission);
-    return NextResponse.json({ ok: true });
+    await saveGoogleSheetsSubmission(submission);
   } catch (error) {
-    console.error("Website form submission failed.", error);
+    console.error(
+      "Primary Google Sheets form submission failed.",
+      safeErrorMessage(error),
+    );
     return NextResponse.json(
       { ok: false, error: "Unable to submit the form right now." },
       { status: 502 },
     );
   }
+
+  if (!assertMondayConfig()) {
+    console.error("Monday.com secondary form configuration is incomplete.");
+  } else {
+    try {
+      await createMondayItem(submission);
+    } catch (error) {
+      console.error(
+        "Monday.com secondary form submission failed.",
+        safeErrorMessage(error),
+      );
+    }
+  }
+
+  return NextResponse.json({ ok: true });
 }
