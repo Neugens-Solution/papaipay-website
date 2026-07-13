@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 
+import type { FormSubmission } from "../../../lib/form-submission";
+import {
+  assertGoogleSheetsConfig,
+  saveGoogleSheetsSubmission,
+} from "../../../lib/google-sheets";
 import { assertMondayConfig, createMondayItem } from "../../../lib/monday";
 
 export const runtime = "nodejs";
@@ -31,6 +36,27 @@ const fieldLabels = {
 
 function textValue(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function safeErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : "Unknown error";
+}
+
+function complaintSource(request: Request) {
+  const fallback = "Complaint widget";
+  const referer = request.headers.get("referer");
+  if (!referer) return fallback;
+
+  try {
+    const requestUrl = new URL(request.url);
+    const refererUrl = new URL(referer);
+    if (requestUrl.origin !== refererUrl.origin) return fallback;
+
+    const path = refererUrl.pathname.slice(0, 180);
+    return path && path !== "/" ? `${fallback}: ${path}` : fallback;
+  } catch {
+    return fallback;
+  }
 }
 
 function validatePayload(payload: ComplaintPayload) {
@@ -83,30 +109,51 @@ export async function POST(request: Request) {
     );
   if (validation.spam) return NextResponse.json({ ok: true });
 
-  if (!assertMondayConfig()) {
-    console.error("Monday.com complaint configuration is incomplete.");
+  if (!assertGoogleSheetsConfig()) {
+    console.error("Google Sheets complaint configuration is incomplete or invalid.");
     return NextResponse.json(
       { ok: false, error: "Unable to send complaint right now." },
       { status: 500 },
     );
   }
 
+  const submission: FormSubmission = {
+    submissionId: crypto.randomUUID(),
+    formType: "Complaint",
+    source: complaintSource(request),
+    name: validation.complaint.fullName,
+    email: validation.complaint.email,
+    phone: validation.complaint.phone,
+    enquiryType: validation.complaint.category,
+    message: validation.complaint.message,
+    details: {},
+  };
+
   try {
-    await createMondayItem({
-      formType: "Complaint",
-      source: "Complaint widget",
-      name: validation.complaint.fullName,
-      email: validation.complaint.email,
-      phone: validation.complaint.phone,
-      enquiryType: validation.complaint.category,
-      message: validation.complaint.message,
-    });
-    return NextResponse.json({ ok: true });
+    await saveGoogleSheetsSubmission(submission);
   } catch (error) {
-    console.error("Complaint Monday.com submission failed.", error);
+    console.error(
+      "Primary Google Sheets complaint submission failed.",
+      safeErrorMessage(error),
+    );
     return NextResponse.json(
       { ok: false, error: "Unable to send complaint right now." },
       { status: 502 },
     );
   }
+
+  if (!assertMondayConfig()) {
+    console.error("Monday.com secondary complaint configuration is incomplete.");
+  } else {
+    try {
+      await createMondayItem(submission);
+    } catch (error) {
+      console.error(
+        "Monday.com secondary complaint submission failed.",
+        safeErrorMessage(error),
+      );
+    }
+  }
+
+  return NextResponse.json({ ok: true });
 }
