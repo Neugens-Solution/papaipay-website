@@ -49,3 +49,4 @@ Before pointing the public domain at production, verify these items in Vercel an
 7. **Form smoke tests** - submit the BM and EN contact, apply, careers, homepage mini, and complaint forms from production. Confirm each accepted submission creates a complete Google Sheet row and, while enabled, a matching Monday.com item with the expected mapped fields.
 8. **Failure-path check** - confirm a Monday.com delivery failure does not reject a submission already saved successfully to Google Sheets, while a Google Sheets failure still returns the existing generic user-safe error.
 9. **Social previews** - test the launch URL in social preview tools and confirm the title, description, canonical URL, and large preview image render correctly.
+10. **Test-data cleanup** - remove smoke-test rows and any matching secondary workflow items after production verification is complete.
