@@ -36,7 +36,7 @@ const whatWeDo = [
 
 const henryHighlights = [
   ["home", "Identify Asset Opportunities", "We help customers identify potential asset options that suit their current situation."],
-  ["clipboard", "Rancang Dengan Strategi", "Setiap langkah dirancang secara tersusun supaya keputusan dibuat dengan lebih yakin."],
+  ["clipboard", "Plan With Strategy", "Every step is carefully structured so decisions can be made with greater confidence."],
   ["shield", "Build a More Stable Future", "With the right assets, customers can plan their future more effectively."],
 ];
 const journeySteps = [
@@ -49,7 +49,7 @@ const credibilityStats = [
   ["award", "10", "Years of Experience", "Strong experience guiding customers through financial and asset decisions."],
   ["users", "80", "Financial Advisory Representatives", "An advisory team that supports customers with a professional approach."],
   ["briefcase", "16,000", "Satisfied Customers", "Customer trust is the foundation of every recommendation and review."],
-  ["shield", "RM450 Juta", "Assets Under Our Advice", "The value of assets under our advice reflects our experience and customer trust."],
+  ["shield", "RM450 Million", "Assets Under Our Advice", "The value of assets under our advice reflects our experience and customer trust."],
 ];
 
 function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
@@ -241,7 +241,7 @@ export default function Home() {
             {credibilityStats.map(([icon, stat, label, text]) => (
               <div key={label} className="rounded-[1.25rem] border border-[#d6b95f]/30 bg-white/10 p-7 text-center shadow-2xl shadow-black/10 backdrop-blur-md">
                 <LineIcon name={icon} className="mx-auto h-12 w-12 text-[#d6b95f]" />
-                <div className={`mt-5 font-extrabold tracking-[-0.06em] text-white ${stat === "RM450 Juta" ? "text-3xl md:text-4xl lg:text-[2.35rem]" : "text-5xl md:text-6xl"}`}>{stat}</div>
+                <div className={`mt-5 font-extrabold tracking-[-0.06em] text-white ${stat === "RM450 Million" ? "text-3xl md:text-4xl lg:text-[2.35rem]" : "text-5xl md:text-6xl"}`}>{stat}</div>
                 <h3 className="mt-3 text-sm font-bold uppercase tracking-[0.08em] text-white/90">{label}</h3>
                 <div className="mx-auto mt-4 h-px w-10 bg-[#d6b95f]" />
                 <p className="mt-4 text-sm leading-6 text-white/65">{text}</p>
