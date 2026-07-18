@@ -45,7 +45,7 @@ function SocialIcon({
 const contactCards = [
   {
     title: "Hubungi Kami",
-    value: "03-6279 0080",
+    value: "+60 11-6137 3110",
     description:
       "Bercakap dengan pasukan kami pada waktu pejabat untuk pertanyaan dan bantuan temujanji.",
   },
@@ -252,7 +252,7 @@ export default function ContactPage() {
               <Field
                 label="Nombor Telefon"
                 name="phone"
-                placeholder="03-6279 0080"
+                placeholder="+60 11-6137 3110"
                 type="tel"
               />
               <Field
@@ -381,7 +381,7 @@ export default function ContactPage() {
               tentang perkhidmatan yang kami sediakan.
             </p>
             <a
-              href="tel:0362790080"
+              href="tel:+601161373110"
               className="mt-9 inline-flex rounded-full bg-white px-8 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-white/90"
             >
               Hubungi Kami Sekarang
