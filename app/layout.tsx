@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     shortcut: "/papaipay-icon.svg",
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "MgZR6kQrQp2TmvdyFrAoswfxvioKHWcAkFp7H9uB7PM",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
