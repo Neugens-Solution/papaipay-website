@@ -1,10 +1,13 @@
 import type { FormSubmission } from "./form-submission";
 
 const REQUEST_TIMEOUT_MS = 15_000;
+const RESPONSE_PREVIEW_LIMIT = 500;
 
 type AppsScriptResult = {
   ok?: unknown;
   success?: unknown;
+  error?: unknown;
+  message?: unknown;
 };
 
 function env(name: string) {
@@ -37,6 +40,10 @@ function languageFromSource(source: string) {
   return /(^|[\s:(])\/en(?:\/|$|[?#])/.test(source.toLowerCase())
     ? "EN"
     : "BM";
+}
+
+function responsePreview(value: string) {
+  return value.replace(/\s+/g, " ").trim().slice(0, RESPONSE_PREVIEW_LIMIT);
 }
 
 export function assertGoogleSheetsConfig() {
@@ -84,8 +91,28 @@ export async function saveGoogleSheetsSubmission(
       !response.ok ||
       !result ||
       (result.ok !== true && result.success !== true)
-    )
-      throw new Error("Google Sheets submission failed.");
+    ) {
+      const appMessage =
+        typeof result?.error === "string"
+          ? result.error
+          : typeof result?.message === "string"
+            ? result.message
+            : "";
+      const preview = responsePreview(responseText);
+
+      console.error("Google Sheets web app rejected submission.", {
+        status: response.status,
+        contentType: response.headers.get("content-type") || "",
+        redirected: response.redirected,
+        finalHost: new URL(response.url).hostname,
+        appMessage,
+        responsePreview: preview,
+      });
+
+      throw new Error(
+        `Google Sheets submission failed (HTTP ${response.status}${appMessage ? `: ${appMessage}` : ""}).`,
+      );
+    }
   } finally {
     clearTimeout(timeout);
   }
