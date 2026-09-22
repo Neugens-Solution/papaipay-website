@@ -14,13 +14,11 @@ export const financialPlanningGroup: TeamMember[] = [
   { name: "Alex", role: "Financial Plan", image: "/Financial-Plan-Alex.png" },
   { name: "Ashikin", role: "Financial Plan", image: "/Financial-Plan-Ashikin.png" },
   { name: "Faten", role: "Financial Plan", image: "/Financial-Plan-Faten.png" },
-  { name: "Ikhwan", role: "Financial Plan", image: "/Financial-Plan-Ikhwan.png" },
   { name: "Izzah", role: "Financial Plan", image: "/Financial-Plan-Izzah.png" },
   { name: "Jasper", role: "Financial Plan", image: "/Financial-Plan-Jasper.png" },
   { name: "Jeremy", role: "Financial Plan", image: "/Financial-Plan-Jeremy.png" },
   { name: "Jessica", role: "Financial Plan", image: "/Financial-Plan-Jessica.png" },
   { name: "Nurul", role: "Financial Plan", image: "/Financial-Plan-Nurul.png" },
-  { name: "Shima", role: "Financial Plan", image: "/Financial-Plan-Shima.png" },
   { name: "Zane", role: "Financial Plan", image: "/Zane-Financial-Plan.png" },
 ];
 
