@@ -19,7 +19,6 @@ export const financialPlanningGroup: TeamMember[] = [
   { name: "Jeremy", role: "Financial Plan", image: "/Financial-Plan-Jeremy.png" },
   { name: "Jessica", role: "Financial Plan", image: "/Financial-Plan-Jessica.png" },
   { name: "Nurul", role: "Financial Plan", image: "/Financial-Plan-Nurul.png" },
-  { name: "Zane", role: "Financial Plan", image: "/Zane-Financial-Plan.png" },
 ];
 
 export const operationsSupportGroup: TeamMember[] = [
