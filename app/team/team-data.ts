@@ -18,6 +18,7 @@ export const financialPlanningGroup: TeamMember[] = [
   { name: "Jeremy", role: "Financial Plan", image: "/Financial-Plan-Jeremy.png" },
   { name: "Jessica", role: "Financial Plan", image: "/Financial-Plan-Jessica.png" },
   { name: "Nurul", role: "Financial Plan", image: "/Financial-Plan-Nurul.png" },
+  { name: "Deena", role: "Financial Plan", image: "/Financial-Plan-Deena.png" },
 ];
 
 export const operationsSupportGroup: TeamMember[] = [
@@ -28,6 +29,7 @@ export const operationsSupportGroup: TeamMember[] = [
   { name: "Kenneth", role: "Financial Operation", image: "/Financial-Operation-Kenneth.png" },
   { name: "Elaine", role: "Human Resources", image: "/Human-Resources-Elaine.png" },
   { name: "Hazim", role: "Social Media Admin", image: "/Social-Media-Admin-Hazim.png" },
+  { name: "Alin", role: "Sales Coordinator", image: "/Sales-Coordinator-Alin.png" },
 ];
 
 export const totalStaffCount =
